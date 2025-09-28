@@ -3,12 +3,14 @@ import { notFound } from "next/navigation";
 import { Locale, locales } from "./i18n.config";
 
 export default getRequestConfig(async ({ locale }) => {
-  if (!locales.includes(locale as Locale)) {
+  const candidate = locale ?? "en";
+  if (!locales.includes(candidate as Locale)) {
     return notFound();
   }
 
   return {
-    messages: (await import(`../locales/${locale}.json`)).default,
+    locale: candidate,
+    messages: (await import(`../locales/${candidate}.json`)).default,
   };
 });
 

@@ -1,5 +1,5 @@
 "use client";
-import React, { useMemo } from "react";
+import React from "react";
 import { motion, useAnimationControls, useInView } from "motion/react";
 import { numbersData } from "./numbersData";
 import { useTranslations } from "next-intl";
@@ -61,10 +61,7 @@ export default function NumbersSection() {
     })();
   }, [isInView, col1, col2, col3]);
 
-  const [titleStrong, titleSubtle] = useMemo(
-    () => [numbersData.headingStrong, numbersData.headingSubtle],
-    []
-  );
+  // Using translations directly; keep local memo removed to avoid unused vars
 
   return (
     <section ref={sectionRef} className="max-w-[1260px] mx-auto px-4 md:px-0 py-20">
