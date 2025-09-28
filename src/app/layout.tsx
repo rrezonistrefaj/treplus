@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/components/Navbar/Navbar";
-import Footer from "@/components/Footer/Footer";
 
 export const metadata: Metadata = {
   title: "treplus",
@@ -15,11 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased font-sans">
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
+      <body className="antialiased font-sans">{children}</body>
     </html>
   );
 }

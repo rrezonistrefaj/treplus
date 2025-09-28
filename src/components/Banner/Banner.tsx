@@ -3,10 +3,12 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import Reveal from "@/components/ui/Reveal";
+import { useTranslations } from "next-intl";
 import { bannerData } from "./bannerData";
 
 const Banner = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const t = useTranslations('Banner');
   const currentContent = bannerData.animatedContent[currentIndex];
 
   // Auto-advance the animation
@@ -55,7 +57,7 @@ const Banner = () => {
         <div className="lg:flex-1">
           <div >
             <h1 className="text-5xl font-semibold font-unbounded text-[#22252A] ">
-              {bannerData.staticTitlePart}
+              {t('titleStatic')}
               <AnimatePresence mode="wait">
                 <motion.span
                   key={currentIndex}
@@ -69,23 +71,23 @@ const Banner = () => {
                   }}
                   className={`${currentContent.wordColor} pl-2`}
                 >
-                  {currentContent.word}
+                  {t(`animated.${currentIndex}`)}
                 </motion.span>
               </AnimatePresence>
             </h1>
             <p className="mt-5 text-base font-medium leading-[20px] text-[#474D57] max-w-[589px]">
-              {bannerData.description}
+              {t('description')}
             </p>
             <div className="mt-14">
               <button className="bg-[#FF5F1F] hover:bg-orange-600 text-white text-xl px-[56.5px] py-5 font-bold rounded-[10px]">
-                {bannerData.primaryButton.text}
+                {t('primaryCta')}
               </button>
             </div>
 
             {/* Trusted by row */}
             <div className="mt-15">
               <div className="text-[12px] uppercase tracking-wide text-gray-500 mb-5">
-                Trusted by:
+                {t('trustedBy')}
               </div>
               <div className="flex flex-wrap items-center gap-x-20 ">
                 {bannerData.trustedBy.map((company, index) => (
