@@ -3,6 +3,7 @@ import React, { useMemo, useRef } from "react";
 import Reveal from "@/components/ui/Reveal";
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import { statsData } from "./statsData";
+import { useTranslations } from "next-intl";
 
 const containerVariants = {
   hidden: { opacity: 0, y: 24 },
@@ -28,9 +29,10 @@ const StatsSection = () => {
     target: sectionRef,
     offset: ["start end", "start start"],
   });
+  const t = useTranslations('Stats');
   const fullTitle = useMemo(
-    () => `${statsData.headingStrong} ${statsData.headingSubtle}`,
-    []
+    () => `${t('headingStrong')} ${t('headingSubtle')}`,
+    [t]
   );
   const words = useMemo(() => fullTitle.split(" "), [fullTitle]);
 
@@ -59,7 +61,7 @@ const StatsSection = () => {
       <div className="mt-44 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12">
         {statsData.stats.map((stat, index) => (
           <motion.div
-            key={stat.title}
+            key={index}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.4 }}
@@ -75,10 +77,10 @@ const StatsSection = () => {
               </span>
             </div>
             <div className="mt-1 text-xl font-bold text-[#22252A]">
-              {stat.title}
+              {t(`items.${index}.title`)}
             </div>
             <div className="mt-2 text-base text-[#474D57]">
-              {stat.description}
+              {t(`items.${index}.description`)}
             </div>
           </motion.div>
         ))}

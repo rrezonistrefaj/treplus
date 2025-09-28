@@ -1,7 +1,8 @@
 "use client";
-import React, { useMemo } from "react";
+import React from "react";
 import { motion, useAnimationControls, useInView } from "motion/react";
 import { numbersData } from "./numbersData";
+import { useTranslations } from "next-intl";
 
 const cardBase =
   "rounded-[24px] px-7.5 py-3 h-[233px] flex flex-col leading-snug justify-start text-white font-unbounded font-black text-[52px] md:text-[64px]";
@@ -12,6 +13,7 @@ const gridLayout =
   "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8";
 
 export default function NumbersSection() {
+  const t = useTranslations('Numbers')
   // Column controls (1..4)
   const col1 = useAnimationControls();
   const col2 = useAnimationControls();
@@ -59,18 +61,15 @@ export default function NumbersSection() {
     })();
   }, [isInView, col1, col2, col3]);
 
-  const [titleStrong, titleSubtle] = useMemo(
-    () => [numbersData.headingStrong, numbersData.headingSubtle],
-    []
-  );
+  // Using translations directly; keep local memo removed to avoid unused vars
 
   return (
     <section ref={sectionRef} className="max-w-[1260px] mx-auto px-4 md:px-0 py-20">
       <div>
         <h2 className="text-[36px] md:text-5xl font-bold font-unbounded text-[#0F0F0F]">
-          {titleStrong}
+          {t('headingStrong')}
         </h2>
-        <p className="mt-2 text-[#474D57] font-medium text-[14px] md:text-base">{titleSubtle}</p>
+        <p className="mt-2 text-[#474D57] font-medium text-[14px] md:text-base">{t('headingSubtle')}</p>
       </div>
 
       <div ref={containerRef} className={`mt-12 ${gridLayout}`}>
@@ -89,7 +88,7 @@ export default function NumbersSection() {
                 data-card
               >
                 <div>{card.headline}</div>
-                <div className={subText}>{card.subline}</div>
+                <div className={subText}>{t(`cards.${idx}.subline`)}</div>
               </div>
             );
           })}
@@ -110,7 +109,7 @@ export default function NumbersSection() {
                 data-card
               >
                 <div>{card.headline}</div>
-                <div className={subText}>{card.subline}</div>
+                <div className={subText}>{t(`cards.${idx}.subline`)}</div>
               </div>
             );
           })}
@@ -131,7 +130,7 @@ export default function NumbersSection() {
                 data-card
               >
                 <div>{card.headline}</div>
-                <div className={subText}>{card.subline}</div>
+                <div className={subText}>{t(`cards.${idx}.subline`)}</div>
               </div>
             );
           })}

@@ -1,6 +1,7 @@
 "use client"
 
 import { ArrowUpRight } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 interface ReadMoreButtonProps {
   onClick?: () => void
@@ -9,6 +10,7 @@ interface ReadMoreButtonProps {
 }
 
 export function ReadMoreButton({ onClick, className = "", color = "green-600" }: ReadMoreButtonProps) {
+  const t = useTranslations('Common')
   return (
     <button
       onClick={onClick}
@@ -16,7 +18,7 @@ export function ReadMoreButton({ onClick, className = "", color = "green-600" }:
     >
       {/* Left side - Glass morphism effect with set height */}
       <div className="flex items-center justify-center h-11 px-4 text-white font-medium text-lg ">
-        Read More
+        {t('readMore')}
       </div>
 
       {/* Right side - White circle with green arrow */}

@@ -1,0 +1,90 @@
+{
+  "Nav": {
+    "services": "Shërbimet",
+    "team": "Ekipi",
+    "cases": "Rastet",
+    "insights": "Analiza",
+    "contact": "Kontakt"
+  },
+  "Common": {
+    "language": "Gjuha",
+    "readMore": "Lexo më shumë"
+  },
+  "Banner": {
+    "titleStatic": "Ne jemi plusi juaj për",
+    "description": "Bashkohuni me ne në këtë udhëtim transformues teksa lind një epokë e re e shërbimeve nearshore, ku rritja dhe suksesi i biznesit tuaj janë prioriteti ynë kryesor.",
+    "primaryCta": "Le të flasim",
+    "trustedBy": "Na besojnë:",
+    "animated": ["Zhvillim", "Marketing", "Dizajn"]
+  },
+  "Services": {
+    "heading": "Krijojmë së bashku.",
+    "subheading": "Dizajn profesionist aplikacionesh, dizajn tërheqës faqesh dhe zhvillim të avancuar web për të rritur praninë tuaj digjitale dhe përvojën e përdoruesit.",
+    "items": [
+      {"title": "Shërbime marketingu", "description": "Krijojmë strategji për rrjetet sociale, SEO dhe fushata për të rritur markën tuaj dhe për të arritur më shumë klientë."},
+      {"title": "Shërbime kreative", "description": "Dizajnojmë identitet, UI/UX dhe përmbajtje vizuale që pasqyrojnë markën tuaj, tregojnë historinë dhe mbajnë audiencën të angazhuar."},
+      {"title": "Shërbime softuerike", "description": "Ndërtojmë aplikacione web, mobile dhe cloud të sigurta, të shkallëzueshme dhe të përshtatura me nevojat e biznesit tuaj."}
+    ],
+    "contact": {"title": "Le të krijojmë së bashku projektin tuaj të radhës.", "label": "Kontakt", "cta": "Na kontakto"}
+  },
+  "OurWork": {
+    "title": "Punët tona",
+    "description": "Krijojmë zgjidhje digjitale që lidhin kreativitetin me teknologjinë. Nga dizajni i produktit dhe zhvillimi i faqeve te asetet digjitale, ekipi ynë ofron rezultate të zgjuara dhe të shkallëzueshme që ndihmojnë bizneset të rriten.",
+    "seeMore": "Shiko më shumë",
+    "items": [
+      {"title": "Asete digjitale", "description": "Fushatë marketingu që promovon investimin e zgjuar në asete digjitale. Fushatë promovuese."},
+      {"title": "Dizajn produkti", "description": "Fushatë marketingu që promovon investimin e zgjuar në asete digjitale. Fushatë promovuese."},
+      {"title": "Zhvillim web‑i", "description": "Fushatë marketingu që promovon investimin e zgjuar në asete digjitale. Fushatë promovuese."},
+      {"title": "Asete digjitale", "description": "Fushatë marketingu që promovon investimin e zgjuar në asete digjitale. Fushatë promovuese."}
+    ]
+  },
+  "Stats": {
+    "headingStrong": "Ne specializohemi në ndërtimin e partneriteteve të forta nearshore",
+    "headingSubtle": "që u ndihmojnë bizneseve të shkallëzohen më shpejt, të optimizojnë operacionet dhe të aksesojnë me lehtësi talente kryesore rajonale.",
+    "items": [
+      {"title": "Projekte të përfunduara", "description": "Kemi ndihmuar në ndërtimin e mbi 400 projekteve të mrekullueshme."},
+      {"title": "Vlerësime me 5 yje", "description": "Kemi ndihmuar në ndërtimin e mbi 400 projekteve të mrekullueshme."},
+      {"title": "Shkarkime globale", "description": "Kemi ndihmuar në ndërtimin e mbi 400 projekteve të mrekullueshme."},
+      {"title": "Kthim i investimit", "description": "Kemi ndihmuar në ndërtimin e mbi 400 projekteve të mrekullueshme."}
+    ]
+  },
+  "Numbers": {
+    "headingStrong": "Le të flasin numrat",
+    "headingSubtle": "Rezultatet tona flasin vetë, të bazuara në eksperiencë, besim dhe impakt.",
+    "cards": [
+      {"subline": "Tre+ qëndron për tre themeluesit dhe plusin"},
+      {"subline": "Tre+ qëndron për tre themeluesit dhe plusin"},
+      {"subline": "Projekte në mbarë botën"},
+      {"subline": "Vlerësime në total"},
+      {"subline": "Vite përvojë"},
+      {"subline": "Projekte të përfunduara"},
+      {"subline": "Më shumë upsells"}
+    ]
+  },
+  "Team": {
+    "title": "Ekipi ynë",
+    "description": "Jemi zhvillues softuerësh, dizajnerë dhe marketierë që punojmë së bashku për të krijuar zgjidhje digjitale me ndikim. Me kreativitet dhe ekspertizë ndihmojmë markat të inovojnë dhe të rriten.",
+    "viewAll": "Shiko të gjithë ekipin",
+    "roles": {"mike": "Bashkëthemelues", "scott": "Drejtor Marketingu", "elena": "Drejtoreshë Dizajni", "daniel": "Inxhinier Kryesor"}
+  },
+  "Footer": {
+    "tagline": "Dizajnoni përvoja digjitale të mrekullueshme që sjellin më shumë lumturi në botë.",
+    "explore": "Eksploro",
+    "nav": {"home": "Faqja kryesore", "services": "Shërbimet", "cases": "Rastet", "insights": "Analiza", "team": "Ekipi", "contact": "Kontakt"},
+    "services": "Shërbimet",
+    "servicesList": ["Zhvillim", "Dizajn", "Marketing", "Proces"],
+    "work": "Punë",
+    "workList": ["Studime rastesh (të gjitha)", "Raste marketingu", "Raste softuerike", "Raste kreative", "Analiza & Lajme", "Lajme nga industria"],
+    "contact": "Kontakt",
+    "contactList": ["Formular kontakti", "Cakto një takim", "Kërkesë për media", "(info@treplus.com)"],
+    "copyright": "Të drejtat e autorit ©"
+  },
+  "CTA": {
+    "titleLine1": "Cakto një takim ose",
+    "titleLine2": "kërko një ofertë",
+    "subtext": "Me kënaqësi të ndihmojmë të mësosh më shumë rreth produkteve dhe shërbimeve tona.",
+    "cta": "Le të flasim"
+  }
+}
+
+

@@ -1,0 +1,91 @@
+{
+  "Nav": {
+    "services": "Diensten",
+    "team": "Team",
+    "cases": "Cases",
+    "insights": "Inzichten",
+    "contact": "Contact"
+  },
+  "Common": {
+    "language": "Taal",
+    "readMore": "Lees meer"
+  },
+  "Banner": {
+    "titleStatic": "Wij zijn jouw plus voor slimmere",
+    "description": "Ga met ons mee op deze transformatieve reis waarin een nieuw tijdperk van nearshore‑diensten ontstaat, waar jouw groei en succes onze hoogste prioriteit zijn.",
+    "primaryCta": "Laten we praten",
+    "trustedBy": "Vertrouwd door:",
+    "animated": ["Ontwikkeling", "Marketing", "Design"]
+  },
+  "Services": {
+    "heading": "Samen creëren we.",
+    "subheading": "Expert app‑design, aantrekkelijk webdesign en geavanceerde webontwikkeling om je digitale aanwezigheid en gebruikerservaring te versterken.",
+    "items": [
+      {"title": "Marketingdiensten", "description": "We creëren strategieën voor social media, SEO en campagnes om je merk te laten groeien en meer klanten te bereiken."},
+      {"title": "Creatieve diensten", "description": "We ontwerpen branding, UI/UX en visuele content die de identiteit van je merk vastlegt, je verhaal vertelt en je publiek betrokken houdt."},
+      {"title": "Softwarediensten", "description": "We bouwen web-, mobiele en cloudapplicaties die veilig, schaalbaar en afgestemd zijn op jouw bedrijfsbehoeften."}
+    ],
+    "contact": {"title": "Laten we samen je volgende grote project maken.", "label": "Contact", "cta": "Neem contact op"}
+  },
+  "OurWork": {
+    "title": "Ons werk",
+    "description": "We bouwen digitale oplossingen die creativiteit met technologie verbinden. Van productdesign en webontwikkeling tot digitale assets: ons team levert slimme, schaalbare resultaten die bedrijven laten groeien.",
+    "seeMore": "Meer bekijken",
+    "items": [
+      {"title": "Digital assets", "description": "Marketingcampagne die slim investeren in digitale assets promoot. Marketingcampagne promotie"},
+      {"title": "Product design", "description": "Marketingcampagne die slim investeren in digitale assets promoot. Marketingcampagne promotie"},
+      {"title": "Web development", "description": "Marketingcampagne die slim investeren in digitale assets promoot. Marketingcampagne promotie"},
+      {"title": "Digital assets", "description": "Marketingcampagne die slim investeren in digitale assets promoot. Marketingcampagne promotie"}
+    ]
+  },
+  "Stats": {
+    "headingStrong": "Wij zijn gespecialiseerd in sterke nearshore‑partnerschappen",
+    "headingSubtle": "die bedrijven helpen sneller te schalen, operaties te optimaliseren en eenvoudig toegang te krijgen tot toptalent in de regio.",
+    "items": [
+      {"title": "Projecten voltooid", "description": "We hebben geholpen bij het bouwen van meer dan 400 geweldige projecten."},
+      {"title": "5‑sterren reviews", "description": "We hebben geholpen bij het bouwen van meer dan 400 geweldige projecten."},
+      {"title": "Wereldwijde downloads", "description": "We hebben geholpen bij het bouwen van meer dan 400 geweldige projecten."},
+      {"title": "Rendement op investering", "description": "We hebben geholpen bij het bouwen van meer dan 400 geweldige projecten."}
+    ]
+  },
+  "Numbers": {
+    "headingStrong": "We laten de cijfers spreken",
+    "headingSubtle": "Onze resultaten spreken voor zich, gebaseerd op ervaring, vertrouwen en impact.",
+    "cards": [
+      {"subline": "Tre+ staat voor drie oprichters en de plus"},
+      {"subline": "Tre+ staat voor drie oprichters en de plus"},
+      {"subline": "Wereldwijde projecten"},
+      {"subline": "Waarderingen in totaal"},
+      {"subline": "Jaren ervaring"},
+      {"subline": "Afgeronde projecten"},
+      {"subline": "Meer upsells"}
+    ]
+  },
+  "Team": {
+    "title": "Ons team",
+    "description": "We zijn softwareontwikkelaars, ontwerpers en marketeers die samenwerken om impactvolle digitale oplossingen te creëren. Met creativiteit en expertise helpen we merken innoveren en groeien.",
+    "viewAll": "Volledig team bekijken",
+    "roles": {"mike": "Co‑Founder", "scott": "Head of Marketing", "elena": "Head of Design", "daniel": "Lead Engineer"}
+  },
+  "Footer": {
+    "tagline": "Ontwerp geweldige digitale ervaringen die meer geluk in de wereld brengen.",
+    "explore": "Verkennen",
+    "nav": {"home": "Home", "services": "Diensten", "cases": "Cases", "insights": "Inzichten", "team": "Team", "contact": "Contact"},
+    "services": "Diensten",
+    "servicesList": ["Ontwikkeling", "Design", "Marketing", "Proces"],
+    "work": "Werk",
+    "workList": ["Casestudies (alle)", "Marketingcases", "Softwarecases", "Creatieve cases", "Inzichten & nieuws", "Branchenieuws"],
+    "contact": "Contact",
+    "contactList": ["Contactformulier", "Afspraak plannen", "Persaanvraag", "(info@treplus.com)"],
+    "copyright": "Auteursrecht ©"
+  }
+  ,
+  "CTA": {
+    "titleLine1": "Plan een afspraak of",
+    "titleLine2": "vraag een offerte aan",
+    "subtext": "We helpen je graag meer te weten te komen over onze producten en diensten.",
+    "cta": "Laten we praten"
+  }
+}
+
+

@@ -3,10 +3,12 @@ import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { servicesData } from "./servicesData";
 import { bannerData } from "@/components/Banner/bannerData";
+import { useTranslations } from "next-intl";
 
 const ServicesSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const t = useTranslations('Services');
 
   // Use the "Design" main image as the static right hero (matches reference)
   const designMainImage =
@@ -20,8 +22,8 @@ const ServicesSection = () => {
   const cardData = [
     ...servicesData.items.map((item, index) => ({
       id: index + 1,
-      title: item.title,
-      content: item.description,
+      title: t(`items.${index}.title`),
+      content: t(`items.${index}.description`),
       iconSrc: item.iconSrc,
       bgColor: "bg-white",
       textColor: "text-gray-900",
@@ -29,8 +31,8 @@ const ServicesSection = () => {
     })),
     {
       id: servicesData.items.length + 1,
-      title: servicesData.contactCard.titleLines.join(" "),
-      content: "Contact",
+      title: t("contact.title"),
+      content: t("contact.label"),
       iconSrc: servicesData.contactCard.iconSrc,
       bgColor: "bg-gray-50",
       textColor: "text-gray-900",
@@ -158,7 +160,7 @@ const ServicesSection = () => {
                         </h2>
                       </div>
                       <button className="w-full bg-[#FF5F1F] hover:bg-orange-600 text-white text-base font-bold py-6 rounded-lg ">
-                        {servicesData.contactCard.ctaText}
+                        {t('contact.cta')}
                       </button>
                     </div>
                   ) : (
@@ -204,10 +206,10 @@ const ServicesSection = () => {
           >
             <div className="w-full">
               <h2 className="text-5xl font-semibold font-unbounded text-[#22252A]">
-                {servicesData.heading}
+                {t('heading')}
               </h2>
               <p className="mt-6 text-base font-medium text-[#474D57] max-w-[568px]">
-                {servicesData.subheading}
+                {t('subheading')}
               </p>
             </div>
             <div className="mt-6 relative w-full h-[539px]">
@@ -234,10 +236,10 @@ const ServicesSection = () => {
           <div className="lg:hidden relative">
             <div className="max-w-[720px]">
               <h2 className="text-[34px] sm:text-[44px] lg:text-[56px] leading-[1.08] font-bold text-gray-900">
-                {servicesData.heading}
+                {t('heading')}
               </h2>
               <p className="mt-3 text-[14px] sm:text-[15px] text-gray-600 leading-relaxed">
-                {servicesData.subheading}
+                {t('subheading')}
               </p>
             </div>
             <div className="mt-6 relative w-full h-[420px] md:h-[460px] rounded-[20px] overflow-hidden bg-gray-100">

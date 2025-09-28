@@ -1,19 +1,24 @@
 'use client'
 
 import Image from 'next/image'
-import Link from 'next/link'
 import Reveal from "@/components/ui/Reveal";
 import { useState } from 'react'
+import { useLocale, useTranslations } from 'next-intl'
+import { Link, usePathname, useRouter } from '@/i18n/routing'
 
 export default function Navbar() {
   const [isLanguageOpen, setIsLanguageOpen] = useState(false)
+  const t = useTranslations('Nav')
+  const pathname = usePathname()
+  const router = useRouter()
+  const locale = useLocale()
 
   const navigationLinks = [
-    { name: 'Services', href: '/services' },
-    { name: 'Team', href: '/team' },
-    { name: 'Cases', href: '/cases' },
-    { name: 'Insights', href: '/insights' },
-    { name: 'Contact', href: '/contact' },
+    { name: t('services'), href: '/services' },
+    { name: t('team'), href: '/team' },
+    { name: t('cases'), href: '/cases' },
+    { name: t('insights'), href: '/insights' },
+    { name: t('contact'), href: '/contact' },
   ]
 
   return (
@@ -51,7 +56,7 @@ export default function Navbar() {
             onClick={() => setIsLanguageOpen(!isLanguageOpen)}
             className="flex items-center gap-1 text-orange-500 hover:text-orange-600 transition-colors duration-200"
           >
-            <span className="font-medium">EN</span>
+            <span className="font-medium">{locale.toUpperCase()}</span>
             <svg
               className={`w-3 h-3 transition-transform duration-200 ${
                 isLanguageOpen ? 'rotate-180' : ''
@@ -71,15 +76,9 @@ export default function Navbar() {
           {isLanguageOpen && (
             <div className="absolute right-0 top-full mt-2 w-20 bg-background border border-border rounded-md shadow-2xl  z-50">
               <div className="py-1">
-                <button className="w-full text-left px-3 py-2 text-sm text-orange-500 hover:bg-orange-50 transition-colors duration-200">
-                  EN
-                </button>
-                <button className="w-full text-left px-3 py-2 text-sm text-foreground hover:bg-orange-50 transition-colors duration-200">
-                  ES
-                </button>
-                <button className="w-full text-left px-3 py-2 text-sm text-foreground hover:bg-orange-50 transition-colors duration-200">
-                  FR
-                </button>
+                <button onClick={() => { setIsLanguageOpen(false); router.replace(pathname, { locale: 'en' }); }} className={`w-full text-left px-3 py-2 text-sm ${locale==='en' ? 'text-orange-500' : 'text-foreground'} hover:bg-orange-50 transition-colors duration-200`}>EN</button>
+                <button onClick={() => { setIsLanguageOpen(false); router.replace(pathname, { locale: 'al' }); }} className={`w-full text-left px-3 py-2 text-sm ${locale==='al' ? 'text-orange-500' : 'text-foreground'} hover:bg-orange-50 transition-colors duration-200`}>AL</button>
+                <button onClick={() => { setIsLanguageOpen(false); router.replace(pathname, { locale: 'nl' }); }} className={`w-full text-left px-3 py-2 text-sm ${locale==='nl' ? 'text-orange-500' : 'text-foreground'} hover:bg-orange-50 transition-colors duration-200`}>NL</button>
               </div>
             </div>
           )}

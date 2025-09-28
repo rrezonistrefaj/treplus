@@ -12,22 +12,23 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { teamMembers } from "./teamData";
+import { useTranslations } from "next-intl";
 
 const TeamSection = () => {
+  const t = useTranslations('Team');
   return (
     <Reveal as="section" className="max-w-[1260px] mx-auto px-4 sm:px-0 py-20 reveal-will-change" amount={0.2}>
       {/* Header */}
       <div className="flex items-end justify-between gap-6">
         <div className="max-w-[760px] mb-20">
           <h2 className="text-[40px] sm:text-5xl font-unbounded font-bold text-[#1F1F1F]">
-            Our team
+            {t('title')}
           </h2>
           <p className="mt-4 mb-6 text-base font-medium text-[#474D57] ">
-            We’re software developers, designers, and marketers working together to create impactful
-            digital solutions. With creativity and expertise, we help brands innovate and grow.
+            {t('description')}
           </p>
           <div className="shrink-0 hidden sm:block">
-          <button className="bg-[#FF5F1F] px-11.5 py-5 font-bold rounded-[10px] hover:bg-orange-600 text-white">View full team</button>
+          <button className="bg-[#FF5F1F] px-11.5 py-5 font-bold rounded-[10px] hover:bg-orange-600 text-white">{t('viewAll')}</button>
         </div>
         </div>
         
@@ -75,7 +76,7 @@ const TeamSection = () => {
                     </div>
                     <header className="text-center mt-2 w-full">
                       <h3 className="text-lg sm:text-3xl font-bold text-[#0F0F0F]">{member.name}</h3>
-                      <p className="mt-1 text-[13px] sm:text-base text-[#0F0F0F] font-medium">{member.role}</p>
+                      <p className="mt-1 text-[13px] sm:text-base text-[#0F0F0F] font-medium">{t(`roles.${member.id}`)}</p>
                     </header>
                   </div>
                 </article>
@@ -98,7 +99,7 @@ const TeamSection = () => {
 
         {/* Mobile CTA */}
         <div className="mt-8 sm:hidden">
-          <Button className="w-full bg-orange-500 hover:bg-orange-600">View full team</Button>
+          <Button className="w-full bg-orange-500 hover:bg-orange-600">{t('viewAll')}</Button>
         </div>
       </div>
 

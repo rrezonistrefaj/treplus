@@ -1,0 +1,92 @@
+{
+  "Nav": {
+    "services": "Services",
+    "team": "Team",
+    "cases": "Cases",
+    "insights": "Insights",
+    "contact": "Contact"
+  },
+  "Common": {
+    "language": "Language",
+    "readMore": "Read More"
+  },
+  "Banner": {
+    "titleStatic": "We're your plus for smarter",
+    "description": "Join us on this transformative journey as a new era of nearshore services emerges, where your business growth and success become our top priority.",
+    "primaryCta": "Let's talk",
+    "trustedBy": "Trusted by:",
+    "animated": ["Development", "Marketing", "Design"]
+  },
+  "Services": {
+    "heading": "Together we create.",
+    "subheading": "Expert app design, captivating web design, and advanced web development to elevate your digital presence and user experience.",
+    "items": [
+      {"title": "Marketing Services", "description": "We create strategies for social media, SEO, and campaigns to grow your brand and reach more customers."},
+      {"title": "Creative Services", "description": "We design branding, UI/UX, and visual content that capture your brand’s identity, tell your story, and keep your audience engaged."},
+      {"title": "Software Services", "description": "We build web, mobile, and cloud applications that are secure, scalable, and tailored to your business needs."}
+    ],
+    "contact": {"title": "Let’s create your next big project together.", "label": "Contact", "cta": "Get in touch"}
+  },
+  "OurWork": {
+    "title": "Our work",
+    "description": "We create digital solutions that connect creativity with technology. From product design and web development to digital assets, our team delivers smart, scalable results that help businesses grow.",
+    "seeMore": "See more",
+    "items": [
+      {"title": "Digital assets", "description": "Marketing campaign promoting smart investment in digital assets. Marketing campaign promoting"},
+      {"title": "Product design", "description": "Marketing campaign promoting smart investment in digital assets. Marketing campaign promoting"},
+      {"title": "Web development", "description": "Marketing campaign promoting smart investment in digital assets. Marketing campaign promoting"},
+      {"title": "Digital assets", "description": "Marketing campaign promoting smart investment in digital assets. Marketing campaign promoting"}
+    ]
+  },
+  "Stats": {
+    "headingStrong": "We specialize in building strong nearshore partnerships",
+    "headingSubtle": "that help businesses scale faster, optimize operations, and access top regional talent with ease.",
+    "items": [
+      {"title": "Projects completed", "description": "We've helped build over 400 amazing projects."},
+      {"title": "5-star reviews", "description": "We've helped build over 400 amazing projects."},
+      {"title": "Global downloads", "description": "We've helped build over 400 amazing projects."},
+      {"title": "Return on investment", "description": "We've helped build over 400 amazing projects."}
+    ]
+  }
+  ,
+  "Numbers": {
+    "headingStrong": "We let the numbers talk",
+    "headingSubtle": "Our results speak for themselves, built on experience, trust, and impactful delivery.",
+    "cards": [
+      {"subline": "Tre+ stands for three founders and the pluss"},
+      {"subline": "Tre+ stands for three founders and the pluss"},
+      {"subline": "Worldwide projects"},
+      {"subline": "Appreciations overall"},
+      {"subline": "Years of experience"},
+      {"subline": "Completed Projects"},
+      {"subline": "More Upsells"}
+    ]
+  },
+  "Team": {
+    "title": "Our team",
+    "description": "We’re software developers, designers, and marketers working together to create impactful digital solutions. With creativity and expertise, we help brands innovate and grow.",
+    "viewAll": "View full team",
+    "roles": {"mike": "Co‑Founder", "scott": "Head of Marketing", "elena": "Head of Design", "daniel": "Lead Engineer"}
+  },
+  "Footer": {
+    "tagline": "Design amazing digital experiences that create more happy in the world.",
+    "explore": "Explore",
+    "nav": {"home": "Home", "services": "Services", "cases": "Cases", "insights": "Insights", "team": "Team", "contact": "Contact"},
+    "services": "Services",
+    "servicesList": ["Development", "Design", "Marketing", "Process"],
+    "work": "Work",
+    "workList": ["Case Studies (All)", "Marketing cases", "Software cases", "Creative cases", "Insights & News", "Industry News"],
+    "contact": "Contact",
+    "contactList": ["Contact form", "Schedule a meeting", "Press inquiry", "(info@treplus.com)"],
+    "copyright": "Copyright ©"
+  }
+  ,
+  "CTA": {
+    "titleLine1": "Schedule a meeting or",
+    "titleLine2": "request an estimate",
+    "subtext": "We’d love to help you learn more about our products and services.",
+    "cta": "Let’s talk"
+  }
+}
+
+
