@@ -85,6 +85,7 @@ const Banner = () => {
             </div>
 
             {/* Trusted by row */}
+            {/* TODO: dont make with intl*/}
             <div className="mt-15">
               <div className="text-[12px] uppercase tracking-wide text-gray-500 mb-5">
                 {t('trustedBy')}

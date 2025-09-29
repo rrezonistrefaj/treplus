@@ -27,6 +27,47 @@
     ],
     "contact": {"title": "Laten we samen je volgende grote project maken.", "label": "Contact", "cta": "Neem contact op"}
   },
+  "ServiceHighlights": {
+    "items": {
+      "0": {
+        "title": "Hoe zit het met digitale marketing?",
+        "description": "We ontwikkelen strategieën voor social media, SEO en campagnes om je merk te laten groeien en meer klanten te bereiken.",
+        "cta": "Lees meer"
+      },
+      "1": {
+        "title": "Hoe zit het met branding & design?",
+        "description": "We ontwerpen branding, UI/UX en visuele content die de identiteit van je merk vastlegt, je verhaal vertelt en je publiek betrokken houdt.",
+        "cta": "Lees meer"
+      },
+      "2": {
+        "title": "Hoe zit het met ontwikkeling?",
+        "description": "We bouwen web-, mobiele en cloudapplicaties die veilig, schaalbaar en afgestemd zijn op jouw bedrijfsbehoeften.",
+        "cta": "Lees meer"
+      }
+    }
+  },
+  "ServiceProcess": {
+    "title": "Hoe we leveren",
+    "subtitle": "Vier bewezen stappen om je visie tot leven te brengen, van het eerste idee tot een volledig opgeleverd en succesvol resultaat.",
+    "steps": {
+      "0": {
+        "title": "Plannen",
+        "description": "We duiken diep in jouw doelen, uitdagingen en doelgroep om de juiste aanpak te bepalen."
+      },
+      "1": {
+        "title": "Creëren",
+        "description": "Ons team ontwikkelt software, ontwerpt visuals en bouwt marketingcampagnes met precisie."
+      },
+      "2": {
+        "title": "Perfectioneren",
+        "description": "We werken nauw met je samen en itereren op basis van feedback voor het beste resultaat."
+      },
+      "3": {
+        "title": "Groei",
+        "description": "We lanceren, monitoren en optimaliseren voor blijvend succes."
+      }
+    }
+  },
   "OurWork": {
     "title": "Ons werk",
     "description": "We bouwen digitale oplossingen die creativiteit met technologie verbinden. Van productdesign en webontwikkeling tot digitale assets: ons team levert slimme, schaalbare resultaten die bedrijven laten groeien.",
