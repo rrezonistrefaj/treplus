@@ -17,6 +17,17 @@
     "trustedBy": "Trusted by:",
     "animated": ["Development", "Marketing", "Design"]
   },
+  "ServicesBanner": {
+    "title": "Your nearshore partner for growth",
+    "description": "From marketing to code, our nearshore teams deliver strategies, designs, and solutions that get results.",
+    "primaryCta": "Let's talk",
+    "trustedBy": "Trusted by:",
+    "overlays": {
+      "software": "Software <br/> solution",
+      "creative": "Creative <br/> solutions",
+      "marketing": "Marketing <br/> solutions"
+    }
+  },
   "Services": {
     "heading": "Together we create.",
     "subheading": "Expert app design, captivating web design, and advanced web development to elevate your digital presence and user experience.",
@@ -26,6 +37,47 @@
       {"title": "Software Services", "description": "We build web, mobile, and cloud applications that are secure, scalable, and tailored to your business needs."}
     ],
     "contact": {"title": "Let’s create your next big project together.", "label": "Contact", "cta": "Get in touch"}
+  },
+  "ServiceHighlights": {
+    "items": {
+      "0": {
+        "title": "What about digital marketing?",
+        "description": "We create strategies for social media, SEO, and campaigns to grow your brand and reach more customers.",
+        "cta": "Read More"
+      },
+      "1": {
+        "title": "What about branding & design?",
+        "description": "We design branding, UI/UX, and visual content that capture your brand’s identity, tell your story, and keep your audience engaged.",
+        "cta": "Read More"
+      },
+      "2": {
+        "title": "What about development?",
+        "description": "We build web, mobile, and cloud applications that are secure, scalable, and tailored to your business needs.",
+        "cta": "Read More"
+      }
+    }
+  },
+  "ServiceProcess": {
+    "title": "The way we deliver",
+    "subtitle": "Four proven steps to bring your vision to life, from the first idea to a fully delivered and successful outcome.",
+    "steps": {
+      "0": {
+        "title": "Plan",
+        "description": "We deep-dive into your goals, challenges, and audience to define the right approach."
+      },
+      "1": {
+        "title": "Create",
+        "description": "Our team develops software, designs visuals, and crafts marketing campaigns with precision."
+      },
+      "2": {
+        "title": "Refine",
+        "description": "We work closely with you, iterating based on feedback for the best results."
+      },
+      "3": {
+        "title": "Grow",
+        "description": "We launch, monitor, and optimize to ensure lasting success."
+      }
+    }
   },
   "OurWork": {
     "title": "Our work",
