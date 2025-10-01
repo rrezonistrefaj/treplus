@@ -39,18 +39,18 @@ export default function ServiceProcess({ steps, className }: ServiceProcessProps
           return (
             <article
               key={iconSrc}
-              className="flex flex-col gap-6 rounded-[32px] border border-[#E4E7E9] bg-white px-7 py-10 text-left shadow-[0_20px_60px_-25px_rgba(28,33,39,0.15)]"
+              className="relative flex flex-col gap-6 rounded-[32px] border border-[#E4E7E9] bg-white pl-10 pr-8  text-left h-[400px]"
             >
-              <div className="inline-flex h-16 w-16 items-center justify-center rounded-[20px] bg-white shadow-[0_25px_45px_-20px_rgba(28,33,39,0.15)]">
-                <Image src={iconSrc} alt={iconAlt} width={128} height={128} priority />
+              <div className="absolute left-6 top-4 h-[128px] w-[128px]">
+                <Image src={iconSrc} alt={iconAlt} fill className="object-contain" priority />
               </div>
 
-              <div className="flex flex-col gap-3">
-                <h3 className="text-xl md:text-2xl font-semibold text-[#22252A]">
-                  <span className="text-[#FF5F1F] font-bold mr-1">{index + 1}.</span>
+              <div className="flex flex-col gap-3 mt-[215px]" >
+                <h3 className="text-xl md:text-3xl font-black text-[#22252A] ">
+                  <span className="mr-1">{index + 1}.</span>
                   {title}
                 </h3>
-                <p className="text-sm md:text-base text-[#474D57] leading-relaxed">
+                <p className="text-sm md:text-base text-[#474D57] leading-[20px]">
                   {description}
                 </p>
               </div>

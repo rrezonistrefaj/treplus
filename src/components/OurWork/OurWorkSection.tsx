@@ -19,7 +19,7 @@ import { useTranslations } from "next-intl";
 const OurWorkSection = () => {
   const t = useTranslations('OurWork');
   return (
-    <Reveal as="section" className="max-w-[1260px] mx-auto px-4 sm:px-0 py-20 reveal-will-change" amount={0.2}>
+    <Reveal as="section" className="max-w-[1260px] mx-auto px-4 sm:px-0 pb-20 reveal-will-change" amount={0.2}>
       {/* Header */}
       <div className="flex items-end justify-between gap-6">
         <div className="max-w-[760px]">
