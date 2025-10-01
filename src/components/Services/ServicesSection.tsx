@@ -115,8 +115,8 @@ const ServicesSection = () => {
   }, [cardData.length]);
 
   return (
-    <section className="max-w-[1260px] mx-auto px-4 md:px-0 py-20">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+    <section className="max-w-[1260px] mx-auto px-4 md:px-0 pt-20">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start max-h-[360vh]">
         {/* Left column - stacking cards */}
         <div className="lg:col-span-4">
           <div 
