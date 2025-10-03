@@ -17,6 +17,12 @@
     "trustedBy": "Na besojnë:",
     "animated": ["Zhvillim", "Marketing", "Dizajn"]
   },
+  "TeamBanner": {
+    "title": "Takoni njerëzit që drejtojnë suksesin e zgjuar dhe të shkallëzueshëm",
+    "description": "Pas çdo projekti të suksesshëm është një ekip që kujdeset. Ne besojmë në hapësinë, bashkëpunimin dhe fuqinë e perspektivave të ndryshme. Së bashku, ne krijojmë një mjedis ku krijimtaria lulëzon, inovacioni udhëheq rrugën dhe çdo klient ndjehet si pjesë e udhëtimit.",
+    "primaryCta": "Le të flasim",
+    "trustedBy": "Na besojnë:"
+  },
   "Services": {
     "heading": "Krijojmë së bashku.",
     "subheading": "Dizajn profesionist aplikacionesh, dizajn tërheqës faqesh dhe zhvillim të avancuar web për të rritur praninë tuaj digjitale dhe përvojën e përdoruesit.",
@@ -63,9 +69,20 @@
   },
   "Team": {
     "title": "Ekipi ynë",
+    "membersTitle": "Njihuni me anëtarët e ekipit tonë",
     "description": "Jemi zhvillues softuerësh, dizajnerë dhe marketierë që punojmë së bashku për të krijuar zgjidhje digjitale me ndikim. Me kreativitet dhe ekspertizë ndihmojmë markat të inovojnë dhe të rriten.",
     "viewAll": "Shiko të gjithë ekipin",
-    "roles": {"mike": "Bashkëthemelues", "scott": "Drejtor Marketingu", "elena": "Drejtoreshë Dizajni", "daniel": "Inxhinier Kryesor"}
+    "roles": {
+      "mike": "Bashkëthemelues",
+      "scott": "Drejtor Marketingu",
+      "elena": "Drejtoreshë Dizajni",
+      "daniel": "Inxhinier Kryesor",
+      "sarah": "Menaxhere Produkte",
+      "alex": "Zhvillues i Lartë",
+      "maria": "Dizajnere UX",
+      "james": "Inxhinier DevOps",
+      "lisa": "Strategjiste Përmbajtjeje"
+    }
   },
   "Footer": {
     "tagline": "Dizajnoni përvoja digjitale të mrekullueshme që sjellin më shumë lumturi në botë.",

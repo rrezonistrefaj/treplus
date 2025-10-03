@@ -28,6 +28,12 @@
       "marketing": "Marketing <br/> solutions"
     }
   },
+  "TeamBanner": {
+    "title": "Meet the people driving smart, scalable success",
+    "description": "Behind every successful project is a team that cares. We believe in openness, collaboration, and the power of diverse perspectives. Together, we create an environment where creativity thrives, innovation leads the way, and every client feels like part of the journey.",
+    "primaryCta": "Let's talk",
+    "trustedBy": "Trusted by:"
+  },
   "Services": {
     "heading": "Together we create.",
     "subheading": "Expert app design, captivating web design, and advanced web development to elevate your digital presence and user experience.",
@@ -99,8 +105,7 @@
       {"title": "Global downloads", "description": "We've helped build over 400 amazing projects."},
       {"title": "Return on investment", "description": "We've helped build over 400 amazing projects."}
     ]
-  }
-  ,
+  },
   "Numbers": {
     "headingStrong": "We let the numbers talk",
     "headingSubtle": "Our results speak for themselves, built on experience, trust, and impactful delivery.",
@@ -116,9 +121,20 @@
   },
   "Team": {
     "title": "Our team",
+    "membersTitle": "Meet our team members",
     "description": "We’re software developers, designers, and marketers working together to create impactful digital solutions. With creativity and expertise, we help brands innovate and grow.",
     "viewAll": "View full team",
-    "roles": {"mike": "Co‑Founder", "scott": "Head of Marketing", "elena": "Head of Design", "daniel": "Lead Engineer"}
+    "roles": {
+      "mike": "Co‑Founder",
+      "scott": "Head of Marketing",
+      "elena": "Head of Design",
+      "daniel": "Lead Engineer",
+      "sarah": "Product Manager",
+      "alex": "Senior Developer",
+      "maria": "UX Designer",
+      "james": "DevOps Engineer",
+      "lisa": "Content Strategist"
+    }
   },
   "Footer": {
     "tagline": "Design amazing digital experiences that create more happy in the world.",
