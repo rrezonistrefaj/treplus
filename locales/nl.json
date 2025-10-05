@@ -17,6 +17,17 @@
     "trustedBy": "Vertrouwd door:",
     "animated": ["Ontwikkeling", "Marketing", "Design"]
   },
+  "TeamBanner": {
+    "title": "Ontmoet de mensen die slimme, schaalbare successen mogelijk maken",
+    "description": "Achter elk succesvol project staat een team dat om zorgt. We geloven in openheid, samenwerking en de kracht van diverse perspectieven. Samen creëren we een omgeving waar creativiteit bloeit, innovatie de weg wijst en elke klant zich onderdeel voelt van de reis.",
+    "primaryCta": "Laten we praten",
+    "trustedBy": "Vertrouwd door:"
+  },
+  "InsightsBanner": {
+    "title": "Ideeën die merken vooruit helpen.",
+    "description": "Blijf op de hoogte van het laatste nieuws in marketing, design en ontwikkeling.",
+    "primaryCta": "Laten we praten"
+  },
   "Services": {
     "heading": "Samen creëren we.",
     "subheading": "Expert app‑design, aantrekkelijk webdesign en geavanceerde webontwikkeling om je digitale aanwezigheid en gebruikerservaring te versterken.",
@@ -104,9 +115,20 @@
   },
   "Team": {
     "title": "Ons team",
+    "membersTitle": "Maak kennis met onze teamleden",
     "description": "We zijn softwareontwikkelaars, ontwerpers en marketeers die samenwerken om impactvolle digitale oplossingen te creëren. Met creativiteit en expertise helpen we merken innoveren en groeien.",
     "viewAll": "Volledig team bekijken",
-    "roles": {"mike": "Co‑Founder", "scott": "Head of Marketing", "elena": "Head of Design", "daniel": "Lead Engineer"}
+    "roles": {
+      "mike": "Co‑Founder",
+      "scott": "Head of Marketing",
+      "elena": "Head of Design",
+      "daniel": "Lead Engineer",
+      "sarah": "Product Manager",
+      "alex": "Senior Developer",
+      "maria": "UX Designer",
+      "james": "DevOps Engineer",
+      "lisa": "Content Strategist"
+    }
   },
   "Footer": {
     "tagline": "Ontwerp geweldige digitale ervaringen die meer geluk in de wereld brengen.",
