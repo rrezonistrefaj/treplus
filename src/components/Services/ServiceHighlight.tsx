@@ -23,7 +23,7 @@ export default function ServiceHighlights({
   }
 
   return (
-    <section className={clsx("max-w-[1260px] mx-auto w-full flex flex-col", className)}>
+    <section className={clsx("max-w-[1118px] mx-auto w-full flex flex-col", className)}>
       {items.map(({ imageSrc, imagePlacement }, index) => {
         const title = t(`items.${index}.title`);
         const description = t(`items.${index}.description`);
@@ -33,20 +33,20 @@ export default function ServiceHighlights({
           <article
             key={imageSrc}
             className={clsx(
-              "flex flex-col gap-14 lg:gap-20 items-center lg:items-center px-6 py-12 sm:px-12 sm:py-20",
+              "flex flex-col gap-14 lg:gap-20 items-center lg:items-center px-4 md:px-0 py-12 sm:px-12 sm:py-20 justify-between",
               imagePlacement === "left" ? "lg:flex-row-reverse" : "lg:flex-row"
             )}
           >
-            <div className="flex flex-col justify-center gap-5 max-w-xl text-center lg:text-left">
-              <h3 className="text-3xl sm:text-[44px] leading-tight font-unbounded font-semibold text-[#22252A]">
+            <div className="flex flex-col justify-center gap-6 max-w-[357px] text-center">
+              <h3 className="text-3xl sm:text-3xl leading-[36px] font-bold text-[#22252A]">
                 {title}
               </h3>
-              <p className="text-base sm:text-lg text-[#474D57] leading-relaxed">{description}</p>
+              <p className="text-base text-[#474D57] leading-[20px]">{description}</p>
               <div>
                 <button
                   type="button"
                   onClick={() => onReadMoreClick?.(index)}
-                  className="inline-flex items-center gap-3 text-base font-semibold text-[#22252A] hover:text-[#FF5F1F] transition-colors"
+                  className="inline-flex items-center gap-3 mt-4 text-base font-semibold text-[#22252A] hover:text-[#FF5F1F] transition-colors"
                 >
                   {cta}
                   <span
@@ -59,12 +59,12 @@ export default function ServiceHighlights({
               </div>
             </div>
 
-            <div className="relative w-full max-w-[560px] aspect-[4/3] overflow-hidden rounded-[36px]">
+            <div className="relative w-[537px] h-[537px] max-w-[537px] overflow-hidden rounded-[36px]">
               <Image
                 src={imageSrc}
                 alt={title}
-                fill
-                sizes="(min-width: 1024px) 460px, 100vw"
+                width={537}
+                height={537}
                 className="object-cover"
                 priority
               />

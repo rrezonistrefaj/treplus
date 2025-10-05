@@ -5,15 +5,17 @@ import ServiceProcess from "@/components/Services/ServiceProcess";
 import { serviceProcessData } from "@/components/Services/serviceProcessData";
 import TestimonialsSection from "@/components/Testimonials/TestimonialsSection";
 import InsightsSection from "@/components/Insights/InsightsSection";
+import CTASection from "@/components/CTA/CTASection";
 
 export default function ServicesPage() {
   return (
-    <div className="flex flex-col gap-20">
+    <div className="">
       <ServicesBanner />
       <ServiceHighlights items={serviceHighlightsData} />
       <ServiceProcess steps={serviceProcessData} />
       <TestimonialsSection />
       <InsightsSection />
+      <CTASection />
     </div>
   );
 }

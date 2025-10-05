@@ -34,6 +34,11 @@
     "primaryCta": "Let's talk",
     "trustedBy": "Trusted by:"
   },
+  "InsightsBanner": {
+    "title": "Ideas that move brands forward.",
+    "description": "Stay informed with the latest in marketing, design, and development.",
+    "primaryCta": "Let's talk"
+  },
   "Services": {
     "heading": "Together we create.",
     "subheading": "Expert app design, captivating web design, and advanced web development to elevate your digital presence and user experience.",

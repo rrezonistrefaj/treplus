@@ -23,6 +23,11 @@
     "primaryCta": "Le të flasim",
     "trustedBy": "Na besojnë:"
   },
+  "InsightsBanner": {
+    "title": "Idetë që i çojnë markat përpara.",
+    "description": "Mbani informuar me të fundmet në marketing, dizajn dhe zhvillim.",
+    "primaryCta": "Le të flasim"
+  },
   "Services": {
     "heading": "Krijojmë së bashku.",
     "subheading": "Dizajn profesionist aplikacionesh, dizajn tërheqës faqesh dhe zhvillim të avancuar web për të rritur praninë tuaj digjitale dhe përvojën e përdoruesit.",
