@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import Reveal from "@/components/ui/Reveal";
 import { useTranslations } from "next-intl";
 import { bannerData } from "./bannerData";
 
@@ -20,79 +19,103 @@ const Banner = () => {
     return () => clearTimeout(timer);
   }, [currentIndex]);
 
-  // Animation variants for the text
-  const textVariants = {
-    enter: {
-      y: 20,
-      opacity: 0,
-    },
-    center: {
-      y: 0,
-      opacity: 1,
-    },
-    exit: {
-      y: -20,
-      opacity: 0,
-    },
-  };
-
-  // Animation variants for images
-  const imageVariants = {
-    enter: {
-      opacity: 0,
-    },
-    center: {
-      opacity: 1,
-    },
-    exit: {
-      opacity: 0,
-    },
-  };
 
   return (
-    <Reveal as="div" className="max-w-[1260px] mx-auto px-0 pt-16 reveal-will-change" amount={0.15}>
+    <div className="max-w-[1260px] mx-auto px-0 pt-16">
       {/* Main content container */}
-        <div className="relative flex flex-col lg:flex-row items-end">
+      <div className="relative flex flex-col lg:flex-row items-end">
         {/* Left side - Text content */}
-        <div className="lg:flex-1">
-          <div >
-            <h1 className="text-5xl font-semibold font-unbounded text-[#22252A] ">
+        <motion.div 
+          className="lg:flex-1"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={{ 
+            hidden: {}, 
+            visible: { 
+              transition: { staggerChildren: 0.1 } 
+            } 
+          }}
+        >
+          <div>
+            <motion.h1 
+              className="text-5xl font-semibold font-unbounded text-[#22252A]"
+              variants={{ 
+                hidden: { opacity: 0, y: 20 }, 
+                visible: { opacity: 1, y: 0 } 
+              }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            >
               {t('titleStatic')}
               <AnimatePresence mode="wait">
                 <motion.span
                   key={currentIndex}
-                  variants={textVariants}
-                  initial="enter"
-                  animate="center"
-                  exit="exit"
-                  transition={{
-                    duration: 0.4,
-                    ease: "easeInOut",
-                  }}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
                   className={`${currentContent.wordColor} pl-2`}
                 >
                   {t(`animated.${currentIndex}`)}
                 </motion.span>
               </AnimatePresence>
-            </h1>
-            <p className="mt-5 text-base font-medium leading-[20px] text-[#474D57] max-w-[589px]">
+            </motion.h1>
+            
+            <motion.p 
+              className="mt-5 text-base font-medium leading-[20px] text-[#474D57] max-w-[589px]"
+              variants={{ 
+                hidden: { opacity: 0, y: 20 }, 
+                visible: { opacity: 1, y: 0 } 
+              }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            >
               {t('description')}
-            </p>
-            <div className="mt-14">
-              <button className="bg-[#FF5F1F] hover:bg-orange-600 text-white text-xl px-[56.5px] py-5 font-bold rounded-[10px]">
+            </motion.p>
+            
+            <motion.div 
+              className="mt-14"
+              variants={{ 
+                hidden: { opacity: 0, y: 20 }, 
+                visible: { opacity: 1, y: 0 } 
+              }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            >
+              <button className="bg-[#FF5F1F] hover:bg-orange-600 text-white text-xl px-[56.5px] py-5 font-bold rounded-[10px] transition-transform hover:-translate-y-1">
                 {t('primaryCta')}
               </button>
-            </div>
+            </motion.div>
 
             {/* Trusted by row */}
-            {/* TODO: dont make with intl*/}
-            <div className="mt-15">
+            <motion.div 
+              className="mt-15"
+              variants={{ 
+                hidden: { opacity: 0, y: 20 }, 
+                visible: { opacity: 1, y: 0 } 
+              }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            >
               <div className="text-[12px] uppercase tracking-wide text-gray-500 mb-5">
                 {t('trustedBy')}
               </div>
-              <div className="flex flex-wrap items-center gap-x-20 ">
+              <motion.div 
+                className="flex flex-wrap items-center gap-x-20"
+                variants={{ 
+                  hidden: {}, 
+                  visible: { 
+                    transition: { staggerChildren: 0.05 } 
+                  } 
+                }}
+              >
                 {bannerData.trustedBy.map((company, index) => (
-                  <div key={index} className="flex items-center gap-2.5">
+                  <motion.div 
+                    key={index} 
+                    className="flex items-center gap-2.5"
+                    variants={{ 
+                      hidden: { opacity: 0, y: 10 }, 
+                      visible: { opacity: 1, y: 0 } 
+                    }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                  >
                     <Image
                       src={company.iconSrc}
                       alt={company.alt}
@@ -102,28 +125,35 @@ const Banner = () => {
                     <span className="text-[#383B41] text-xl font-semibold">
                       {company.name}
                     </span>
-                  </div>
+                  </motion.div>
                 ))}
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
 
          {/* Right side - Image with overlays */}
-         <div className="w-[466px] relative">
+         <motion.div 
+           className="w-[466px] relative"
+           initial="hidden"
+           whileInView="visible"
+           viewport={{ once: true, amount: 0.3 }}
+           variants={{ 
+             hidden: {}, 
+             visible: { 
+               transition: { staggerChildren: 0.1 } 
+             } 
+           }}
+         >
           {/* Main image placeholder */}
-          <div className="relative w-[466px] h-[466px] ">
+          <div className="relative w-[466px] h-[466px]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
-                variants={imageVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{
-                  duration: 0.3,
-                  ease: "easeInOut",
-                }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
                 className="absolute inset-0"
               >
                 <Image
@@ -138,18 +168,21 @@ const Banner = () => {
             </AnimatePresence>
 
             {/* Animated overlay - top left */}
-            <div className="absolute -top-13 -left-17 select-none">
+            <motion.div 
+              className="absolute -top-13 -left-17 select-none"
+              variants={{ 
+                hidden: { opacity: 0, scale: 0.8 }, 
+                visible: { opacity: 1, scale: 1 } 
+              }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+            >
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentIndex}
-                  variants={imageVariants}
-                  initial="enter"
-                  animate="center"
-                  exit="exit"
-                  transition={{
-                    duration: 0.3,
-                    ease: "easeInOut",
-                  }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
                 >
                   <Image
                     src={currentContent.overlayImageSrc}
@@ -161,10 +194,17 @@ const Banner = () => {
                   />
                 </motion.div>
               </AnimatePresence>
-            </div>
+            </motion.div>
 
-            {/* Orange plus overlay - bottom right (placeholder image) */}
-            <div className="absolute -bottom-42 -right-17 select-none">
+            {/* Orange plus overlay - bottom right */}
+            <motion.div 
+              className="absolute -bottom-42 -right-17 select-none"
+              variants={{ 
+                hidden: { opacity: 0, scale: 0.8 }, 
+                visible: { opacity: 1, scale: 1 } 
+              }}
+              transition={{ duration: 0.4, ease: "easeOut", delay: 0.1 }}
+            >
               <Image
                 src="/orangeIcon.svg"
                 alt="orange plus placeholder"
@@ -172,11 +212,11 @@ const Banner = () => {
                 height={295}
                 priority
               />
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </Reveal>
+    </div>
   );
 };
 

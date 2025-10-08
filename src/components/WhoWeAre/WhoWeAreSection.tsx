@@ -1,22 +1,14 @@
 "use client";
 import React from "react";
-import Reveal from "@/components/ui/Reveal";
-import { motion } from "framer-motion";
 import { whoWeAreData } from "./whoWeAreData";
 import Image from "next/image";
 
 const WhoWeAreSection = () => {
   return (
-    <Reveal as="section" className="max-w-[792px] mx-auto px-4 xl:px-0 py-[80px] reveal-will-change" amount={0.15}>
+    <section className="max-w-[792px] mx-auto px-4 xl:px-0 py-[80px] animate-fade-in">
       <div className="text-center">
         {/* Main Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
-          className="mb-8"
-        >
+        <div className="mb-8 animate-slide-up">
           <h2 className="text-[48px] md:text-5xl font-semibold font-unbounded text-[#22252A] leading-[50px]">
             {/* Line 1: "Who We Are" */}
             <div className="flex items-center justify-center gap-3">
@@ -63,22 +55,16 @@ const WhoWeAreSection = () => {
               <span>Vision</span>
             </div>
           </h2>
-        </motion.div>
+        </div>
 
         {/* Description Paragraph */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-   
-        >
+        <div className="animate-slide-up-delayed">
           <p className="text-base text-[#474D57] leading-[20px]">
             &ldquo;{whoWeAreData.description}&rdquo;
           </p>
-        </motion.div>
+        </div>
       </div>
-    </Reveal>
+    </section>
   );
 };
 

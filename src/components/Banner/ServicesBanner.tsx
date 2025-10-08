@@ -1,9 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { servicesBannerData } from "@/components/Banner/servicesBannerData";
-import { motion } from "framer-motion";
 
 const ServicesBanner = () => {
   const tServicesBanner = useTranslations("ServicesBanner");
@@ -12,37 +12,113 @@ const ServicesBanner = () => {
     <section className="max-w-[1260px] mx-auto px-4 md:px-0 pt-16">
       <div className="relative flex flex-col justify-between lg:flex-row items-center mb-20">
         {/* Left: copy and CTA */}
-        <div className="max-w-[370px]">
+        <motion.div 
+          className="max-w-[370px]"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: { staggerChildren: 0.1 }
+            }
+          }}
+        >
           <div>
-            <h1 className="text-5xl font-semibold font-unbounded text-[#22252A]">
+            <motion.h1 
+              className="text-5xl font-semibold font-unbounded text-[#22252A]"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            >
               {tServicesBanner("title")}
-            </h1>
-            <p className="mt-5 text-base font-medium leading-[20px] text-[#474D57] max-w-[589px]">
+            </motion.h1>
+            <motion.p 
+              className="mt-5 text-base font-medium leading-[20px] text-[#474D57] max-w-[589px]"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            >
               {tServicesBanner("description")}
-            </p>
-            <div className="mt-14">
-              <button className="bg-[#FF5F1F] hover:bg-orange-600 text-white text-xl px-[56.5px] py-5 font-bold rounded-[10px]">
+            </motion.p>
+            <motion.div 
+              className="mt-14"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            >
+              <button className="bg-[#FF5F1F] hover:bg-orange-600 text-white text-xl px-[56.5px] py-5 font-bold rounded-[10px] transition-transform hover:-translate-y-1">
                 {tServicesBanner("primaryCta")}
               </button>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Right: animated hero imagery layout */}
-        <AnimatedRightImages />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={{
+            hidden: { opacity: 0, scale: 0.95 },
+            visible: { 
+              opacity: 1, 
+              scale: 1,
+              transition: { duration: 0.5, ease: "easeOut" }
+            }
+          }}
+        >
+          <AnimatedRightImages />
+        </motion.div>
       </div>
 
       {/* Trusted by row - below both sides */}
-      <div className="mt-15">
-        <div className="flex flex-wrap items-center gap-x-20 ">
+      <motion.div 
+        className="mt-15"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: { staggerChildren: 0.05 }
+          }
+        }}
+      >
+        <div className="text-[12px] uppercase tracking-wide text-gray-500 mb-5">
+          Trusted by
+        </div>
+        <motion.div 
+          className="flex flex-wrap items-center gap-x-20"
+          variants={{
+            hidden: {},
+            visible: {
+              transition: { staggerChildren: 0.05 }
+            }
+          }}
+        >
           {servicesBannerData.trustedBy.map((company, index) => (
-            <div key={index} className="flex items-center gap-2.5">
+            <motion.div 
+              key={index} 
+              className="flex items-center gap-2.5"
+              variants={{
+                hidden: { opacity: 0, y: 10 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+            >
               <Image src={company.iconSrc} alt={company.alt} width={33} height={33} />
               <span className="text-[#383B41] text-xl font-semibold">{company.name}</span>
-            </div>
+            </motion.div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
@@ -54,6 +130,7 @@ const AnimatedRightImages = () => {
   const tServicesBanner = useTranslations("ServicesBanner");
 
   const [activeIndex, setActiveIndex] = useState(0);
+  const [loaded, setLoaded] = useState<boolean[]>(() => new Array(servicesBannerData.images.length).fill(false));
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -67,14 +144,19 @@ const AnimatedRightImages = () => {
       {servicesBannerData.images.map((src, idx) => {
         const isActive = idx === activeIndex;
         return (
-          <motion.div
+          <div
             key={idx}
-            className="relative h-[533px] overflow-hidden rounded-[24px]"
+            className="relative h-[533px] overflow-hidden rounded-[24px] transition-all duration-500 ease-in-out"
             style={{ width: isActive ? 372 : 120 }}
-            animate={{ width: isActive ? 372 : 120 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
           >
-            <Image src={src} alt={`Services variant ${idx + 1}`} fill className="object-cover" />
+            {!loaded[idx] && <div className="absolute inset-0 rounded-[24px] skeleton" />}
+            <Image 
+              src={src} 
+              alt={`Services variant ${idx + 1}`} 
+              fill 
+              className="object-cover" 
+              onLoadingComplete={() => setLoaded((prev)=>{ const next=[...prev]; next[idx]=true; return next; })} 
+            />
             {isActive && (
               <div className="absolute bottom-4 left-4">
                 {idx === 0 ? (
@@ -119,7 +201,7 @@ const AnimatedRightImages = () => {
                 )}
               </div>
             )}
-          </motion.div>
+          </div>
         );
       })}
     </div>
