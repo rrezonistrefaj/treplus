@@ -1,31 +1,63 @@
 "use client";
 import React from "react";
-import Reveal from "@/components/ui/Reveal";
+import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
 const CTASection = () => {
   const t = useTranslations('CTA');
   return (
-    <Reveal as="section" className=" py-16 sm:py-20 reveal-will-change" amount={0.2}>
+    <section className=" py-16 sm:py-20">
       <div className=" mx-auto">
         <div className=" bg-[#F3F3F3] shadow-[0_0_24px_rgba(0,0,0,0.15)]">
-          <div className=" pt-20 pb-25 text-center">
-            <h2 className="text-[34px] sm:text-5xl leading-tight font-bold font-unbounded  text-[#1F1F1F]">
+          <motion.div 
+            className=" pt-20 pb-25 text-center"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: { staggerChildren: 0.1 }
+              }
+            }}
+          >
+            <motion.h2 
+              className="text-[34px] sm:text-5xl leading-tight font-bold font-unbounded  text-[#1F1F1F]"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            >
               {t('titleLine1')}
               <br className="hidden sm:block" /> {t('titleLine2')}
-            </h2>
-            <p className="mt-2 text-[14px] sm:text-base font-medium text-[#474D57]">
+            </motion.h2>
+            <motion.p 
+              className="mt-2 text-[14px] sm:text-base font-medium text-[#474D57]"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            >
               {t('subtext')}
-            </p>
-            <div className="mt-6 flex justify-center">
-              <button className="bg-[#FF5F1F] px-11.5 py-5 font-bold rounded-[10px] hover:bg-orange-600 text-white">
+            </motion.p>
+            <motion.div 
+              className="mt-6 flex justify-center"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            >
+              <button className="bg-[#FF5F1F] px-11.5 py-5 font-bold rounded-[10px] hover:bg-orange-600 text-white transition-transform will-change-transform hover:-translate-y-[1px]">
                 {t('cta')}
               </button>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
-    </Reveal>
+    </section>
   );
 };
 

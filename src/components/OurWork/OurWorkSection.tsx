@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Reveal from "@/components/ui/Reveal";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -19,24 +19,68 @@ import { useTranslations } from "next-intl";
 const OurWorkSection = () => {
   const t = useTranslations('OurWork');
   return (
-    <Reveal as="section" className="max-w-[1260px] mx-auto px-4 sm:px-0 pb-20 reveal-will-change" amount={0.2}>
-      {/* Header */}
-      <div className="flex items-end justify-between gap-6">
+    <section className="max-w-[1260px] mx-auto px-4 sm:px-0 pb-20">
+      {/* Header with staggered animations */}
+      <motion.div 
+        className="flex items-end justify-between gap-6"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: { staggerChildren: 0.1 }
+          }
+        }}
+      >
         <div className="max-w-[760px]">
-          <h2 className="text-[40px] sm:text-[48px] font-unbounded font-bold text-[#0F0F0F]">
+          <motion.h2 
+            className="text-[40px] sm:text-[48px] font-unbounded font-bold text-[#0F0F0F]"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 }
+            }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
             {t('title')}
-          </h2>
-          <p className="py-5 text-[14px] sm:text-base text-[#474D57] leading-5">
+          </motion.h2>
+          <motion.p 
+            className="py-5 text-[14px] sm:text-base text-[#474D57] leading-5"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 }
+            }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
             {t('description')}
-          </p>
-          <button className="bg-[#FF5F1F] px-11.5 py-5 font-bold rounded-[10px] hover:bg-orange-600 text-white">
-            <Link href={ourWorkSectionData.seeMoreButtonHref}>{t('seeMore')}</Link>
-          </button>
+          </motion.p>
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 }
+            }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
+            <button className="bg-[#FF5F1F] px-11.5 py-5 font-bold rounded-[10px] hover:bg-orange-600 text-white transition-transform will-change-transform hover:-translate-y-[1px]">
+              <Link href={ourWorkSectionData.seeMoreButtonHref}>{t('seeMore')}</Link>
+            </button>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
 
-      {/* Right-bleed carousel */}
-      <div className="mt-13 relative ourwork-overflow">
+      {/* Right-bleed carousel with staggered animations */}
+      <motion.div 
+        className="mt-13 relative ourwork-overflow"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: { staggerChildren: 0.1 }
+          }
+        }}
+      >
         {/* Carousel within container; overflow visible so left side peeks when sliding */}
         <Carousel
           opts={{ align: "start" }}
@@ -48,8 +92,22 @@ const OurWorkSection = () => {
                 key={item.id}
                 className="basis-[85%] sm:basis-[65%] md:basis-1/2 lg:basis-1/3 xl:basis-1/3"
               >
-                <article className="h-full rounded-[25px] bg-[#F3F3F3] shadow-[0_8px_30px_rgba(0,0,0,0.04)] p-3 flex flex-col gap-5">
-                  <header className="px-4.5 pt-8 ">
+                <motion.article 
+                  className="h-full rounded-[25px] bg-[#F3F3F3] shadow-[0_8px_30px_rgba(0,0,0,0.04)] p-3 flex flex-col gap-5"
+                  variants={{
+                    hidden: { opacity: 0, y: 20, scale: 0.95 },
+                    visible: { 
+                      opacity: 1, 
+                      y: 0, 
+                      scale: 1,
+                      transition: { 
+                        duration: 0.4, 
+                        ease: "easeOut"
+                      }
+                    }
+                  }}
+                >
+                  <header className="px-4.5 pt-8">
                     <h3 className={`text-3xl font-bold leading-snug ${item.textColor}`}>
                       {t(`items.${index}.title`)}
                     </h3>
@@ -72,7 +130,7 @@ const OurWorkSection = () => {
                       <ReadMoreButton color={item.textColor.replace('text-', '')} />
                     </div>
                   </div>
-                </article>
+                </motion.article>
               </CarouselItem>
             ))}
           </CarouselContent>
@@ -91,15 +149,22 @@ const OurWorkSection = () => {
         </Carousel>
 
         {/* Mobile CTA */}
-        <div className="mt-8 sm:hidden">
-          <Button variant="custom" size="custom" className="w-full bg-[#FF5F1F] px-11.5 py-5 font-bold rounded-[10px] hover:bg-orange-600 text-white">{t('seeMore')}</Button>
-        </div>
-      </div>
+        <motion.div 
+          className="mt-8 sm:hidden"
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0 }
+          }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+        >
+          <Button variant="custom" size="custom" className="w-full bg-[#FF5F1F] px-11.5 py-5 font-bold rounded-[10px] hover:bg-orange-600 text-white transition-transform will-change-transform hover:-translate-y-[1px]">{t('seeMore')}</Button>
+        </motion.div>
+      </motion.div>
       {/* Scoped override: allow left-side visibility by removing overflow clipping on shadcn carousel content */}
       <style jsx global>{`
         .ourwork-overflow [data-slot="carousel-content"] { overflow: visible; }
       `}</style>
-    </Reveal>
+    </section>
   );
 };
 

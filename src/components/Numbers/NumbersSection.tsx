@@ -65,19 +65,61 @@ export default function NumbersSection() {
 
   return (
     <section ref={sectionRef} className="max-w-[1260px] mx-auto px-4 md:px-0 py-20">
-      <div>
-        <h2 className="text-[36px] md:text-5xl font-bold font-unbounded text-[#0F0F0F]">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: { staggerChildren: 0.1 }
+          }
+        }}
+      >
+        <motion.h2 
+          className="text-[36px] md:text-5xl font-bold font-unbounded text-[#0F0F0F]"
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0 }
+          }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
           {t('headingStrong')}
-        </h2>
-        <p className="mt-2 text-[#474D57] font-medium text-[14px] md:text-base">{t('headingSubtle')}</p>
-      </div>
+        </motion.h2>
+        <motion.p 
+          className="mt-2 text-[#474D57] font-medium text-[14px] md:text-base"
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0 }
+          }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
+          {t('headingSubtle')}
+        </motion.p>
+      </motion.div>
 
-      <div ref={containerRef} className={`mt-12 ${gridLayout}`}>
+      <motion.div 
+        ref={containerRef} 
+        className={`mt-12 ${gridLayout}`}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: { staggerChildren: 0.05 }
+          }
+        }}
+      >
         {/* Column 1: 120+ */}
         <motion.div
           animate={col1}
           initial={{ marginTop: 0 }}
           className="flex flex-col gap-6 md:gap-8"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1 }
+          }}
         >
           {[0].map((idx) => {
             const card = numbersData.cards[idx];
@@ -99,6 +141,10 @@ export default function NumbersSection() {
           animate={col2}
           initial={{ marginTop: 0 }}
           className="flex flex-col gap-6 md:gap-8"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1 }
+          }}
         >
           {[1].map((idx) => {
             const card = numbersData.cards[idx];
@@ -120,6 +166,10 @@ export default function NumbersSection() {
           animate={col3}
           initial={{ marginTop: 0 }}
           className="flex flex-col gap-6 md:gap-8"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1 }
+          }}
         >
           {[2, 4].map((idx) => {
             const card = numbersData.cards[idx];
@@ -141,6 +191,10 @@ export default function NumbersSection() {
           animate={col4}
           initial={{ marginTop: 0 }}
           className="flex flex-col gap-6 md:gap-8"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1 }
+          }}
         >
           {[3, 5, 6].map((idx) => {
             const card = numbersData.cards[idx];
@@ -156,7 +210,7 @@ export default function NumbersSection() {
             );
           })}
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }

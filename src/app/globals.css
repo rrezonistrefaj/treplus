@@ -268,9 +268,88 @@
   }
 }
 
-/* Subtle reveal utilities (non-intrusive) */
+/* Simple animations for performance */
 @layer utilities {
   .reveal-will-change {
     will-change: opacity, transform;
   }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+  
+  .animate-slide-up-delayed {
+    animation: slideUp 0.6s ease-out 0.2s forwards;
+  }
+  
+  .animate-spin-slow {
+    animation: spin 8s linear infinite;
+  }
+
+  /* Lightweight skeleton shimmer */
+  .skeleton {
+    position: relative;
+    overflow: hidden;
+    background-color: oklch(0.95 0 0 / 1);
+  }
+  .skeleton::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg,
+      transparent 0%,
+      oklch(1 0 0 / 0.6) 50%,
+      transparent 100%
+    );
+    animation: skeleton-shimmer 1.2s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes skeleton-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .animate-slide-up,
+  .animate-slide-up-delayed,
+  .animate-spin-slow {
+    animation: none !important;
+  }
+  .skeleton::after { display: none; }
 }

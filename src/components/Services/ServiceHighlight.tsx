@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import clsx from "clsx";
@@ -30,19 +31,57 @@ export default function ServiceHighlights({
         const cta = t(`items.${index}.cta`);
 
         return (
-          <article
+          <motion.article
             key={imageSrc}
             className={clsx(
               "flex flex-col gap-14 lg:gap-20 items-center lg:items-center px-4 md:px-0 py-12 sm:px-12 sm:py-20 justify-between",
               imagePlacement === "left" ? "lg:flex-row-reverse" : "lg:flex-row"
             )}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: { staggerChildren: 0.1 }
+              }
+            }}
           >
-            <div className="flex flex-col justify-center gap-6 max-w-[357px] text-center">
-              <h3 className="text-3xl sm:text-3xl leading-[36px] font-bold text-[#22252A]">
+            <motion.div 
+              className="flex flex-col justify-center gap-6 max-w-[357px] text-center"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+            >
+              <motion.h3 
+                className="text-3xl sm:text-3xl leading-[36px] font-bold text-[#22252A]"
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+              >
                 {title}
-              </h3>
-              <p className="text-base text-[#474D57] leading-[20px]">{description}</p>
-              <div>
+              </motion.h3>
+              <motion.p 
+                className="text-base text-[#474D57] leading-[20px]"
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+              >
+                {description}
+              </motion.p>
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+              >
                 <button
                   type="button"
                   onClick={() => onReadMoreClick?.(index)}
@@ -56,10 +95,20 @@ export default function ServiceHighlights({
                     ↗
                   </span>
                 </button>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
-            <div className="relative w-[537px] h-[537px] max-w-[537px] overflow-hidden rounded-[36px]">
+            <motion.div 
+              className="relative w-[537px] h-[537px] max-w-[537px] overflow-hidden rounded-[36px]"
+              variants={{
+                hidden: { opacity: 0, scale: 0.95 },
+                visible: { 
+                  opacity: 1, 
+                  scale: 1,
+                  transition: { duration: 0.4, ease: "easeOut" }
+                }
+              }}
+            >
               <Image
                 src={imageSrc}
                 alt={title}
@@ -68,8 +117,8 @@ export default function ServiceHighlights({
                 className="object-cover"
                 priority
               />
-            </div>
-          </article>
+            </motion.div>
+          </motion.article>
         );
       })}
     </section>

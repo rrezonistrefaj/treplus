@@ -1,13 +1,14 @@
 'use client'
 
 import Image from 'next/image'
-import Reveal from "@/components/ui/Reveal";
+import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
 import { Link, usePathname, useRouter } from '@/i18n/routing'
 
 export default function Navbar() {
   const [isLanguageOpen, setIsLanguageOpen] = useState(false)
+  const [logoLoaded, setLogoLoaded] = useState(false)
   const t = useTranslations('Nav')
   const pathname = usePathname()
   const router = useRouter()
@@ -22,19 +23,23 @@ export default function Navbar() {
   ]
 
   return (
-    <Reveal as="div" className="w-full sticky top-0 bg-background border-b border-gray-200 shadow-[0_1px_3px_rgba(0,0,0,0.1)] z-50 reveal-will-change" amount={0.1}>
+    <div className="w-full sticky top-0 bg-background border-b border-gray-200 shadow-[0_1px_3px_rgba(0,0,0,0.1)] z-50">
       <nav className="w-full max-w-[1260px] mx-auto px-4 sm:px-0 py-[25px]">
         <div className="flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
-          <Image
-            src="/logo.png"
-            alt="treplus logo"
-            width={80}
-            height={30}
-            className="h-auto"
-            priority
-          />
+          <div className="relative" style={{ width: 80, height: 30 }}>
+            {!logoLoaded && <div className="absolute inset-0 rounded skeleton" />}
+            <Image
+              src="/logo.png"
+              alt="treplus logo"
+              width={80}
+              height={30}
+              className="h-auto relative"
+              priority
+              onLoadingComplete={() => setLogoLoaded(true)}
+            />
+          </div>
         </Link>
 
         {/* Navigation Links */}
@@ -73,15 +78,23 @@ export default function Navbar() {
           </button>
 
           {/* Language Dropdown */}
-          {isLanguageOpen && (
-            <div className="absolute right-0 top-full mt-2 w-20 bg-background border border-border rounded-md shadow-2xl  z-50">
-              <div className="py-1">
-                <button onClick={() => { setIsLanguageOpen(false); router.replace(pathname, { locale: 'en' }); }} className={`w-full text-left px-3 py-2 text-sm ${locale==='en' ? 'text-orange-500' : 'text-foreground'} hover:bg-orange-50 transition-colors duration-200`}>EN</button>
-                <button onClick={() => { setIsLanguageOpen(false); router.replace(pathname, { locale: 'al' }); }} className={`w-full text-left px-3 py-2 text-sm ${locale==='al' ? 'text-orange-500' : 'text-foreground'} hover:bg-orange-50 transition-colors duration-200`}>AL</button>
-                <button onClick={() => { setIsLanguageOpen(false); router.replace(pathname, { locale: 'nl' }); }} className={`w-full text-left px-3 py-2 text-sm ${locale==='nl' ? 'text-orange-500' : 'text-foreground'} hover:bg-orange-50 transition-colors duration-200`}>NL</button>
-              </div>
-            </div>
-          )}
+          <AnimatePresence>
+            {isLanguageOpen && (
+              <motion.div
+                initial={{ opacity: 0, y: -6, scale: 0.98 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -6, scale: 0.98 }}
+                transition={{ duration: 0.16, ease: 'easeOut' }}
+                className="absolute right-0 top-full mt-2 w-20 bg-background border border-border rounded-md shadow-2xl  z-50"
+              >
+                <div className="py-1">
+                  <button onClick={() => { setIsLanguageOpen(false); router.replace(pathname, { locale: 'en' }); }} className={`w-full text-left px-3 py-2 text-sm ${locale==='en' ? 'text-orange-500' : 'text-foreground'} hover:bg-orange-50 transition-colors duration-200`}>EN</button>
+                  <button onClick={() => { setIsLanguageOpen(false); router.replace(pathname, { locale: 'al' }); }} className={`w-full text-left px-3 py-2 text-sm ${locale==='al' ? 'text-orange-500' : 'text-foreground'} hover:bg-orange-50 transition-colors duration-200`}>AL</button>
+                  <button onClick={() => { setIsLanguageOpen(false); router.replace(pathname, { locale: 'nl' }); }} className={`w-full text-left px-3 py-2 text-sm ${locale==='nl' ? 'text-orange-500' : 'text-foreground'} hover:bg-orange-50 transition-colors duration-200`}>NL</button>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
 
         {/* Mobile Menu Button */}
@@ -102,6 +115,6 @@ export default function Navbar() {
         </button>
         </div>
       </nav>
-    </Reveal>
+    </div>
   )
 }

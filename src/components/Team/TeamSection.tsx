@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Reveal from "@/components/ui/Reveal";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import {
@@ -17,33 +17,89 @@ import { useTranslations } from "next-intl";
 const TeamSection = () => {
   const t = useTranslations('Team');
   return (
-    <Reveal as="section" className="max-w-[1260px] mx-auto px-4 sm:px-0 py-20 reveal-will-change" amount={0.2}>
-      {/* Header */}
-      <div className="flex items-end justify-between gap-6">
+    <section className="max-w-[1260px] mx-auto px-4 sm:px-0 py-20">
+      {/* Header with staggered animations */}
+      <motion.div 
+        className="flex items-end justify-between gap-6"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: { staggerChildren: 0.1 }
+          }
+        }}
+      >
         <div className="max-w-[760px] mb-20">
-          <h2 className="text-[40px] sm:text-5xl font-unbounded font-bold text-[#1F1F1F]">
+          <motion.h2 
+            className="text-[40px] sm:text-5xl font-unbounded font-bold text-[#1F1F1F]"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 }
+            }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
             {t('title')}
-          </h2>
-          <p className="mt-4 mb-6 text-base font-medium text-[#474D57] ">
+          </motion.h2>
+          <motion.p 
+            className="mt-4 mb-6 text-base font-medium text-[#474D57]"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 }
+            }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
             {t('description')}
-          </p>
-          <div className="shrink-0 hidden sm:block">
-          <button className="bg-[#FF5F1F] px-11.5 py-5 font-bold rounded-[10px] hover:bg-orange-600 text-white">{t('viewAll')}</button>
+          </motion.p>
+          <motion.div 
+            className="shrink-0 hidden sm:block"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 }
+            }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
+            <button className="bg-[#FF5F1F] px-11.5 py-5 font-bold rounded-[10px] hover:bg-orange-600 text-white transition-transform will-change-transform hover:-translate-y-[1px]">{t('viewAll')}</button>
+          </motion.div>
         </div>
-        </div>
-        
-      </div>
+      </motion.div>
 
-      {/* Right-bleed carousel, same structure as OurWork */}
-      <div className="mt-10 relative team-overflow">
+      {/* Right-bleed carousel with staggered animations */}
+      <motion.div 
+        className="mt-10 relative team-overflow"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: { staggerChildren: 0.1 }
+          }
+        }}
+      >
         <Carousel opts={{ align: "start" }} className="relative">
           <CarouselContent>
-            {teamMembers.map((member) => (
+            {teamMembers.map((member, index) => (
               <CarouselItem
                 key={member.id}
                 className="basis-[85%] sm:basis-[65%] md:basis-1/2 lg:basis-1/3 xl:basis-1/3"
               >
-                <article className="h-full rounded-[20px]">
+                <motion.article 
+                  className="h-full rounded-[20px]"
+                  variants={{
+                    hidden: { opacity: 0, y: 20, scale: 0.95 },
+                    visible: { 
+                      opacity: 1, 
+                      y: 0, 
+                      scale: 1,
+                      transition: { 
+                        duration: 0.4, 
+                        ease: "easeOut"
+                      }
+                    }
+                  }}
+                >
                   <div className="flex flex-col items-start gap-4 w-[323px]">
                     <div className="relative mt-1 w-[323px] h-[389px] overflow-visible">
                     {/* Background layer */}
@@ -79,7 +135,7 @@ const TeamSection = () => {
                       <p className="mt-1 text-[13px] sm:text-base text-[#0F0F0F] font-medium">{t(`roles.${member.id}`)}</p>
                     </header>
                   </div>
-                </article>
+                </motion.article>
               </CarouselItem>
             ))}
           </CarouselContent>
@@ -98,16 +154,23 @@ const TeamSection = () => {
         </Carousel>
 
         {/* Mobile CTA */}
-        <div className="mt-8 sm:hidden">
-          <Button className="w-full bg-orange-500 hover:bg-orange-600">{t('viewAll')}</Button>
-        </div>
-      </div>
+        <motion.div 
+          className="mt-8 sm:hidden"
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0 }
+          }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+        >
+          <Button className="w-full bg-orange-500 hover:bg-orange-600 transition-transform will-change-transform hover:-translate-y-[1px]">{t('viewAll')}</Button>
+        </motion.div>
+      </motion.div>
 
       {/* Scoped overflow rule matching OurWork to allow left-side peek */}
       <style jsx global>{`
         .team-overflow [data-slot="carousel-content"] { overflow: visible; }
       `}</style>
-    </Reveal>
+    </section>
   );
 };
 
