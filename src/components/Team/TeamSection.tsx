@@ -3,7 +3,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import {
   Carousel,
   CarouselContent,
@@ -152,18 +151,6 @@ const TeamSection = () => {
             className="left-16 -bottom-18 top-auto translate-y-0 size-[60px] rounded-full border-2 bg-transparent hover:bg-transparent shadow-none border-[#0F0F0F] text-[#0F0F0F] disabled:border-gray-400 disabled:text-gray-400 disabled:opacity-100"
           />
         </Carousel>
-
-        {/* Mobile CTA */}
-        <motion.div 
-          className="mt-8 sm:hidden"
-          variants={{
-            hidden: { opacity: 0, y: 20 },
-            visible: { opacity: 1, y: 0 }
-          }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
-        >
-          <Button className="w-full bg-orange-500 hover:bg-orange-600 transition-transform will-change-transform hover:-translate-y-[1px]">{t('viewAll')}</Button>
-        </motion.div>
       </motion.div>
 
       {/* Scoped overflow rule matching OurWork to allow left-side peek */}

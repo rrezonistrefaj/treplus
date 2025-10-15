@@ -4,7 +4,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { ReadMoreButton } from "@/components/ui/ReadMoreButton";
 import {
   Carousel,
@@ -19,7 +18,7 @@ import { useTranslations } from "next-intl";
 const OurWorkSection = () => {
   const t = useTranslations('OurWork');
   return (
-    <section className="max-w-[1260px] mx-auto px-4 sm:px-0 pb-20">
+    <section className="max-w-[1260px] mx-auto pl-4 xl:pl-0 pb-20">
       {/* Header with staggered animations */}
       <motion.div 
         className="flex items-end justify-between gap-6"
@@ -116,13 +115,12 @@ const OurWorkSection = () => {
                     </p>
                   </header>
 
-                  <div className="relative mt-4 rounded-[16px] overflow-hidden h-[220px] bg-gray-100">
+                  <div className="relative mt-4 rounded-[16px] overflow-hidden aspect-[380/245] bg-gray-100">
                     <Image
                       src={item.imageUrl}
                       alt={item.title}
-                      width={380}
-                      height={245}
-                      className="object-cover"
+                      fill
+                      className="object-cover w-full h-full"
                       priority
                     />
 
@@ -148,17 +146,6 @@ const OurWorkSection = () => {
           />
         </Carousel>
 
-        {/* Mobile CTA */}
-        <motion.div 
-          className="mt-8 sm:hidden"
-          variants={{
-            hidden: { opacity: 0, y: 20 },
-            visible: { opacity: 1, y: 0 }
-          }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
-        >
-          <Button variant="custom" size="custom" className="w-full bg-[#FF5F1F] px-11.5 py-5 font-bold rounded-[10px] hover:bg-orange-600 text-white transition-transform will-change-transform hover:-translate-y-[1px]">{t('seeMore')}</Button>
-        </motion.div>
       </motion.div>
       {/* Scoped override: allow left-side visibility by removing overflow clipping on shadcn carousel content */}
       <style jsx global>{`

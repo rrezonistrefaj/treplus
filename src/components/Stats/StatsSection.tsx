@@ -15,7 +15,7 @@ const StatsSection = () => {
     <section className="max-w-[1260px] mx-auto px-4 md:px-0 py-[250px]">
       {/* Header with improved animation */}
       <motion.div 
-        className="text-center max-w-[1100px] mx-auto"
+        className="text-center max-w-[1100px] mx-auto hidden md:block"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.4 }}
@@ -40,7 +40,7 @@ const StatsSection = () => {
 
       {/* Stats grid with enhanced animations */}
       <motion.div
-        className="mt-44 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12"
+        className="mt-0 md:mt-44 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -75,7 +75,7 @@ const StatsSection = () => {
             }}
           >
             {/* Static number with gradient */}
-            <div className="text-[64px] font-bold font-unbounded mb-2">
+            <div className=" text-[30px] md:text-[64px] font-bold font-unbounded mb-2">
               <span
                 className={`bg-gradient-to-r ${stat.numberClass} bg-clip-text text-transparent will-change-transform`}
               >
@@ -84,12 +84,12 @@ const StatsSection = () => {
             </div>
             
             {/* Title */}
-            <div className="text-xl font-bold text-[#22252A] mb-2">
+            <div className="text-[14px] md:text-xl font-bold text-[#22252A] mb-2">
               {t(`items.${index}.title`)}
             </div>
             
             {/* Description */}
-            <div className="text-base text-[#474D57] leading-relaxed">
+            <div className="text-[14px] md:text-base text-[#474D57] leading-relaxed">
               {t(`items.${index}.description`)}
             </div>
           </motion.div>
