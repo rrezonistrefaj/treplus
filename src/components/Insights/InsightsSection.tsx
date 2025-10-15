@@ -155,7 +155,13 @@ const InsightsSection = () => {
 
       {/* Overflow like OurWork */}
       <style jsx global>{`
-        .insights-overflow [data-slot="carousel-content"] { overflow: visible; }
+        .insights-overflow [data-slot="carousel-content"] { 
+          overflow: visible; 
+          overflow-x: hidden;
+        }
+        .insights-overflow {
+          overflow-x: hidden;
+        }
       `}</style>
     </section>
   );

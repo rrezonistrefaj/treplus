@@ -138,7 +138,13 @@ const TestimonialsSection = () => {
 
       {/* Allow left-side visibility like OurWorkSection */}
       <style jsx global>{`
-        .testimonials-overflow [data-slot="carousel-content"] { overflow: visible; }
+        .testimonials-overflow [data-slot="carousel-content"] { 
+          overflow: visible; 
+          overflow-x: hidden;
+        }
+        .testimonials-overflow {
+          overflow-x: hidden;
+        }
       `}</style>
     </section>
   );
