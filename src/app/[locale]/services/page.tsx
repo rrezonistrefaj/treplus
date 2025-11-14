@@ -1,11 +1,11 @@
-import ServicesBanner from "@/components/Banner/ServicesBanner";
-import ServiceHighlights from "@/components/Services/ServiceHighlight";
-import { serviceHighlightsData } from "@/components/Services/serviceHighlightsData";
-import ServiceProcess from "@/components/Services/ServiceProcess";
-import { serviceProcessData } from "@/components/Services/serviceProcessData";
-import TestimonialsSection from "@/components/Testimonials/TestimonialsSection";
-import InsightsSection from "@/components/Insights/InsightsSection";
-import CTASection from "@/components/CTA/CTASection";
+import ServicesBanner from "@/components/banners/ServicesBanner";
+import ServiceHighlights from "@/components/features/services/ServiceHighlight";
+import { serviceHighlightsData } from "@/components/features/services/serviceHighlightsData";
+import ServiceProcess from "@/components/features/services/ServiceProcess";
+import { serviceProcessData } from "@/components/features/services/serviceProcessData";
+import TestimonialsSection from "@/components/sections/Testimonials/TestimonialsSection";
+import InsightsSection from "@/components/sections/Insights/InsightsSection";
+import CTASection from "@/components/sections/CTA/CTASection";
 
 export default function ServicesPage() {
   return (

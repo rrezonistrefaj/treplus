@@ -1,5 +1,5 @@
-import InsightsBanner from "@/components/Banner/InsightsBanner";
-import CTASection from "@/components/CTA/CTASection";
+import InsightsBanner from "@/components/banners/InsightsBanner";
+import CTASection from "@/components/sections/CTA/CTASection";
 
 export default function InsightsPage() {
   return (
