@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 const CTASection = () => {
   const t = useTranslations('CTA');
   return (
-    <section className=" py-16 sm:py-20 ">
+    <section className=" py-16 sm:py-20 overflow-x-clip">
       <div className=" mx-auto">
         <div className=" bg-[#F3F3F3] shadow-[0_0_24px_rgba(0,0,0,0.15)]">
           <motion.div 

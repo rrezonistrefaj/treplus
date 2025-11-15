@@ -24,9 +24,11 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider messages={messages} locale={locale as Locale}>
-      <Navbar />
-      {children}
-      <Footer />
+      <div className="overflow-x-clip">
+        <Navbar />
+        {children}
+        <Footer />
+      </div>
     </NextIntlClientProvider>
   );
 }

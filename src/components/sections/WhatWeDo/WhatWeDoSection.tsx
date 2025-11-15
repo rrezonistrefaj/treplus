@@ -6,7 +6,7 @@ import { whatWeDoData } from "./whatWeDoData";
 
 const WhatWeDoSection = () => {
   return (
-    <section className="max-w-[1260px] mx-auto px-4 xl:px-0 py-12 md:py-16 lg:py-20">
+    <section className="max-w-[1260px] mx-auto px-4 xl:px-0 py-12 md:py-16 lg:py-20 overflow-x-clip">
       {/* Main Title */}
       <motion.div 
         className="text-center mb-12 md:mb-16 lg:mb-20"

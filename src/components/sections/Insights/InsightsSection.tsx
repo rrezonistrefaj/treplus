@@ -16,7 +16,7 @@ import { insightsData } from "./insightsData";
 
 const InsightsSection = () => {
   return (
-    <section className="max-w-[1260px] mx-auto px-4 xl:px-0 py-12 md:py-20">
+    <section className="max-w-[1260px] mx-auto px-4 xl:px-0 py-12 md:py-20 overflow-x-clip">
       {/* Header with staggered animations */}
       <motion.div
         className="flex items-end justify-between gap-6"

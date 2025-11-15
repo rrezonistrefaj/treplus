@@ -7,7 +7,7 @@ import { supportData } from './supportData';
 
 const SupportSection = () => {
   return (
-    <div className="max-w-[1260px] mx-auto px-4 md:px-0 py-12 md:py-16 lg:py-20">
+    <div className="max-w-[1260px] mx-auto px-4 md:px-0 py-12 md:py-16 lg:py-20 overflow-x-clip">
       {/* Section Title */}
       <motion.div 
         className="text-center mb-8 md:mb-12 lg:mb-16"

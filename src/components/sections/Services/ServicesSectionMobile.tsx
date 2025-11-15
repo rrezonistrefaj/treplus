@@ -106,7 +106,7 @@ const ServicesSectionMobile = () => {
   }, [cardData.length]);
 
   return (
-    <section className="max-w-[1260px] mx-auto px-4 pt-12 max-h-[390vh]">
+    <section className="max-w-[1260px] mx-auto px-4 pt-12 max-h-[390vh] overflow-x-clip">
       {/* Hero image and heading on top for mobile - NO STICKY */}
       <div className="mb-4">
         <div className="w-full">

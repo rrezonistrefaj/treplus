@@ -18,7 +18,7 @@ import { Link } from "@/i18n/routing";
 const OurWorkSection = () => {
   const t = useTranslations('OurWork');
   return (
-    <section className="max-w-[1260px] mx-auto px-4 xl:pl-0 pb-20">
+    <section className="max-w-[1260px] mx-auto px-4 xl:pl-0 pb-20 overflow-x-clip">
       {/* Header with staggered animations */}
       <motion.div 
         className="flex items-end justify-between gap-6"

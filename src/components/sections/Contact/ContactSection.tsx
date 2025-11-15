@@ -38,7 +38,7 @@ const ContactSection = () => {
 
 
     return (
-      <div className="max-w-[1260px] mx-auto px-0 lg:px-4 py-12 md:py-16 lg:py-20">
+      <div className="max-w-[1260px] mx-auto px-0 lg:px-4 py-12 md:py-16 lg:py-20 overflow-x-clip">
         <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-8 lg:gap-0">
         {/* Left Column - Information Section */}
         <motion.div 

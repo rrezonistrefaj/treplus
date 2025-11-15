@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const OurProjectsSection = () => {
   return (
-    <section className="max-w-[810px] mx-auto px-4 xl:px-0 py-12 md:py-16 lg:py-20 xl:py-[80px] animate-fade-in">
+    <section className="max-w-[810px] mx-auto px-4 xl:px-0 py-12 md:py-16 lg:py-20 xl:py-[80px] animate-fade-in overflow-x-clip">
       <div className="text-center">
         {/* Main Heading */}
         <div className="mb-6 md:mb-8 animate-slide-up">

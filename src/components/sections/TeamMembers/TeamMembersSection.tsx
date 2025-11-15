@@ -9,7 +9,7 @@ import { useTranslations } from "next-intl";
 const TeamMembersSection = () => {
   const t = useTranslations("Team");
   return (
-    <section className="max-w-[1260px] mx-auto px-4 xl:px-0 py-12 md:py-16 lg:py-20">
+    <section className="max-w-[1260px] mx-auto px-4 xl:px-0 py-12 md:py-16 lg:py-20 overflow-x-clip">
       {/* Header */}
       <motion.div 
         className="max-w-[760px] mb-12 md:mb-16 lg:mb-37"

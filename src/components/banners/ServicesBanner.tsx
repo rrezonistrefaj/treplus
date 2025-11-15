@@ -9,7 +9,7 @@ const ServicesBanner = () => {
   const tServicesBanner = useTranslations("ServicesBanner");
 
   return (
-    <section className="max-w-[1260px] mx-auto px-4 xl:px-0 pt-8 md:pt-16">
+    <section className="max-w-[1260px] mx-auto px-4 xl:px-0 pt-8 md:pt-16 overflow-x-clip">
       <div className="relative flex flex-col justify-between lg:flex-row items-center mb-10 md:mb-20">
         {/* Left: copy and CTA */}
         <motion.div 

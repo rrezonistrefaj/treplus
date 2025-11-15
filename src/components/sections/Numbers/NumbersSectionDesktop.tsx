@@ -79,7 +79,7 @@ export default function NumbersSectionDesktop() {
   }, [isInView, col1, col2, col3]);
 
   return (
-    <section ref={sectionRef} className="max-w-[1260px] mx-auto px-4 xl:px-0 py-20">
+    <section ref={sectionRef} className="max-w-[1260px] mx-auto px-4 xl:px-0 py-20 overflow-x-clip">
       <motion.div
         initial="hidden"
         whileInView="visible"

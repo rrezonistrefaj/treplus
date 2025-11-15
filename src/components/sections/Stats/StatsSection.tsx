@@ -73,7 +73,7 @@ const StatsSection = ({ hideHeading = false }: StatsSectionProps) => {
 
   return (
 
-    <Reveal as="section" className={`max-w-[1260px] mx-auto px-4 xl:px-0 reveal-will-change ${hideHeading ? "py-[50px]" : "py-20 lg:py-[250px]"}`} amount={0.15}>
+    <Reveal as="section" className={`max-w-[1260px] mx-auto px-4 xl:px-0 reveal-will-change overflow-x-clip ${hideHeading ? "py-[50px]" : "py-20 lg:py-[250px]"}`} amount={0.15}>
 
       {!hideHeading && (
         <div ref={sectionRef} className="text-center max-w-[1100px] mx-auto">
