@@ -1,10 +1,12 @@
-import CTASection from "@/components/CTA/CTASection";
-import OurProjectsSection from "@/components/OurProjects/OurProjectsSection";
+import CTASection from "@/components/sections/CTA/CTASection";
+import OurProjectsSection from "@/components/sections/OurProjects/OurProjectsSection";
+import CasesListing from "@/components/sections/Cases/CasesListing";
 
 export default function ServicesPage() {
   return (
-    <div className="flex flex-col gap-20">
+    <div>
         <OurProjectsSection />
+        <CasesListing />
         <CTASection />
     </div>
   );

@@ -150,6 +150,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --breakpoint-xs: 480px;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
@@ -266,12 +267,20 @@
   body {
     @apply bg-background text-foreground font-sans;
   }
+  html {
+    /* overflow-x removed to allow sticky navbar */
+  }
 }
 
 /* Simple animations for performance */
 @layer utilities {
   .reveal-will-change {
     will-change: opacity, transform;
+  }
+  
+  /* Prevent horizontal scroll for carousel containers */
+  .carousel-container {
+    overflow-x: clip;
   }
   
   .animate-fade-in {

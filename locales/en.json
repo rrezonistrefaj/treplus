@@ -115,7 +115,7 @@
     "headingStrong": "We let the numbers talk",
     "headingSubtle": "Our results speak for themselves, built on experience, trust, and impactful delivery.",
     "cards": [
-      {"subline": "Tre+ stands for three founders and the pluss"},
+      {"subline": "Projects"},
       {"subline": "Tre+ stands for three founders and the pluss"},
       {"subline": "Worldwide projects"},
       {"subline": "Appreciations overall"},
@@ -159,6 +159,142 @@
     "titleLine2": "request an estimate",
     "subtext": "We’d love to help you learn more about our products and services.",
     "cta": "Let’s talk"
+  },
+  "Cases": {
+    "title": "All projects",
+    "tabs": {
+      "all": "All projects",
+      "marketing": "Marketing",
+      "software": "Software",
+      "creative": "Creative"
+    },
+    "buttons": {
+      "viewMore": "View more"
+    },
+    "cards": {
+      "digital-assets-1": {
+        "title": "Digital assets",
+        "description": "Marketing campaign promoting smart investment in digital assets. Marketing campaign promoting"
+      },
+      "unwell-product-design": {
+        "title": "Product design",
+        "description": "Marketing campaign promoting smart investment in digital assets. Marketing campaign promoting"
+      },
+      "smart-web-app-landing": {
+        "title": "Web development",
+        "description": "Marketing campaign promoting smart investment in digital assets. Marketing campaign promoting"
+      },
+      "campaign-digital-assets-2": {
+        "title": "Digital assets",
+        "description": "Marketing campaign promoting smart investment in digital assets. Marketing campaign promoting"
+      },
+      "social-boost-campaign": {
+        "title": "Digital assets",
+        "description": "Performance campaign to grow reach and conversions."
+      },
+      "ecommerce-redesign": {
+        "title": "Web development",
+        "description": "Modernizing storefront UX and performance for conversions."
+      },
+      "brand-refresh-kit": {
+        "title": "Product design",
+        "description": "A modular brand kit for consistent visuals across channels."
+      },
+      "product-teaser-video": {
+        "title": "Digital assets",
+        "description": "Short‑form promos for product launches across social."
+      },
+      "mobile-app-ui-kit": {
+        "title": "Product design",
+        "description": "UI patterns for faster delivery across mobile apps."
+      },
+      "saas-dashboard": {
+        "title": "Web development",
+        "description": "Analytics dashboard with clean information hierarchy."
+      },
+      "email-automation": {
+        "title": "Digital assets",
+        "description": "Lifecycle emails that drive activation and retention."
+      },
+      "landing-optimization": {
+        "title": "Web development",
+        "description": "A/B tested landing pages to improve trial signups."
+      },
+      "packaging-concepts": {
+        "title": "Product design",
+        "description": "Shelf‑ready concepts with bold personality."
+      },
+      "seo-foundations": {
+        "title": "Digital assets",
+        "description": "Technical and content SEO to grow organic traffic."
+      },
+      "nextjs-migration": {
+        "title": "Web development",
+        "description": "Porting a legacy stack to Next.js for speed and DX."
+      },
+      "brand-guidelines": {
+        "title": "Product design",
+        "description": "Clear guidance for typography, color and components."
+      },
+      "paid-media-optimizer": {
+        "title": "Digital assets",
+        "description": "Models to balance reach, frequency and ROAS."
+      },
+      "design-system-starter": {
+        "title": "Product design",
+        "description": "Foundational tokens and components for rapid scaling."
+      }
+    }
+  },
+  "Insights": {
+    "tabs": {
+      "all": "All Insights",
+      "marketing": "Marketing",
+      "software": "Software",
+      "creative": "Creative",
+      "industry-news": "Industry News"
+    },
+    "buttons": {
+      "viewMore": "View more"
+    },
+    "cards": {
+      "social-ads-that-convert": {
+        "title": "Social Ads That Convert",
+        "description": "How to design campaigns that boost ROI."
+      },
+      "faster-website-loads": {
+        "title": "Faster Website Loads",
+        "description": "5 proven steps to improve performance."
+      },
+      "googles-big-update": {
+        "title": "Google's Big Update",
+        "description": "What the new algorithm means for SEO."
+      },
+      "design-systems-101": {
+        "title": "Design Systems: From Chaos to Clarity",
+        "description": "Build consistency and ship faster with a shared system."
+      },
+      "faster-website-loads-2": {
+        "title": "Faster Website Loads 2",
+        "description": "A pragmatic checklist for Core Web Vitals."
+      },
+      "creative-that-scales": {
+        "title": "Creative That Scales",
+        "description": "How to build a content engine your team can maintain."
+      },
+      "performance-optimization": {
+        "title": "Performance Optimization Guide",
+        "description": "Advanced techniques for faster page loads and better UX."
+      },
+      "seo-strategies": {
+        "title": "Modern SEO Strategies",
+        "description": "What works in 2025 and beyond for organic growth."
+      },
+      "design-trends": {
+        "title": "Design Trends 2025",
+        "description": "Emerging patterns and best practices in UI/UX design."
+      }
+    }
   }
 }
 

@@ -148,6 +148,88 @@
     "titleLine2": "vraag een offerte aan",
     "subtext": "We helpen je graag meer te weten te komen over onze producten en diensten.",
     "cta": "Laten we praten"
+  },
+  "Cases": {
+    "title": "Alle projecten",
+    "tabs": {
+      "all": "Alle projecten",
+      "marketing": "Marketing",
+      "software": "Software",
+      "creative": "Creatief"
+    },
+    "buttons": {
+      "viewMore": "Meer laden"
+    },
+    "cards": {
+      "digital-assets-1": { "title": "Digital assets", "description": "Marketingcampagne voor slimme investeringen." },
+      "unwell-product-design": { "title": "Product design", "description": "Een gedurfd visueel merk." },
+      "smart-web-app-landing": { "title": "Web development", "description": "Scherpe landingspagina voor een webapp." },
+      "campaign-digital-assets-2": { "title": "Digital assets", "description": "Multichannel promotiecampagne." },
+      "social-boost-campaign": { "title": "Digital assets", "description": "Campagne om bereik en engagement te vergroten." },
+      "ecommerce-redesign": { "title": "Web development", "description": "Herontwerp van e‑commerce." },
+      "brand-refresh-kit": { "title": "Product design", "description": "Modulaire brandkit." },
+      "product-teaser-video": { "title": "Digital assets", "description": "Korte teaser‑video’s voor lanceringen." },
+      "mobile-app-ui-kit": { "title": "Product design", "description": "UI‑kit voor mobiele apps." },
+      "saas-dashboard": { "title": "Web development", "description": "Analyse‑dashboard met duidelijke hiërarchie." },
+      "email-automation": { "title": "Digital assets", "description": "Geautomatiseerde e‑mails voor activatie." },
+      "landing-optimization": { "title": "Web development", "description": "A/B‑testen voor betere conversie." },
+      "packaging-concepts": { "title": "Product design", "description": "Verpakkingsconcepten met karakter." },
+      "seo-foundations": { "title": "Digital assets", "description": "Technische en content‑SEO." },
+      "nextjs-migration": { "title": "Web development", "description": "Migratie naar Next.js." },
+      "brand-guidelines": { "title": "Product design", "description": "Richtlijnen voor typografie, kleur en componenten." },
+      "paid-media-optimizer": { "title": "Digital assets", "description": "Modellen voor bereik, frequentie en ROAS." },
+      "design-system-starter": { "title": "Product design", "description": "Basis voor een designsysteem." }
+    }
+  },
+  "Insights": {
+    "tabs": {
+      "all": "Alle inzichten",
+      "marketing": "Marketing",
+      "software": "Software",
+      "creative": "Creatief",
+      "industry-news": "Branchenieuws"
+    },
+    "buttons": {
+      "viewMore": "Meer bekijken"
+    },
+    "cards": {
+      "social-ads-that-convert": {
+        "title": "Sociale advertenties die converteren",
+        "description": "Hoe je campagnes ontwerpt die ROI verhogen."
+      },
+      "faster-website-loads": {
+        "title": "Snellere website laadtijden",
+        "description": "5 bewezen stappen om prestaties te verbeteren."
+      },
+      "googles-big-update": {
+        "title": "Google's grote update",
+        "description": "Wat het nieuwe algoritme betekent voor SEO."
+      },
+      "design-systems-101": {
+        "title": "Designsystemen: Van chaos naar duidelijkheid",
+        "description": "Bouw consistentie en lever sneller met een gedeeld systeem."
+      },
+      "faster-website-loads-2": {
+        "title": "Snellere website laadtijden 2",
+        "description": "Een pragmatische checklist voor Core Web Vitals."
+      },
+      "creative-that-scales": {
+        "title": "Creativiteit die schaalt",
+        "description": "Hoe je een contentengine bouwt die je team kan onderhouden."
+      },
+      "performance-optimization": {
+        "title": "Prestatie-optimalisatiegids",
+        "description": "Geavanceerde technieken voor snellere paginalaadtijden en betere UX."
+      },
+      "seo-strategies": {
+        "title": "Moderne SEO-strategieën",
+        "description": "Wat werkt in 2025 en daarna voor organische groei."
+      },
+      "design-trends": {
+        "title": "Designtrends 2025",
+        "description": "Opkomende patronen en best practices in UI/UX-design."
+      }
+    }
   }
 }
 
