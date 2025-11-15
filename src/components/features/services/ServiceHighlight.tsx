@@ -5,11 +5,11 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import clsx from "clsx";
 import { type ServiceHighlightVisual } from "./serviceHighlightsData";
+import { Link } from "@/i18n/routing";
 
 interface ServiceHighlightsProps {
   items: ServiceHighlightVisual[];
   className?: string;
-  onReadMoreClick?: (index: number) => void;
 }
 
 const fadeInUp = {
@@ -27,7 +27,6 @@ const transition = { duration: 0.4, ease: "easeOut" as const };
 export default function ServiceHighlights({
   items,
   className,
-  onReadMoreClick,
 }: ServiceHighlightsProps) {
   const t = useTranslations("ServiceHighlights");
 
@@ -69,22 +68,21 @@ export default function ServiceHighlights({
               <p className="text-base text-[#474D57] leading-[20px]">
                 {description}
               </p>
-              <button
-                type="button"
-                onClick={() => onReadMoreClick?.(index)}
-                className="flex items-center gap-3 mt-4 mx-auto text-base font-semibold text-[#22252A] transition-colors cursor-pointer"
-                onMouseEnter={(e) => (e.currentTarget.style.color = color)}
-                onMouseLeave={(e) => (e.currentTarget.style.color = '#22252A')}
+            <Link
+              href={`/services/${index === 0 ? "digital-marketing" : index === 1 ? "branding-and-design" : "development"}`}
+              className="flex items-center gap-3 mt-4 mx-auto text-base font-semibold text-[#22252A] transition-colors cursor-pointer"
+              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = color; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#22252A"; }}
+            >
+              {cta}
+              <span
+                aria-hidden="true"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full"
+                style={{ backgroundColor: lightColor, color }}
               >
-                {cta}
-                <span
-                  aria-hidden="true"
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full"
-                  style={{ backgroundColor: lightColor, color }}
-                >
-                  ↗
-                </span>
-              </button>
+                ↗
+              </span>
+            </Link>
             </motion.div>
 
             <motion.div 

@@ -3,7 +3,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import { ReadMoreButton } from "@/components/ui/ReadMoreButton";
 import {
   Carousel,
@@ -14,6 +13,7 @@ import {
 } from "@/components/ui/carousel";
 import { ourWorkSectionData } from "./ourWorkData";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 
 const OurWorkSection = () => {
   const t = useTranslations('OurWork');
@@ -110,22 +110,34 @@ const OurWorkSection = () => {
                     <h3 className="text-[20px] md:text-3xl font-bold leading-snug" style={{ color: item.textColor }}>
                       {t(`items.${index}.title`)}
                     </h3>
-                    <p className="mt-2 text-[14px] sm:text-[16px] text-[#474D57] leading-[16px] sm:leading-[20px] ">
+                    <p
+                      className="mt-2 text-[14px] sm:text-[16px] text-[#474D57] leading-[16px] sm:leading-[20px] min-h-[48px] sm:min-h-[60px]"
+                      style={{
+                        display: "-webkit-box",
+                        WebkitLineClamp: 3,
+                        WebkitBoxOrient: "vertical",
+                        overflow: "hidden",
+                      }}
+                    >
                       {t(`items.${index}.description`)}
                     </p>
                   </header>
 
                   <div className="relative mt-4 rounded-[16px] overflow-hidden aspect-[380/245] bg-gray-100">
-                    <Image
-                      src={item.imageUrl}
-                      alt={item.title}
-                      fill
-                      className="object-cover w-full h-full"
-                      priority
-                    />
+                    <Link href={item.slug ? `/cases/${item.slug}` : ourWorkSectionData.readMoreButtonHref}>
+                      <Image
+                        src={item.imageUrl}
+                        alt={item.title}
+                        fill
+                        className="object-cover w-full h-full"
+                        priority
+                      />
+                    </Link>
 
                     <div className="absolute bottom-3 left-3">
-                      <ReadMoreButton color={item.textColor} />
+                      <Link href={item.slug ? `/cases/${item.slug}` : ourWorkSectionData.readMoreButtonHref}>
+                        <ReadMoreButton color={item.textColor} />
+                      </Link>
                     </div>
                   </div>
                 </motion.article>

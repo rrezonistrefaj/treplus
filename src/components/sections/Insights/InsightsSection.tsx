@@ -123,7 +123,7 @@ const InsightsSection = () => {
                       {item.excerpt}
                     </p>
                     <div className="mt-6 sm:mt-7 md:mt-[37.5px]">
-                      <button className="cursor-pointer group relative inline-flex items-center overflow-hidden rounded-full transition-all duration-300 hover:scale-105 bg-white">
+                      <Link href={`/insights/${item.slug}`} className="cursor-pointer group relative inline-flex items-center overflow-hidden rounded-full transition-all duration-300 hover:scale-105 bg-white">
                         {/* Left side - Glass morphism effect with set height */}
                         <div className="flex items-center justify-center h-10 sm:h-11 md:h-12 px-3 sm:px-3.5 md:px-4 text-[#474D57] font-medium text-sm sm:text-base md:text-lg">
                           Read More
@@ -133,7 +133,7 @@ const InsightsSection = () => {
                         <div className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 bg-[#F4F4F4] rounded-full border border-white">
                           <ArrowUpRight className="w-4 h-4 sm:w-[16px] sm:h-[16px] md:w-[18px] md:h-[18px] text-[#FF5F1F]" />
                         </div>
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </motion.article>

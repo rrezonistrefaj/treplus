@@ -106,6 +106,88 @@
     "titleLine2": "kërko një ofertë",
     "subtext": "Me kënaqësi të ndihmojmë të mësosh më shumë rreth produkteve dhe shërbimeve tona.",
     "cta": "Le të flasim"
+  },
+  "Cases": {
+    "title": "Të gjitha projektet",
+    "tabs": {
+      "all": "Të gjitha projektet",
+      "marketing": "Marketing",
+      "software": "Softuer",
+      "creative": "Kreative"
+    },
+    "buttons": {
+      "viewMore": "Shiko më shumë"
+    },
+    "cards": {
+      "digital-assets-1": { "title": "Asete digjitale", "description": "Fushatë marketingu që promovon investimin e zgjuar." },
+      "unwell-product-design": { "title": "Dizajn produkti", "description": "Identitet i guximshëm për një brand lifestyle." },
+      "smart-web-app-landing": { "title": "Zhvillim web‑i", "description": "Landing i pastër për aplikacion web." },
+      "campaign-digital-assets-2": { "title": "Asete digjitale", "description": "Fushatë promovuese shumë‑kanalëshe." },
+      "social-boost-campaign": { "title": "Asete digjitale", "description": "Fushatë rritjeje të angazhimit." },
+      "ecommerce-redesign": { "title": "Zhvillim web‑i", "description": "Ridizajnim i dyqanit online." },
+      "brand-refresh-kit": { "title": "Dizajn produkti", "description": "Kit marke i modulueshëm." },
+      "product-teaser-video": { "title": "Asete digjitale", "description": "Video të shkurtra prezantuese." },
+      "mobile-app-ui-kit": { "title": "Dizajn produkti", "description": "UI kit për aplikacione mobile." },
+      "saas-dashboard": { "title": "Zhvillim web‑i", "description": "Panel analitik i pastër." },
+      "email-automation": { "title": "Asete digjitale", "description": "Email automatikë për aktivizim." },
+      "landing-optimization": { "title": "Zhvillim web‑i", "description": "Optimizim i faqeve hyrëse." },
+      "packaging-concepts": { "title": "Dizajn produkti", "description": "Koncepte të paketimeve." },
+      "seo-foundations": { "title": "Asete digjitale", "description": "SEO teknike dhe përmbajtje." },
+      "nextjs-migration": { "title": "Zhvillim web‑i", "description": "Migrim në Next.js." },
+      "brand-guidelines": { "title": "Dizajn produkti", "description": "Udhëzues i markës." },
+      "paid-media-optimizer": { "title": "Asete digjitale", "description": "Optimizim i fushatave me pagesë." },
+      "design-system-starter": { "title": "Dizajn produkti", "description": "Sistem dizajni bazë." }
+    }
+  },
+  "Insights": {
+    "tabs": {
+      "all": "Të gjitha analizat",
+      "marketing": "Marketing",
+      "software": "Softuer",
+      "creative": "Kreative",
+      "industry-news": "Lajme nga industria"
+    },
+    "buttons": {
+      "viewMore": "Shiko më shumë"
+    },
+    "cards": {
+      "social-ads-that-convert": {
+        "title": "Reklama sociale që konvertojnë",
+        "description": "Si të dizajnosh fushata që rrisin ROI."
+      },
+      "faster-website-loads": {
+        "title": "Faqet web më të shpejta",
+        "description": "5 hapa të provuar për të përmirësuar performancën."
+      },
+      "googles-big-update": {
+        "title": "Përditësimi i madh i Google",
+        "description": "Çfarë do të thotë algoritmi i ri për SEO."
+      },
+      "design-systems-101": {
+        "title": "Sistemet e dizajnit: Nga kaosi te qartësia",
+        "description": "Ndërto konsistencë dhe dërgo më shpejt me një sistem të përbashkët."
+      },
+      "faster-website-loads-2": {
+        "title": "Faqet web më të shpejta 2",
+        "description": "Një listë kontrolli pragmatike për Core Web Vitals."
+      },
+      "creative-that-scales": {
+        "title": "Kreative që rriten",
+        "description": "Si të ndërtosh një motor përmbajtjeje që ekipi yt mund ta mbajë."
+      },
+      "performance-optimization": {
+        "title": "Udhëzues për optimizimin e performancës",
+        "description": "Teknika të avancuara për ngarkime më të shpejta të faqeve dhe UX më të mirë."
+      },
+      "seo-strategies": {
+        "title": "Strategjitë moderne të SEO",
+        "description": "Çfarë funksionon në 2025 dhe më tej për rritje organike."
+      },
+      "design-trends": {
+        "title": "Trendet e dizajnit 2025",
+        "description": "Modelet e reja dhe praktikat më të mira në dizajnin UI/UX."
+      }
+    }
   }
 }
 
