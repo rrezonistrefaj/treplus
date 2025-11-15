@@ -4,6 +4,7 @@ import React, { useMemo } from "react";
 import { insightsData } from "./insightsData";
 import InsightsTabs from "./InsightsTabs";
 import InsightsGrid from "./InsightsGrid";
+import { InsightCardItem } from "./InsightCard";
 
 export default function InsightsListing({ initialCategory = "all" }: { initialCategory?: string }) {
   const filtered = useMemo(() => {
@@ -16,7 +17,7 @@ export default function InsightsListing({ initialCategory = "all" }: { initialCa
       <div className="flex justify-center mb-6 mt-6">
         <InsightsTabs current={initialCategory} />
       </div>
-      <InsightsGrid items={filtered.map(({ id, ...i }) => ({ ...i })) as any} />
+      <InsightsGrid items={filtered.map(({ id: _, ...i }) => i as InsightCardItem)} />
     </section>
   );
 }

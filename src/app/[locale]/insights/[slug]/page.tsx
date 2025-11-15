@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { insightsData } from "@/components/sections/Insights/insightsData";
 import CTASection from "@/components/sections/CTA/CTASection";
 import InsightsGrid from "@/components/sections/Insights/InsightsGrid";
+import { InsightCardItem } from "@/components/sections/Insights/InsightCard";
 
 type Params = {
   params: Promise<{ slug: string }>;
@@ -52,7 +53,7 @@ export default async function InsightDetailPage({ params }: Params) {
         </div>
 
         <div className="mt-14">
-          <InsightsGrid items={related as any} />
+          <InsightsGrid items={related.map(({ id, ...item }) => item as InsightCardItem)} />
         </div>
       </div>
       <CTASection />
