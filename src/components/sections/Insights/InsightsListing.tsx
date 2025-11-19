@@ -14,9 +14,10 @@ export default function InsightsListing({ initialCategory = "all" }: { initialCa
 
   return (
     <section className="max-w-[1260px] mx-auto px-4 xl:pl-0 pb-20">
-      <div className="flex justify-center mb-6 mt-6">
+      <div className="flex justify-center mb-25 mt-6">
         <InsightsTabs current={initialCategory} />
       </div>
+      {/* eslint-disable-next-line @typescript-eslint/no-unused-vars */}
       <InsightsGrid items={filtered.map(({ id: _, ...i }) => i as InsightCardItem)} />
     </section>
   );

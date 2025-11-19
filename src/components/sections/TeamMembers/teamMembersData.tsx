@@ -62,7 +62,7 @@ export interface TeamMember {
       imageUrl: "/team-member4.png",
       icons: [
         {
-          src: "/BlueIcon.svg",
+          src: "/blueIcon.svg",
           width: 218,
           height: 194,
           className: "-right-6 -top-16",
@@ -90,7 +90,7 @@ export interface TeamMember {
       imageUrl: "/team-member6.png",
       icons: [
         {
-          src: "/BlueIcon.svg",
+          src: "/blueIcon.svg",
           width: 218,
           height: 194,
           className: "-right-6 -top-16",

@@ -3,8 +3,12 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { whatWeDoData } from "./whatWeDoData";
+import { useTranslations } from "next-intl";
 
 const WhatWeDoSection = () => {
+  const t = useTranslations();
+  const tWhatWeDo = useTranslations("WhatWeDo");
+  
   return (
     <section className="max-w-[1260px] mx-auto px-4 xl:px-0 py-12 md:py-16 lg:py-20 overflow-x-clip">
       {/* Main Title */}
@@ -20,7 +24,7 @@ const WhatWeDoSection = () => {
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#22252A] font-unbounded">
-          {whatWeDoData.heading}
+          {tWhatWeDo("heading")}
         </h2>
       </motion.div>
 
@@ -64,12 +68,12 @@ const WhatWeDoSection = () => {
 
             {/* Title */}
             <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#22252A] mb-2 sm:mb-3 mt-32 sm:mt-40 md:mt-[180px] lg:mt-[212px] leading-tight sm:leading-normal md:leading-[36px] tracking-[0px]">
-              {item.title}
+              {t(`Services.items.${index}.title`)}
             </h3>
 
             {/* Description */}
             <p className="text-sm sm:text-base text-[#474D57] leading-relaxed sm:leading-[20px]">
-              {item.description}
+              {t(`Services.items.${index}.description`)}
             </p>
           </motion.div>
         ))}

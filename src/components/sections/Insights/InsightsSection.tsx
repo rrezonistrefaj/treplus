@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { ArrowUpRight } from "lucide-react";
 import {
   Carousel,
@@ -13,10 +13,14 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { insightsData } from "./insightsData";
+import { useTranslations } from "next-intl";
 
 const InsightsSection = () => {
+  const t = useTranslations("Insights");
+  const tCommon = useTranslations("Common");
+  
   return (
-    <section className="max-w-[1260px] mx-auto px-4 xl:px-0 py-12 md:py-20 overflow-x-clip">
+    <section className="max-w-[1260px] mx-auto px-4 xl:px-0 py-12 md:py-20 overflow-x-visible">
       {/* Header with staggered animations */}
       <motion.div
         className="flex items-end justify-between gap-6"
@@ -39,7 +43,7 @@ const InsightsSection = () => {
             }}
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            {insightsData.title}
+            {t("title")}
           </motion.h2>
           <motion.p
             className="mt-3 sm:mt-4 md:py-5 text-[14px] sm:text-[15px] md:text-base text-[#474D57] leading-5 sm:leading-6"
@@ -49,7 +53,7 @@ const InsightsSection = () => {
             }}
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            {insightsData.description}
+            {t("description")}
           </motion.p>
           <motion.div
             className="mt-4 sm:mt-5 md:mt-0"
@@ -60,7 +64,7 @@ const InsightsSection = () => {
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
             <button className="bg-[#FF5F1F] px-8 sm:px-10 md:px-11.5 py-4 sm:py-4.5 md:py-5 font-bold text-sm sm:text-base rounded-[10px] hover:bg-orange-600 text-white transition-transform will-change-transform hover:-translate-y-[1px]">
-              <Link href={insightsData.seeMoreButtonHref}>{insightsData.seeMoreLabel}</Link>
+              <Link href={insightsData.seeMoreButtonHref}>{t("seeMoreLabel")}</Link>
             </button>
           </motion.div>
         </div>
@@ -119,18 +123,18 @@ const InsightsSection = () => {
                       <span className="flex-shrink-0">{item.date}</span>
                     </div>
                     <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#22252A] truncate" title={item.title}>{item.title}</h3>
-                    <p className="mt-2 sm:mt-3 text-[13px] sm:text-sm md:text-base font-medium text-[#474D57] leading-[140%] sm:leading-[150%] line-clamp-3 sm:line-clamp-none">
+                    <p className="mt-2 sm:mt-3 text-[13px] sm:text-sm md:text-base font-medium text-[#474D57] leading-[140%] sm:leading-[150%] truncate" title={item.excerpt}>
                       {item.excerpt}
                     </p>
                     <div className="mt-6 sm:mt-7 md:mt-[37.5px]">
                       <Link href={`/insights/${item.slug}`} className="cursor-pointer group relative inline-flex items-center overflow-hidden rounded-full transition-all duration-300 hover:scale-105 bg-white">
                         {/* Left side - Glass morphism effect with set height */}
                         <div className="flex items-center justify-center h-10 sm:h-11 md:h-12 px-3 sm:px-3.5 md:px-4 text-[#474D57] font-medium text-sm sm:text-base md:text-lg">
-                          Read More
+                          {tCommon("readMore")}
                         </div>
 
                         {/* Right side - White circle with orange arrow */}
-                        <div className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 bg-[#F4F4F4] rounded-full border border-white">
+                        <div className="flex items-center justify-center h-10 w-10 sm:h-11 sm:w-11 md:h-12 md:w-12 bg-[#F4F4F4] rounded-full border border-white flex-shrink-0">
                           <ArrowUpRight className="w-4 h-4 sm:w-[16px] sm:h-[16px] md:w-[18px] md:h-[18px] text-[#FF5F1F]" />
                         </div>
                       </Link>

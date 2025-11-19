@@ -1,15 +1,21 @@
+// Contact data - only non-translatable metadata (images, URLs, structure)
+// All text content is in locale files
+
+export interface ContactFormField {
+  id: string;
+  name: string;
+  type: 'text' | 'email' | 'tel' | 'url' | 'textarea';
+  required: boolean;
+  rows?: number;
+}
+
+export interface TrustedCompany {
+  name: string; // Used as key for alt text
+  icon: string; // Image path
+}
+
 export const contactData = {
-  header: {
-    title: "Get in touch with our team",
-    description: [
-      "Our team is highly dedicated to help you with your queries.",
-      "Just drop an 'hi' through the form & our team will be in touch with you with-in same day."
-    ]
-  },
-  trustedSection: {
-    title: "Trusted by Leaders",
-    description: "Join hundreds of companies that trust us for top-tier nearshore development solutions with speed, quality, and scalability."
-  },
+  // Trusted companies - only image paths
   trustedCompanies: [
     { name: 'Hourglass', icon: '/HourglassIcon.svg' },
     { name: 'Command+R', icon: '/deafultOrangeIcon.svg' },
@@ -17,58 +23,45 @@ export const contactData = {
     { name: 'Catalog', icon: '/CatalogIcon.svg' },
     { name: 'Layers', icon: '/LayersIcon.svg' },
     { name: 'Layers', icon: '/LayersIcon.svg' }
-  ],
+  ] as TrustedCompany[],
+  
+  // Form field structure - only metadata (no text)
   form: {
     fields: [
       {
         id: 'fullName',
         name: 'fullName',
-        label: 'Full name',
-        type: 'text',
-        placeholder: 'Full name',
+        type: 'text' as const,
         required: true
       },
       {
         id: 'profileLink',
         name: 'profileLink',
-        label: 'Profile link (any social media)',
-        type: 'url',
-        placeholder: 'Example Instagram, Tik tok etc.',
+        type: 'url' as const,
         required: false
       },
       {
         id: 'email',
         name: 'email',
-        label: 'Email',
-        type: 'email',
-        placeholder: 'Enter your email',
+        type: 'email' as const,
         required: true
       },
       {
         id: 'phoneNumber',
         name: 'phoneNumber',
-        label: 'Phone number (with country code)',
-        type: 'tel',
-        placeholder: '+1 (000) 000-0000',
+        type: 'tel' as const,
         required: false
       },
       {
         id: 'query',
         name: 'query',
-        label: 'Your Query',
-        type: 'textarea',
-        placeholder: 'Provide any details regarding your query...',
+        type: 'textarea' as const,
         required: true,
         rows: 4
       }
-    ],
+    ] as ContactFormField[],
     privacyPolicy: {
-      text: "By reaching out to us, you agree to our",
-      linkText: "Privacy Policy",
-      linkUrl: "#"
-    },
-    submitButton: {
-      text: "Send message"
+      linkUrl: "#" // Only URL, text is in locale files
     }
   }
 };

@@ -9,7 +9,7 @@ const InsightsBanner = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
-    <div className="max-w-[1036px] mx-auto px-4 xl:px-0 pt-8 md:pt-12 lg:pt-16 overflow-x-clip">
+    <div className="max-w-[1036px] mx-auto px-4 xl:px-0 pt-8 md:pt-12 lg:pt-16 overflow-x-visible">
       <div className="relative flex flex-col lg:flex-row items-center justify-between gap-6 md:gap-8 lg:gap-12">
         {/* Left side - Text content with staggered animations */}
         <motion.div

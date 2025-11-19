@@ -4,6 +4,7 @@ import { insightsData } from "@/components/sections/Insights/insightsData";
 import CTASection from "@/components/sections/CTA/CTASection";
 import InsightsGrid from "@/components/sections/Insights/InsightsGrid";
 import { InsightCardItem } from "@/components/sections/Insights/InsightCard";
+import { getTranslations } from "next-intl/server";
 
 type Params = {
   params: Promise<{ slug: string }>;
@@ -18,6 +19,7 @@ export default async function InsightDetailPage({ params }: Params) {
   const item = insightsData.items.find((i) => i.slug === slug);
   if (!item) return notFound();
 
+  const t = await getTranslations("Insights.detailPage");
   const related = insightsData.items.filter((i) => i.slug !== slug).slice(0, 6);
 
   return (
@@ -32,28 +34,26 @@ export default async function InsightDetailPage({ params }: Params) {
           </h1>
           <div className="mt-6 text-[#474D57] space-y-8">
             <p>
-              In today&apos;s digital landscape, running ads is easy—but creating content that performs takes
-              strategy. Here are the principles we use to design articles that inform and convert.
+              {t("intro")}
             </p>
             <section>
-              <h2 className="text-[18px] md:text-[22px] font-semibold text-[#0F0F0F] mb-2">What Makes It Work?</h2>
+              <h2 className="text-[18px] md:text-[22px] font-semibold text-[#0F0F0F] mb-2">{t("sections.whatMakesItWork.heading")}</h2>
               <p>
-                Clear messaging, polished visuals and timing. We combine research, strong editorial structure
-                and performance thinking to keep readers engaged and moving forward.
+                {t("sections.whatMakesItWork.content")}
               </p>
             </section>
             <section>
-              <h2 className="text-[18px] md:text-[22px] font-semibold text-[#0F0F0F] mb-2">Why It Matters</h2>
+              <h2 className="text-[18px] md:text-[22px] font-semibold text-[#0F0F0F] mb-2">{t("sections.whyItMatters.heading")}</h2>
               <p>
-                With competition rising across channels, the right content strategy turns impressions into
-                meaningful brand moments—and growth.
+                {t("sections.whyItMatters.content")}
               </p>
             </section>
           </div>
         </div>
 
         <div className="mt-14">
-          <InsightsGrid items={related.map(({ id, ...item }) => item as InsightCardItem)} />
+          {/* eslint-disable-next-line @typescript-eslint/no-unused-vars */}
+          <InsightsGrid items={related.map(({ id: _, ...item }) => item as InsightCardItem)} />
         </div>
       </div>
       <CTASection />

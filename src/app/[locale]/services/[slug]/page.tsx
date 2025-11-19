@@ -19,6 +19,7 @@ export default async function ServiceDetailPage({ params }: Params) {
   if (!item) return notFound();
 
   const t = await getTranslations();
+  const tServices = await getTranslations("Services");
   const title = t(item.i18nKey + ".title");
   const description = t(item.i18nKey + ".description");
   const related = serviceDetailItems.filter((s) => s.slug !== slug);
@@ -48,35 +49,28 @@ export default async function ServiceDetailPage({ params }: Params) {
 
           <section>
             <h2 className="text-[18px] md:text-[22px] font-semibold text-[#0F0F0F] mb-2">
-              Our Approach
+              {tServices("detailPage.sections.ourApproach.heading")}
             </h2>
             <p>
-              We combine creativity with data-driven decision making. Every engagement is tailored to your
-              goals, whether that&apos;s building awareness, generating leads, or driving sales. By aligning
-              strategy, content, design and performance, we make sure your message reaches the right people at
-              the right time.
+              {tServices("detailPage.sections.ourApproach.content")}
             </p>
           </section>
 
           <section>
             <h2 className="text-[18px] md:text-[22px] font-semibold text-[#0F0F0F] mb-2">
-              What We Offer
+              {tServices("detailPage.sections.whatWeOffer.heading")}
             </h2>
             <p>
-              A complete offering across strategy, design and delivery. From social, search and content to
-              product design and scalable web experiences, we build systems that are secure, performant and
-              easy to grow.
+              {tServices("detailPage.sections.whatWeOffer.content")}
             </p>
           </section>
 
           <section>
             <h2 className="text-[18px] md:text-[22px] font-semibold text-[#0F0F0F] mb-2">
-              Why Tre+
+              {tServices("detailPage.sections.whyTrePlus.heading")}
             </h2>
             <p>
-              As a nearshore partner, we bring you the best of both worlds: Western-European market
-              understanding combined with efficient delivery. Our multidisciplinary team works hand-in-hand to
-              create solutions that are not only effective but also scalable as your business grows.
+              {tServices("detailPage.sections.whyTrePlus.content")}
             </p>
           </section>
         </div>

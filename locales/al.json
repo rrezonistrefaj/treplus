@@ -17,6 +17,17 @@
     "trustedBy": "Na besojnë:",
     "animated": ["Zhvillim", "Marketing", "Dizajn"]
   },
+  "ServicesBanner": {
+    "title": "Partneri juaj nearshore për rritje",
+    "description": "Nga marketingu te kodi, ekipet tona nearshore ofrojnë strategji, dizajne dhe zgjidhje që japin rezultate.",
+    "primaryCta": "Le të flasim",
+    "trustedBy": "Na besojnë:",
+    "overlays": {
+      "software": "Zgjidhje <br/> softuerike",
+      "creative": "Zgjidhje <br/> kreative",
+      "marketing": "Zgjidhje <br/> marketingu"
+    }
+  },
   "TeamBanner": {
     "title": "Takoni njerëzit që drejtojnë suksesin e zgjuar dhe të shkallëzueshëm",
     "description": "Pas çdo projekti të suksesshëm është një ekip që kujdeset. Ne besojmë në hapësinë, bashkëpunimin dhe fuqinë e perspektivave të ndryshme. Së bashku, ne krijojmë një mjedis ku krijimtaria lulëzon, inovacioni udhëheq rrugën dhe çdo klient ndjehet si pjesë e udhëtimit.",
@@ -36,7 +47,64 @@
       {"title": "Shërbime kreative", "description": "Dizajnojmë identitet, UI/UX dhe përmbajtje vizuale që pasqyrojnë markën tuaj, tregojnë historinë dhe mbajnë audiencën të angazhuar."},
       {"title": "Shërbime softuerike", "description": "Ndërtojmë aplikacione web, mobile dhe cloud të sigurta, të shkallëzueshme dhe të përshtatura me nevojat e biznesit tuaj."}
     ],
-    "contact": {"title": "Le të krijojmë së bashku projektin tuaj të radhës.", "label": "Kontakt", "cta": "Na kontakto"}
+    "contact": {"title": "Le të krijojmë së bashku projektin tuaj të radhës.", "label": "Kontakt", "cta": "Na kontakto"},
+    "detailPage": {
+      "sections": {
+        "ourApproach": {
+          "heading": "Qasja jonë",
+          "content": "Ne kombinojmë kreativitetin me vendimmarrje të bazuara në të dhëna. Çdo angazhim është i përshtatur me objektivat tuaja, qoftë kjo ndërtimi i vetëdijes, gjenerimi i klientëve potencialë, ose rritja e shitjeve. Duke rreshtuar strategjinë, përmbajtjen, dizajnin dhe performancën, sigurojmë që mesazhi juaj të arrijë njerëzit e duhur në kohën e duhur."
+        },
+        "whatWeOffer": {
+          "heading": "Çfarë ofrojmë",
+          "content": "Një ofertë e plotë në strategji, dizajn dhe dorëzim. Nga sociale, kërkimi dhe përmbajtja te dizajni i produktit dhe përvojat web të shkallëzueshme, ne ndërtojmë sisteme që janë të sigurta, performuese dhe të lehta për t'u rritur."
+        },
+        "whyTrePlus": {
+          "heading": "Pse Tre+",
+          "content": "Si partner nearshore, ju sjellim më të mirën e të dy botëve: kuptimin e tregut Perëndimor-Evropian të kombinuar me dorëzim efikas. Ekipi ynë multidisciplinar punon dorë për dore për të krijuar zgjidhje që jo vetëm janë efektive por edhe të shkallëzueshme ndërsa biznesi juaj rritet."
+        }
+      }
+    }
+  },
+  "ServiceHighlights": {
+    "items": {
+      "0": {
+        "title": "Po për marketingu digjital?",
+        "description": "Krijojmë strategji për rrjetet sociale, SEO dhe fushata për të rritur markën tuaj dhe për të arritur më shumë klientë.",
+        "cta": "Lexo më shumë"
+      },
+      "1": {
+        "title": "Po për identitetin & dizajnin?",
+        "description": "Dizajnojmë identitet, UI/UX dhe përmbajtje vizuale që pasqyrojnë markën tuaj, tregojnë historinë dhe mbajnë audiencën të angazhuar.",
+        "cta": "Lexo më shumë"
+      },
+      "2": {
+        "title": "Po për zhvillimin?",
+        "description": "Ndërtojmë aplikacione web, mobile dhe cloud të sigurta, të shkallëzueshme dhe të përshtatura me nevojat e biznesit tuaj.",
+        "cta": "Lexo më shumë"
+      }
+    }
+  },
+  "ServiceProcess": {
+    "title": "Mënyra se si dorëzojmë",
+    "subtitle": "Katër hapa të provuar për të sjellë vizionin tuaj në jetë, nga ideja e parë deri në një rezultat të dorëzuar plotësisht dhe të suksesshëm.",
+    "steps": {
+      "0": {
+        "title": "Planifikim",
+        "description": "Ne futemi thellë në objektivat, sfidat dhe audiencën tuaj për të përcaktuar qasjen e duhur."
+      },
+      "1": {
+        "title": "Krijim",
+        "description": "Ekipi ynë zhvillon softuer, dizajnon vizuale dhe krijon fushata marketingu me precizion."
+      },
+      "2": {
+        "title": "Përmirësim",
+        "description": "Punojmë ngushtë me ju, duke përsëritur bazuar në feedback për rezultatet më të mira."
+      },
+      "3": {
+        "title": "Rritje",
+        "description": "Ne nisim, monitorojmë dhe optimizojmë për të siguruar sukses të qëndrueshëm."
+      }
+    }
   },
   "OurWork": {
     "title": "Punët tona",
@@ -118,6 +186,23 @@
     "buttons": {
       "viewMore": "Shiko më shumë"
     },
+    "detailPage": {
+      "titleSuffix": "– Një pamje e guximshme për një markë të guximshme",
+      "sections": {
+        "theChallenge": {
+          "heading": "Sfida",
+          "content": "Kur klienti na kontaktua, objektivi i tyre ishte i qartë: ata nuk donin të dukeshin si një markë tjetër. Ata donin energji, rini dhe një buzë lozonjare që do të dallohej si në raftet e dyqaneve ashtu edhe në fushatat digjitale."
+        },
+        "ourCreativeDirection": {
+          "heading": "Drejtimi ynë krijues",
+          "content": "Filluam duke ripërmendur gjuhën e tyre vizuale, duke ndërtuar rreth një emri të guximshëm dhe një palete të gjallë. Dizajni është qëllimisht i thjeshtë që emri të marrë qendrën e skenës, ndërsa ngjyrat mbajnë personalitetin."
+        },
+        "extendingTheBrandExperience": {
+          "heading": "Zgjerimi i përvojës së markës",
+          "content": "Përtej paketimit, ne krijuam vizuale të stilit të jetesës dhe asete të fushatave digjitale. Nga rrjetet sociale te bannerat e tregtisë elektronike, pamja dhe ndjenja mbeten konsistente: të sigurta, me zë të lartë dhe të paharrueshme."
+        }
+      }
+    },
     "cards": {
       "digital-assets-1": { "title": "Asete digjitale", "description": "Fushatë marketingu që promovon investimin e zgjuar." },
       "unwell-product-design": { "title": "Dizajn produkti", "description": "Identitet i guximshëm për një brand lifestyle." },
@@ -140,6 +225,9 @@
     }
   },
   "Insights": {
+    "title": "Analiza & Lajme",
+    "description": "Mbani të informuar me të fundmet në zhvillimin e softuerit, dizajnin dhe marketingu. Nga lajmet e industrisë te këshillat praktike, analizat tona janë këtu për të ndihmuar bizneset të rriten më inteligjentisht dhe të qëndrojnë përpara.",
+    "seeMoreLabel": "Shiko më shumë",
     "tabs": {
       "all": "Të gjitha analizat",
       "marketing": "Marketing",
@@ -149,6 +237,19 @@
     },
     "buttons": {
       "viewMore": "Shiko më shumë"
+    },
+    "detailPage": {
+      "intro": "Në peizazhin digjital të sotëm, drejtimi i reklamave është i lehtë—por krijimi i përmbajtjes që performon kërkon strategji. Ja parimet që ne përdorim për të dizajnuar artikuj që informojnë dhe konvertojnë.",
+      "sections": {
+        "whatMakesItWork": {
+          "heading": "Çfarë e bën të funksionojë?",
+          "content": "Mesazh i qartë, vizuale të poliruara dhe kohëzgjatje. Ne kombinojmë kërkimin, strukturën e fortë redaktuese dhe mendimin e performancës për të mbajtur lexuesit të angazhuar dhe të lëvizur përpara."
+        },
+        "whyItMatters": {
+          "heading": "Pse ka rëndësi",
+          "content": "Me konkurrencën në rritje nëpër kanale, strategjia e duhur e përmbajtjes i kthen përshtypjet në momente kuptimplote të markës—dhe rritje."
+        }
+      }
     },
     "cards": {
       "social-ads-that-convert": {
@@ -186,6 +287,126 @@
       "design-trends": {
         "title": "Trendet e dizajnit 2025",
         "description": "Modelet e reja dhe praktikat më të mira në dizajnin UI/UX."
+      }
+    }
+  },
+  "Testimonials": {
+    "title": "Çfarë thonë klientët tanë",
+    "description": "Ne duam feedback nga klientët tanë. Njihuni me atë që ata po thonë për ne!",
+    "mobileCta": "Shiko më shumë",
+    "items": [
+      {
+        "id": 1,
+        "quote": "Ata ofruan zhvillim nearshore të klasit të parë që rriti shpejtësinë dhe cilësinë e projektit tonë.",
+        "name": "Morgan Carric",
+        "role": "Krijues Kodi"
+      },
+      {
+        "id": 2,
+        "quote": "Një partner i besueshëm për zgjidhje softuerike të shkallëzueshme me çmime konkurruese.",
+        "name": "Alexa Huster",
+        "role": "CEO i Ta2k"
+      },
+      {
+        "id": 3,
+        "quote": "Ekipi i tyre u integrua pa probleme me tonin, duke dorëzuar në kohë dhe me precizion.",
+        "name": "Irina Lester",
+        "role": "Klient"
+      },
+      {
+        "id": 4,
+        "quote": "Profesionist, proaktiv dhe i fokusuar në rezultate — na pëlqeu shumë të punonim me ta.",
+        "name": "Liam Ortega",
+        "role": "Drejtor Produkti"
+      }
+    ]
+  },
+  "WhoWeAre": {
+    "heading": {
+      "line1": "Kush jemi ne",
+      "line2": "Nga tre themelues",
+      "line3": "te një vizion i përbashkët"
+    },
+    "description": "Tre+ u themelua nga tre sipërmarrës, dy nga Holanda dhe një nga Kosova, me një vizion për të lidhur Evropën Perëndimore me talentin e Evropës Lindore. Me ekspertizë në zhvillim, dizajn dhe marketing digjital, ne krijuam një kompani nearshore që përzihet aftësinë teknike, kreativitetin dhe diversitetin kulturor."
+  },
+  "OurProjects": {
+    "heading": {
+      "line1": "Projekte që na bënë",
+      "line2": {
+        "beforeUs": "krenar dhe",
+        "afterOur": "tonë"
+      },
+      "line3": "klientët e lumtur"
+    },
+    "description": "Ne krijojmë softuer, dizajn dhe zgjidhje marketingu që zgjidhin sfida të vërteta dhe ofrojnë ndikim të matshëm. Çdo projekt është një bashkëpunim që i kthen idetë në rezultate që klientët tanë mund t'u mbështeten."
+  },
+  "WhatWeDo": {
+    "heading": "Çfarë bëjmë"
+  },
+  "Support": {
+    "title": "Për mbështetje tjetër të dedikuar",
+    "cards": [
+      {
+        "id": "press-inquiry",
+        "heading": "Pyetje për media",
+        "description": "Për çdo pyetje të lidhur me media ose shtypin, ju lutemi na kontaktoni direkt në:",
+        "actionText": "Info@treplus.com"
+      },
+      {
+        "id": "direct-meeting",
+        "heading": "Takim i drejtpërdrejtë",
+        "description": "Për diskutime prioritare ose pyetje për projekte, caktoni një takim me ekipin tonë:",
+        "actionText": "Cakto një takim"
+      }
+    ]
+  },
+  "Contact": {
+    "header": {
+      "title": "Lidhuni me ekipin tonë",
+      "description": [
+        "Ekipi ynë është shumë i dedikuar për t'ju ndihmuar me pyetjet tuaja.",
+        "Thjesht dërgoni një 'përshëndetje' përmes formularit dhe ekipi ynë do të jetë në kontakt me ju brenda të njëjtës ditë."
+      ]
+    },
+    "trustedSection": {
+      "title": "Të besuar nga liderët",
+      "description": "Bashkohuni me qindra kompani që na besojnë për zgjidhje nearshore zhvillimi të klasit të parë me shpejtësi, cilësi dhe shkallëzueshmëri."
+    },
+    "form": {
+      "fields": {
+        "fullName": {
+          "label": "Emri i plotë",
+          "placeholder": "Emri i plotë"
+        },
+        "profileLink": {
+          "label": "Lidhja e profilit (çdo rrjet social)",
+          "placeholder": "Shembull Instagram, Tik tok etj."
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Shkruani email-in tuaj"
+        },
+        "phoneNumber": {
+          "label": "Numri i telefonit (me kod shteti)",
+          "placeholder": "+1 (000) 000-0000"
+        },
+        "query": {
+          "label": "Pyetja juaj",
+          "placeholder": "Jepni çdo detaj në lidhje me pyetjen tuaj..."
+        }
+      },
+      "privacyPolicy": {
+        "text": "Duke na kontaktuar, ju pranoni",
+        "linkText": "Politikën e Privatësisë"
+      },
+      "submitButton": {
+        "text": "Dërgo mesazh",
+        "submitting": "Duke dërguar..."
+      },
+      "success": "Faleminderit për mesazhin tuaj! Do të kthehemi tek ju së shpejti.",
+      "errors": {
+        "validation": "Ju lutemi korrigjoni gabimet në formular.",
+        "submission": "Ndodhi një gabim gjatë dërgimit të mesazhit tuaj. Ju lutemi provoni përsëri më vonë."
       }
     }
   }

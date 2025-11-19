@@ -3,7 +3,7 @@ export const supportData = {
   cards: [
     {
       id: "press-inquiry",
-      icon: "/insightsIcon.png",
+      icon: "/insightsIcon.svg",
       heading: "Press Inquiry",
       description: "For any media or press-related questions, please contact us directly at:",
       actionText: "Info@treplus.com",
@@ -12,7 +12,7 @@ export const supportData = {
     },
     {
       id: "direct-meeting",
-      icon: "/insightsIcon.png",
+      icon: "/insightsIcon.svg",
       heading: "Direct Meeting",
       description: "For priority discussions or project inquiries, schedule a meeting with our team:",
       actionText: "Schedule a meeting",

@@ -15,7 +15,11 @@
     "description": "Join us on this transformative journey as a new era of nearshore services emerges, where your business growth and success become our top priority.",
     "primaryCta": "Let's talk",
     "trustedBy": "Trusted by:",
-    "animated": ["Development", "Marketing", "Design"]
+    "animated": [
+      "Development",
+      "Marketing",
+      "Design"
+    ]
   },
   "ServicesBanner": {
     "title": "Your nearshore partner for growth",
@@ -43,11 +47,40 @@
     "heading": "Together we create.",
     "subheading": "Expert app design, captivating web design, and advanced web development to elevate your digital presence and user experience.",
     "items": [
-      {"title": "Marketing Services", "description": "We create strategies for social media, SEO, and campaigns to grow your brand and reach more customers."},
-      {"title": "Creative Services", "description": "We design branding, UI/UX, and visual content that capture your brand’s identity, tell your story, and keep your audience engaged."},
-      {"title": "Software Services", "description": "We build web, mobile, and cloud applications that are secure, scalable, and tailored to your business needs."}
+      {
+        "title": "Marketing Services",
+        "description": "We create strategies for social media, SEO, and campaigns to grow your brand and reach more customers."
+      },
+      {
+        "title": "Creative Services",
+        "description": "We design branding, UI/UX, and visual content that capture your brand's identity, tell your story, and keep your audience engaged."
+      },
+      {
+        "title": "Software Services",
+        "description": "We build web, mobile, and cloud applications that are secure, scalable, and tailored to your business needs."
+      }
     ],
-    "contact": {"title": "Let’s create your next big project together.", "label": "Contact", "cta": "Get in touch"}
+    "contact": {
+      "title": "Let's create your next big project together.",
+      "label": "Contact",
+      "cta": "Get in touch"
+    },
+    "detailPage": {
+      "sections": {
+        "ourApproach": {
+          "heading": "Our Approach",
+          "content": "We combine creativity with data-driven decision making. Every engagement is tailored to your goals, whether that's building awareness, generating leads, or driving sales. By aligning strategy, content, design and performance, we make sure your message reaches the right people at the right time."
+        },
+        "whatWeOffer": {
+          "heading": "What We Offer",
+          "content": "A complete offering across strategy, design and delivery. From social, search and content to product design and scalable web experiences, we build systems that are secure, performant and easy to grow."
+        },
+        "whyTrePlus": {
+          "heading": "Why Tre+",
+          "content": "As a nearshore partner, we bring you the best of both worlds: Western-European market understanding combined with efficient delivery. Our multidisciplinary team works hand-in-hand to create solutions that are not only effective but also scalable as your business grows."
+        }
+      }
+    }
   },
   "ServiceHighlights": {
     "items": {
@@ -95,33 +128,71 @@
     "description": "We create digital solutions that connect creativity with technology. From product design and web development to digital assets, our team delivers smart, scalable results that help businesses grow.",
     "seeMore": "See more",
     "items": [
-      {"title": "Digital assets", "description": "Marketing campaign promoting smart investment in digital assets. Marketing campaign promoting"},
-      {"title": "Product design", "description": "Marketing campaign promoting smart investment in digital assets. Marketing campaign promoting"},
-      {"title": "Web development", "description": "Marketing campaign promoting smart investment in digital assets. Marketing campaign promoting"},
-      {"title": "Digital assets", "description": "Marketing campaign promoting smart investment in digital assets. Marketing campaign promoting"}
+      {
+        "title": "Digital assets",
+        "description": "Marketing campaign promoting smart investment in digital assets. Marketing campaign promoting"
+      },
+      {
+        "title": "Product design",
+        "description": "Marketing campaign promoting smart investment in digital assets. Marketing campaign promoting"
+      },
+      {
+        "title": "Web development",
+        "description": "Marketing campaign promoting smart investment in digital assets. Marketing campaign promoting"
+      },
+      {
+        "title": "Digital assets",
+        "description": "Marketing campaign promoting smart investment in digital assets. Marketing campaign promoting"
+      }
     ]
   },
   "Stats": {
     "headingStrong": "We specialize in building strong nearshore partnerships",
     "headingSubtle": "that help businesses scale faster, optimize operations, and access top regional talent with ease.",
     "items": [
-      {"title": "Projects completed", "description": "We've helped build over 400 amazing projects."},
-      {"title": "5-star reviews", "description": "We've helped build over 400 amazing projects."},
-      {"title": "Global downloads", "description": "We've helped build over 400 amazing projects."},
-      {"title": "Return on investment", "description": "We've helped build over 400 amazing projects."}
+      {
+        "title": "Projects completed",
+        "description": "We've helped build over 400 amazing projects."
+      },
+      {
+        "title": "5-star reviews",
+        "description": "We've helped build over 400 amazing projects."
+      },
+      {
+        "title": "Global downloads",
+        "description": "We've helped build over 400 amazing projects."
+      },
+      {
+        "title": "Return on investment",
+        "description": "We've helped build over 400 amazing projects."
+      }
     ]
   },
   "Numbers": {
     "headingStrong": "We let the numbers talk",
     "headingSubtle": "Our results speak for themselves, built on experience, trust, and impactful delivery.",
     "cards": [
-      {"subline": "Projects"},
-      {"subline": "Tre+ stands for three founders and the pluss"},
-      {"subline": "Worldwide projects"},
-      {"subline": "Appreciations overall"},
-      {"subline": "Years of experience"},
-      {"subline": "Completed Projects"},
-      {"subline": "More Upsells"}
+      {
+        "subline": "Projects"
+      },
+      {
+        "subline": "Tre+ stands for three founders and the pluss"
+      },
+      {
+        "subline": "Worldwide projects"
+      },
+      {
+        "subline": "Appreciations overall"
+      },
+      {
+        "subline": "Years of experience"
+      },
+      {
+        "subline": "Completed Projects"
+      },
+      {
+        "subline": "More Upsells"
+      }
     ]
   },
   "Team": {
@@ -144,16 +215,39 @@
   "Footer": {
     "tagline": "Design amazing digital experiences that create more happy in the world.",
     "explore": "Explore",
-    "nav": {"home": "Home", "services": "Services", "cases": "Cases", "insights": "Insights", "team": "Team", "contact": "Contact"},
+    "nav": {
+      "home": "Home",
+      "services": "Services",
+      "cases": "Cases",
+      "insights": "Insights",
+      "team": "Team",
+      "contact": "Contact"
+    },
     "services": "Services",
-    "servicesList": ["Development", "Design", "Marketing", "Process"],
+    "servicesList": [
+      "Development",
+      "Design",
+      "Marketing",
+      "Process"
+    ],
     "work": "Work",
-    "workList": ["Case Studies (All)", "Marketing cases", "Software cases", "Creative cases", "Insights & News", "Industry News"],
+    "workList": [
+      "Case Studies (All)",
+      "Marketing cases",
+      "Software cases",
+      "Creative cases",
+      "Insights & News",
+      "Industry News"
+    ],
     "contact": "Contact",
-    "contactList": ["Contact form", "Schedule a meeting", "Press inquiry", "(info@treplus.com)"],
+    "contactList": [
+      "Contact form",
+      "Schedule a meeting",
+      "Press inquiry",
+      "(info@treplus.com)"
+    ],
     "copyright": "Copyright ©"
-  }
-  ,
+  },
   "CTA": {
     "titleLine1": "Schedule a meeting or",
     "titleLine2": "request an estimate",
@@ -170,6 +264,23 @@
     },
     "buttons": {
       "viewMore": "View more"
+    },
+    "detailPage": {
+      "titleSuffix": "– A Bold Look for a Bold Brand",
+      "sections": {
+        "theChallenge": {
+          "heading": "The Challenge",
+          "content": "When the client approached us, their goal was clear: they didn't want to look like just another brand. They wanted energy, youth, and a playful edge that would stand out both on shelves and in digital campaigns."
+        },
+        "ourCreativeDirection": {
+          "heading": "Our Creative Direction",
+          "content": "We started by rethinking their visual language, building around a bold wordmark and a vivid palette. The design is intentionally simple so the name takes center stage, while the colors carry the personality."
+        },
+        "extendingTheBrandExperience": {
+          "heading": "Extending the Brand Experience",
+          "content": "Beyond packaging, we created lifestyle visuals and digital campaign assets. From social media to e‑commerce banners, the look and feel stays consistent: confident, loud, and memorable."
+        }
+      }
     },
     "cards": {
       "digital-assets-1": {
@@ -247,6 +358,9 @@
     }
   },
   "Insights": {
+    "title": "Insights & News",
+    "description": "Stay up to date with the latest in software development, design, and marketing. From industry news to practical tips, our insights are here to help businesses grow smarter and stay ahead.",
+    "seeMoreLabel": "See more",
     "tabs": {
       "all": "All Insights",
       "marketing": "Marketing",
@@ -256,6 +370,19 @@
     },
     "buttons": {
       "viewMore": "View more"
+    },
+    "detailPage": {
+      "intro": "In today's digital landscape, running ads is easy—but creating content that performs takes strategy. Here are the principles we use to design articles that inform and convert.",
+      "sections": {
+        "whatMakesItWork": {
+          "heading": "What Makes It Work?",
+          "content": "Clear messaging, polished visuals and timing. We combine research, strong editorial structure and performance thinking to keep readers engaged and moving forward."
+        },
+        "whyItMatters": {
+          "heading": "Why It Matters",
+          "content": "With competition rising across channels, the right content strategy turns impressions into meaningful brand moments—and growth."
+        }
+      }
     },
     "cards": {
       "social-ads-that-convert": {
@@ -295,7 +422,125 @@
         "description": "Emerging patterns and best practices in UI/UX design."
       }
     }
+  },
+  "Testimonials": {
+    "title": "What our clients say",
+    "description": "We love feedback from our clients. Get to know what they are saying about us!",
+    "mobileCta": "See more",
+    "items": [
+      {
+        "id": 1,
+        "quote": "They provided top-notch nearshore development that boosted our project speed and quality.",
+        "name": "Morgan Carric",
+        "role": "Code Crafter"
+      },
+      {
+        "id": 2,
+        "quote": "A reliable partner for scalable software solutions at competitive rates.",
+        "name": "Alexa Huster",
+        "role": "CEO of Ta2k"
+      },
+      {
+        "id": 3,
+        "quote": "Their team integrated seamlessly with ours, delivering on time and with precision.",
+        "name": "Irina Lester",
+        "role": "Client"
+      },
+      {
+        "id": 4,
+        "quote": "Professional, proactive, and focused on outcomes — we loved working with them.",
+        "name": "Liam Ortega",
+        "role": "Product Lead"
+      }
+    ]
+  },
+  "WhoWeAre": {
+    "heading": {
+      "line1": "Who We Are",
+      "line2": "From Three Founders",
+      "line3": "to a Shared Vision"
+    },
+    "description": "Tre+ was founded by three entrepreneurs, two from the Netherlands and one from Kosovo, with a vision to connect Western Europe with the talent of Eastern Europe. With expertise in development, design, and digital marketing, we created a nearshore company that blends technical skill, creativity, and cultural diversity."
+  },
+  "OurProjects": {
+    "heading": {
+      "line1": "Projects that made",
+      "line2": {
+        "beforeUs": "us proud and",
+        "afterOur": "our"
+      },
+      "line3": "clients happy"
+    },
+    "description": "We craft software, design, and marketing solutions that solve real challenges and deliver measurable impact. Each project is a collaboration that turns ideas into results our clients can rely on."
+  },
+  "WhatWeDo": {
+    "heading": "What we do"
+  },
+  "Support": {
+    "title": "For other dedicated support",
+    "cards": [
+      {
+        "id": "press-inquiry",
+        "heading": "Press Inquiry",
+        "description": "For any media or press-related questions, please contact us directly at:",
+        "actionText": "Info@treplus.com"
+      },
+      {
+        "id": "direct-meeting",
+        "heading": "Direct Meeting",
+        "description": "For priority discussions or project inquiries, schedule a meeting with our team:",
+        "actionText": "Schedule a meeting"
+      }
+    ]
+  },
+  "Contact": {
+    "header": {
+      "title": "Get in touch with our team",
+      "description": [
+        "Our team is highly dedicated to help you with your queries.",
+        "Just drop an 'hi' through the form & our team will be in touch with you with-in same day."
+      ]
+    },
+    "trustedSection": {
+      "title": "Trusted by Leaders",
+      "description": "Join hundreds of companies that trust us for top-tier nearshore development solutions with speed, quality, and scalability."
+    },
+    "form": {
+      "fields": {
+        "fullName": {
+          "label": "Full name",
+          "placeholder": "Full name"
+        },
+        "profileLink": {
+          "label": "Profile link (any social media)",
+          "placeholder": "Example Instagram, Tik tok etc."
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Enter your email"
+        },
+        "phoneNumber": {
+          "label": "Phone number (with country code)",
+          "placeholder": "+1 (000) 000-0000"
+        },
+        "query": {
+          "label": "Your Query",
+          "placeholder": "Provide any details regarding your query..."
+        }
+      },
+      "privacyPolicy": {
+        "text": "By reaching out to us, you agree to our",
+        "linkText": "Privacy Policy"
+      },
+      "submitButton": {
+        "text": "Send message",
+        "submitting": "Sending..."
+      },
+      "success": "Thank you for your message! We'll get back to you soon.",
+      "errors": {
+        "validation": "Please correct the errors in the form.",
+        "submission": "An error occurred while sending your message. Please try again later."
+      }
+    }
   }
 }
-
-

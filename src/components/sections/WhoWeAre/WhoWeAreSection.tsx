@@ -2,8 +2,11 @@
 import React from "react";
 import { whoWeAreData } from "./whoWeAreData";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const WhoWeAreSection = () => {
+  const t = useTranslations("WhoWeAre");
+  
   return (
     <section className="max-w-[792px] mx-auto px-4 xl:px-0 py-12 md:py-16 lg:py-20 xl:py-[80px] animate-fade-in overflow-x-clip">
       <div className="text-center">
@@ -19,7 +22,7 @@ const WhoWeAreSection = () => {
                 height={32}
                 className="w-6 h-6 sm:w-7 sm:h-7 md:w-[62px] md:h-[62px] flex-shrink-0"
               />
-              <span>Who We Are</span>
+              <span>{t("heading.line1")}</span>
               <Image
                 src={whoWeAreData.icons.blue}
                 alt="Blue icon"
@@ -31,7 +34,7 @@ const WhoWeAreSection = () => {
             
             {/* Line 2: "From Three Founders" */}
             <div className="flex items-center justify-center  flex-wrap">
-              <span>From</span>
+              <span>{t("heading.line2").split(" ")[0]}</span>
               <Image
                 src={whoWeAreData.icons.green}
                 alt="Green icon"
@@ -39,12 +42,12 @@ const WhoWeAreSection = () => {
                 height={32}
                 className="w-6 h-6 sm:w-7 sm:h-7 md:w-[50px] md:h-[50px] flex-shrink-0"
               />
-              <span>Three Founders</span>
+              <span>{t("heading.line2").split(" ").slice(1).join(" ")}</span>
             </div>
             
             {/* Line 3: "to a Shared Vision" */}
             <div className="flex items-center justify-center  flex-wrap">
-              <span>to a Shared</span>
+              <span>{t("heading.line3").split(" ").slice(0, 2).join(" ")}</span>
               <Image
                 src={whoWeAreData.icons.purple}
                 alt="Purple icon"
@@ -52,7 +55,7 @@ const WhoWeAreSection = () => {
                 height={32}
                 className="w-6 h-6 sm:w-7 sm:h-7 md:w-[50px] md:h-[50px] flex-shrink-0"
               />
-              <span>Vision</span>
+              <span>{t("heading.line3").split(" ").slice(2).join(" ")}</span>
             </div>
           </h2>
         </div>
@@ -60,7 +63,7 @@ const WhoWeAreSection = () => {
         {/* Description Paragraph */}
         <div className="animate-slide-up-delayed">
           <p className="text-sm sm:text-base text-[#474D57] leading-relaxed sm:leading-[20px] px-2 sm:px-0">
-            &ldquo;{whoWeAreData.description}&rdquo;
+            &ldquo;{t("description")}&rdquo;
           </p>
         </div>
       </div>

@@ -4,9 +4,17 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { contactData } from './contactData';
+import { useTranslations } from 'next-intl';
+import { contactFormSchema, type ContactFormData } from '@/lib/validation/contactFormSchema';
+import { z } from 'zod';
+
+interface FormErrors {
+  [key: string]: string | undefined;
+}
 
 const ContactSection = () => {
-  const [formData, setFormData] = useState({
+  const t = useTranslations("Contact");
+  const [formData, setFormData] = useState<ContactFormData>({
     fullName: '',
     profileLink: '',
     email: '',
@@ -14,9 +22,31 @@ const ContactSection = () => {
     query: '',
     privacyPolicy: false
   });
+  
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [submitMessage, setSubmitMessage] = useState('');
+  
+  // Get form field structure from data file, labels/placeholders from translations
+  const formFields = contactData.form.fields.map((field) => ({
+    ...field,
+    label: t(`form.fields.${field.id}.label`),
+    placeholder: t(`form.fields.${field.id}.placeholder`),
+  }));
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
+    
+    // Clear error for this field when user starts typing
+    if (errors[name]) {
+      setErrors(prev => {
+        const newErrors = { ...prev };
+        delete newErrors[name];
+        return newErrors;
+      });
+    }
+    
     setFormData(prev => ({
       ...prev,
       [name]: value
@@ -24,16 +54,100 @@ const ContactSection = () => {
   };
 
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, checked } = e.target;
+    
+    // Clear error for this field when user checks/unchecks
+    if (errors[name]) {
+      setErrors(prev => {
+        const newErrors = { ...prev };
+        delete newErrors[name];
+        return newErrors;
+      });
+    }
+    
     setFormData(prev => ({
       ...prev,
-      privacyPolicy: e.target.checked
+      [name]: checked
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const validateForm = (): boolean => {
+    try {
+      contactFormSchema.parse(formData);
+      setErrors({});
+      return true;
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        const fieldErrors: FormErrors = {};
+        error.issues.forEach((err) => {
+          const fieldName = err.path[0] as string;
+          fieldErrors[fieldName] = err.message;
+        });
+        setErrors(fieldErrors);
+      }
+      return false;
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+    setSubmitStatus('idle');
+    setSubmitMessage('');
+
+    // Validate form
+    if (!validateForm()) {
+      setSubmitStatus('error');
+      setSubmitMessage(t('form.errors.validation'));
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || t('form.errors.submission'));
+      }
+
+      // Success
+      setSubmitStatus('success');
+      setSubmitMessage(data.message || t('form.success'));
+      
+      // Reset form
+      setFormData({
+        fullName: '',
+        profileLink: '',
+        email: '',
+        phoneNumber: '',
+        query: '',
+        privacyPolicy: false
+      });
+      setErrors({});
+
+      // Clear success message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus('idle');
+        setSubmitMessage('');
+      }, 5000);
+    } catch (error) {
+      setSubmitStatus('error');
+      setSubmitMessage(
+        error instanceof Error 
+          ? error.message 
+          : t('form.errors.submission')
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
 
@@ -72,39 +186,22 @@ const ContactSection = () => {
                 transition={{ duration: 0.5, ease: "easeOut" }}
               >
                 <h1 className="text-5xl font-semibold text-[#22252A] leading-[110%] font-unbounded">
-                  Get in <span className="relative inline-flex items-center">
-                    touch
-                    <div className="ml-2 w-[92px] h-[92px] relative">
-                      <Image
-                        src="/teamBannerOrange.svg"
-                        alt="Orange icon"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                  </span> with our team
+                  {t("header.title")}
                 </h1>
               </motion.div>
+              {t.raw("header.description").map((desc: string, idx: number) => (
               <motion.p 
-                className="text-base font-medium text-[#474D57] mb-4 leading-[20px]"
+                  key={idx}
+                  className={idx === 0 ? "text-base font-medium text-[#474D57] mb-4 leading-[20px]" : "text-base font-medium text-[#474D57] leading-[20px]"}
                 variants={{
                   hidden: { opacity: 0, y: 20 },
                   visible: { opacity: 1, y: 0 }
                 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
               >
-                {contactData.header.description[0]}
+                  {desc}
               </motion.p>
-              <motion.p 
-                className="text-base font-medium text-[#474D57] leading-[20px]"
-                variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  visible: { opacity: 1, y: 0 }
-                }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-              >
-                {contactData.header.description[1]}
-              </motion.p>
+              ))}
             </motion.div>
 
             {/* Trusted by Leaders section */}
@@ -124,7 +221,7 @@ const ContactSection = () => {
                 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
               >
-                {contactData.trustedSection.title}
+                {t("trustedSection.title")}
               </motion.h2>
               <motion.p 
                 className="text-base font-medium text-[#474D57] mb-20.5 leading-[20px] !max-w-[467px]"
@@ -134,7 +231,7 @@ const ContactSection = () => {
                 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
               >
-                {contactData.trustedSection.description}
+                {t("trustedSection.description")}
               </motion.p>
               
               {/* Company logos grid */}
@@ -194,16 +291,7 @@ const ContactSection = () => {
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
             <h1 className="text-[28px] sm:text-3xl font-semibold text-[#22252A] leading-[110%] tracking-[0%] font-unbounded">
-              Get in touch <span className="relative inline-flex items-center">
-                <div className="ml-2 w-[42px] h-[42px] relative">
-                  <Image
-                    src="/teamBannerOrange.svg"
-                    alt="Orange icon"
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-              </span> with our team
+              {t("header.title")}
             </h1>
           </motion.div>
           <motion.p 
@@ -214,7 +302,7 @@ const ContactSection = () => {
             }}
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            {contactData.header.description[0]}
+            {t.raw("header.description")[0]}
           </motion.p>
         </motion.div>
 
@@ -259,7 +347,7 @@ const ContactSection = () => {
                   }
                 }}
               >
-                {contactData.form.fields.slice(0, 2).map((field) => (
+                {formFields.slice(0, 2).map((field) => (
                   <motion.div 
                     key={field.id}
                     variants={{
@@ -275,18 +363,30 @@ const ContactSection = () => {
                       type={field.type}
                       id={field.id}
                       name={field.name}
-                      value={formData[field.name as keyof typeof formData] as string}
+                      value={formData[field.name as keyof ContactFormData] as string}
                       onChange={handleInputChange}
                       placeholder={field.placeholder}
-                      className="w-full px-4 md:px-5 py-4 md:py-[21px] bg-white border border-[#E4E7E9] rounded-[10px] text-sm md:text-base leading-[20px] font-light text-[#474D57] placeholder-[#474D57]"
+                      className={`w-full px-4 md:px-5 py-4 md:py-[21px] bg-white border rounded-[10px] text-sm md:text-base leading-[20px] font-light text-[#474D57] placeholder-[#474D57] ${
+                        errors[field.name] 
+                          ? 'border-red-500 focus:border-red-500 focus:ring-red-500' 
+                          : 'border-[#E4E7E9] focus:border-[#FF5F1F] focus:ring-[#FF5F1F]'
+                      } focus:outline-none focus:ring-1`}
                       required={field.required}
+                      disabled={isSubmitting}
+                      aria-invalid={errors[field.name] ? 'true' : 'false'}
+                      aria-describedby={errors[field.name] ? `${field.id}-error` : undefined}
                     />
+                    {errors[field.name] && (
+                      <p id={`${field.id}-error`} className="mt-1 text-sm text-red-600" role="alert">
+                        {errors[field.name]}
+                      </p>
+                    )}
                   </motion.div>
                 ))}
               </motion.div>
 
               {/* Remaining fields */}
-              {contactData.form.fields.slice(2).map((field) => (
+              {formFields.slice(2).map((field) => (
                 <motion.div 
                   key={field.id} 
                   className={field.id === 'query' ? "mb-6 md:mb-8" : "mb-6 md:mb-10"}
@@ -300,27 +400,55 @@ const ContactSection = () => {
                       {field.label}
                     </label>
                   {field.type === 'textarea' ? (
-                    <textarea
-                      id={field.id}
-                      name={field.name}
-                      value={formData[field.name as keyof typeof formData] as string}
-                      onChange={handleInputChange}
-                      placeholder={field.placeholder}
-                      rows={field.rows}
-                      className="w-full px-4 md:px-5 py-4 md:py-[21px] bg-white border border-[#E4E7E9] rounded-[10px] text-sm md:text-base leading-[20px] font-light text-[#474D57] placeholder-[#474D57]"
-                      required={field.required}
-                    />
+                    <>
+                      <textarea
+                        id={field.id}
+                        name={field.name}
+                        value={formData[field.name as keyof ContactFormData] as string}
+                        onChange={handleInputChange}
+                        placeholder={field.placeholder}
+                        rows={field.rows}
+                        className={`w-full px-4 md:px-5 py-4 md:py-[21px] bg-white border rounded-[10px] text-sm md:text-base leading-[20px] font-light text-[#474D57] placeholder-[#474D57] ${
+                          errors[field.name] 
+                            ? 'border-red-500 focus:border-red-500 focus:ring-red-500' 
+                            : 'border-[#E4E7E9] focus:border-[#FF5F1F] focus:ring-[#FF5F1F]'
+                        } focus:outline-none focus:ring-1`}
+                        required={field.required}
+                        disabled={isSubmitting}
+                        aria-invalid={errors[field.name] ? 'true' : 'false'}
+                        aria-describedby={errors[field.name] ? `${field.id}-error` : undefined}
+                      />
+                      {errors[field.name] && (
+                        <p id={`${field.id}-error`} className="mt-1 text-sm text-red-600" role="alert">
+                          {errors[field.name]}
+                        </p>
+                      )}
+                    </>
                   ) : (
-                    <input
-                      type={field.type}
-                      id={field.id}
-                      name={field.name}
-                      value={formData[field.name as keyof typeof formData] as string}
-                      onChange={handleInputChange}
-                      placeholder={field.placeholder}
-                      className="w-full px-4 md:px-5 py-4 md:py-[21px] bg-white border border-[#E4E7E9] rounded-[10px] text-sm md:text-base leading-[20px] font-light text-[#474D57] placeholder-[#474D57]"
-                      required={field.required}
-                    />
+                    <>
+                      <input
+                        type={field.type}
+                        id={field.id}
+                        name={field.name}
+                        value={formData[field.name as keyof ContactFormData] as string}
+                        onChange={handleInputChange}
+                        placeholder={field.placeholder}
+                        className={`w-full px-4 md:px-5 py-4 md:py-[21px] bg-white border rounded-[10px] text-sm md:text-base leading-[20px] font-light text-[#474D57] placeholder-[#474D57] ${
+                          errors[field.name] 
+                            ? 'border-red-500 focus:border-red-500 focus:ring-red-500' 
+                            : 'border-[#E4E7E9] focus:border-[#FF5F1F] focus:ring-[#FF5F1F]'
+                        } focus:outline-none focus:ring-1`}
+                        required={field.required}
+                        disabled={isSubmitting}
+                        aria-invalid={errors[field.name] ? 'true' : 'false'}
+                        aria-describedby={errors[field.name] ? `${field.id}-error` : undefined}
+                      />
+                      {errors[field.name] && (
+                        <p id={`${field.id}-error`} className="mt-1 text-sm text-red-600" role="alert">
+                          {errors[field.name]}
+                        </p>
+                      )}
+                    </>
                   )}
                 </motion.div>
               ))}
@@ -340,29 +468,66 @@ const ContactSection = () => {
                   name="privacyPolicy"
                   checked={formData.privacyPolicy}
                   onChange={handleCheckboxChange}
-                  className="w-4 h-4 mt-0.5 text-orange-500 bg-white border-orange-500 rounded flex-shrink-0"
+                  className={`w-4 h-4 mt-0.5 text-orange-500 bg-white border rounded flex-shrink-0 ${
+                    errors.privacyPolicy 
+                      ? 'border-red-500' 
+                      : 'border-orange-500'
+                  }`}
                   required
+                  disabled={isSubmitting}
+                  aria-invalid={errors.privacyPolicy ? 'true' : 'false'}
+                  aria-describedby={errors.privacyPolicy ? 'privacyPolicy-error' : undefined}
                 />
-                <label htmlFor="privacyPolicy" className="text-xs md:text-sm text-gray-700 font-sans leading-relaxed md:leading-4">
-                  {contactData.form.privacyPolicy.text}{' '}
-                  <a href={contactData.form.privacyPolicy.linkUrl} className="text-gray-800 font-bold hover:text-gray-900">
-                    {contactData.form.privacyPolicy.linkText}
-                  </a>
-                  .
-                </label>
+                <div className="flex-1">
+                  <label htmlFor="privacyPolicy" className="text-xs md:text-sm text-gray-700 font-sans leading-relaxed md:leading-4">
+                    {t("form.privacyPolicy.text")}{' '}
+                    <a href={contactData.form.privacyPolicy.linkUrl} className="text-gray-800 font-bold hover:text-gray-900">
+                      {t("form.privacyPolicy.linkText")}
+                    </a>
+                    .
+                  </label>
+                  {errors.privacyPolicy && (
+                    <p id="privacyPolicy-error" className="mt-1 text-sm text-red-600" role="alert">
+                      {errors.privacyPolicy}
+                    </p>
+                  )}
+                </div>
               </motion.div>
+
+              {/* Status Messages */}
+              {submitStatus !== 'idle' && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className={`mb-4 p-4 rounded-[10px] ${
+                    submitStatus === 'success' 
+                      ? 'bg-green-50 border border-green-200 text-green-800' 
+                      : 'bg-red-50 border border-red-200 text-red-800'
+                  }`}
+                  role="alert"
+                  aria-live="polite"
+                >
+                  <p className="text-sm md:text-base font-medium">{submitMessage}</p>
+                </motion.div>
+              )}
 
               {/* Send Message Button */}
               <motion.button
                 type="submit"
-                className="w-full bg-[#FF5F1F] hover:bg-orange-600 text-white font-medium py-4 md:py-5 px-6 rounded-[10px] transition-transform will-change-transform hover:-translate-y-[1px] font-sans text-base md:text-lg"
+                disabled={isSubmitting}
+                className={`w-full font-medium py-4 md:py-5 px-6 rounded-[10px] transition-all will-change-transform font-sans text-base md:text-lg ${
+                  isSubmitting
+                    ? 'bg-gray-400 text-white cursor-not-allowed'
+                    : 'bg-[#FF5F1F] hover:bg-orange-600 text-white hover:-translate-y-[1px]'
+                }`}
                 variants={{
                   hidden: { opacity: 0, y: 15 },
                   visible: { opacity: 1, y: 0 }
                 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
+                aria-busy={isSubmitting}
               >
-                {contactData.form.submitButton.text}
+                {isSubmitting ? t("form.submitButton.submitting") : t("form.submitButton.text")}
               </motion.button>
             </motion.form>
         </motion.div>

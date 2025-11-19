@@ -33,7 +33,7 @@ const TeamSection = () => {
     };
   }, []);
   return (
-    <section className="max-w-[1260px] mx-auto px-4 xl:px-0 py-20 overflow-x-clip">
+    <section className="max-w-[1260px] mx-auto px-4 xl:px-0 py-20 overflow-x-visible">
       {/* Header with staggered animations */}
       <motion.div 
         className="flex items-end justify-between gap-6"
@@ -136,6 +136,7 @@ const TeamSection = () => {
                         <Image
                           src={icon.src}
                           alt=""
+                          aria-hidden="true"
                           width={icon.width}
                           height={icon.height}
                           className="w-full h-full object-contain"
@@ -152,7 +153,6 @@ const TeamSection = () => {
                         fill
                         className="object-contain"
                         sizes="360px"
-                        priority
                       />
                     </div>
                     </div>

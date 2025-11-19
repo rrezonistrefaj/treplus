@@ -78,7 +78,7 @@ export const teamMembers: TeamMember[] = [
       "/team-member3.png",
     icons: [
       { 
-        src: "/BlueIcon.svg", 
+        src: "/blueIcon.svg", 
         width: 267, 
         height: 180, 
         mobileWidth: 170, 

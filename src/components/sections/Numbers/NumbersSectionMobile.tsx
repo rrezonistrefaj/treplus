@@ -143,6 +143,7 @@ export default function NumbersSectionMobile() {
                 <Image
                   src={card.bgImage}
                   alt=""
+                  aria-hidden="true"
                   width={270}
                   height={316}
                   className="absolute bottom-0 right-0 pointer-events-none select-none z-0"

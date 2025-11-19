@@ -23,13 +23,17 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <NextIntlClientProvider messages={messages} locale={locale as Locale}>
-      <div className="overflow-x-clip">
-        <Navbar />
-        {children}
-        <Footer />
-      </div>
-    </NextIntlClientProvider>
+    <html lang={locale}>
+      <body>
+        <NextIntlClientProvider messages={messages} locale={locale as Locale}>
+          <div className="overflow-x-clip">
+            <Navbar />
+            {children}
+            <Footer />
+          </div>
+        </NextIntlClientProvider>
+      </body>
+    </html>
   );
 }
 

@@ -11,11 +11,31 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Star } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { testimonialsData } from "./testimonialsData";
 
 const TestimonialsSection = () => {
+  const t = useTranslations("Testimonials");
+  
+  // Get testimonials from translations
+  const testimonials = t.raw("items") as Array<{
+    id: number;
+    quote: string;
+    name: string;
+    role: string;
+  }>;
+  
+  // Map translations with avatar URLs from data
+  const testimonialsWithAvatars = testimonials.map((tItem) => {
+    const dataItem = testimonialsData.items.find((d) => d.id === tItem.id);
+    return {
+      ...tItem,
+      avatar: dataItem?.avatar || "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop"
+    };
+  });
+
   return (
-    <section className="max-w-[1260px] mx-auto px-4 xl:px-0 py-12 md:py-20 overflow-x-clip">
+    <section className="max-w-[1260px] mx-auto px-4 xl:px-0 py-12 md:py-20 overflow-x-visible">
       {/* Header with staggered animations */}
       <motion.div 
         className="flex items-end justify-between"
@@ -38,7 +58,7 @@ const TestimonialsSection = () => {
             }}
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            {testimonialsData.title}
+            {t("title")}
           </motion.h2>
           <motion.p 
             className="text-[14px] sm:text-base font-bold text-[#474D57] leading-5"
@@ -48,7 +68,7 @@ const TestimonialsSection = () => {
             }}
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            {testimonialsData.description}
+            {t("description")}
           </motion.p>
         </div>
       </motion.div>
@@ -68,7 +88,7 @@ const TestimonialsSection = () => {
       >
         <Carousel opts={{ align: "start" }} className="relative">
           <CarouselContent>
-            {testimonialsData.items.map((item) => (
+            {testimonialsWithAvatars.map((item) => (
               <CarouselItem
                 key={item.id}
                 className="basis-[85%] sm:basis-[65%] md:basis-1/2 lg:basis-1/3 xl:basis-1/3"

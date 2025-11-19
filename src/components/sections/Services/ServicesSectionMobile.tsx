@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { servicesData } from "./servicesData";
+import { servicesCardData } from "./servicesCardData";
 import { useTranslations } from "next-intl";
 
 const ServicesSectionMobile = () => {
@@ -9,25 +10,21 @@ const ServicesSectionMobile = () => {
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
   const t = useTranslations('Services');
 
-  // Create card data from services data
+  // Create card data from services data + styling config
   const cardData = [
     ...servicesData.items.map((item, index) => ({
       id: index + 1,
       title: t(`items.${index}.title`),
       content: t(`items.${index}.description`),
       iconSrc: item.iconSrc,
-      bgColor: "bg-white",
-      textColor: "text-gray-900",
-      isContact: false,
+      ...servicesCardData.serviceCard,
     })),
     {
       id: servicesData.items.length + 1,
       title: t("contact.title"),
       content: t("contact.label"),
       iconSrc: servicesData.contactCard.iconSrc,
-      bgColor: "bg-gray-50",
-      textColor: "text-gray-900",
-      isContact: true,
+      ...servicesCardData.contactCard,
     },
   ];
 

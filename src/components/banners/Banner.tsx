@@ -110,7 +110,7 @@ const Banner = () => {
 
 
   return (
-    <div className="max-w-[1260px] mx-auto px-4 xl:px-0 pt-8.5 lg:pt-41.25 overflow-x-clip">
+    <div className="max-w-[1260px] mx-auto px-4 xl:px-0 pt-8.5 lg:pt-41.25 overflow-x-visible">
       {/* Main content container */}
       <div className="relative flex flex-col md:flex-row items-end gap-0 md:gap-10">
         {/* Image section - Top on mobile, right on desktop */}

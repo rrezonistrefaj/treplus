@@ -148,6 +148,7 @@ export default function NumbersSectionDesktop() {
                 <Image
                   src={card.bgImage}
                   alt=""
+                  aria-hidden="true"
                   width={200}
                   height={117}
                   className="absolute bottom-0 right-4 pointer-events-none select-none z-0"

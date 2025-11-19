@@ -150,18 +150,18 @@ const Footer = () => {
           }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
-          <Link aria-label="Facebook" href="#" className="hover:text-gray-600">
+          <a aria-label="Facebook" href="#" rel="noopener noreferrer" className="hover:text-gray-600">
             <Image src="/facebookIcon.svg" alt="Facebook" width={24} height={24} />
-          </Link>
-          <Link aria-label="Instagram" href="#" className="hover:text-gray-600">
+          </a>
+          <a aria-label="Instagram" href="#" rel="noopener noreferrer" className="hover:text-gray-600">
             <Image src="/instagramIcon.svg" alt="Instagram" width={24} height={24} />
-          </Link>
-          <Link aria-label="LinkedIn" href="#" className="hover:text-gray-600">
+          </a>
+          <a aria-label="LinkedIn" href="#" rel="noopener noreferrer" className="hover:text-gray-600">
             <Image src="/linkedinIcon.svg" alt="LinkedIn" width={24} height={24} />
-          </Link>
-          <Link aria-label="YouTube" href="#" className="hover:text-gray-600">
+          </a>
+          <a aria-label="YouTube" href="#" rel="noopener noreferrer" className="hover:text-gray-600">
             <Image src="/youtubeIcon.svg" alt="YouTube" width={24} height={24} />
-          </Link>
+          </a>
         </motion.div>
       </motion.div>
       </div>

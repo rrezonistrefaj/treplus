@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
 import { Link, usePathname, useRouter } from '@/i18n/routing'
+import { navbarData } from './navbarData'
 
 export default function Navbar() {
   const [isLanguageOpen, setIsLanguageOpen] = useState(false)
@@ -15,13 +16,11 @@ export default function Navbar() {
   const router = useRouter()
   const locale = useLocale()
 
-  const navigationLinks = [
-    { name: t('services'), href: '/services' },
-    { name: t('team'), href: '/team' },
-    { name: t('cases'), href: '/cases' },
-    { name: t('insights'), href: '/insights' },
-    { name: t('contact'), href: '/contact' },
-  ]
+  // Get navigation links from data file, names from translations
+  const navigationLinks = navbarData.navigationLinks.map((link) => ({
+    ...link,
+    name: t(link.key),
+  }))
 
   const handleLanguageChange = (newLocale: string) => {
     setIsLanguageOpen(false)

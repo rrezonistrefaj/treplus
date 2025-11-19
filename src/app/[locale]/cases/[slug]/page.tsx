@@ -52,7 +52,7 @@ export default async function CaseDetailPage({ params }: Params) {
 
           {/* Title */}
           <h1 className="mt-10 font-unbounded font-bold text-[24px] md:text-[36px] lg:text-[48px] leading-tight">
-            {title} – A Bold Look for a Bold Brand
+            {title} {t("detailPage.titleSuffix")}
           </h1>
 
           {/* Body copy */}
@@ -62,34 +62,26 @@ export default async function CaseDetailPage({ params }: Params) {
             </p>
             <section>
               <h2 className="text-[18px] md:text-[22px] font-semibold text-[#0F0F0F] mb-2">
-                The Challenge
+                {t("detailPage.sections.theChallenge.heading")}
               </h2>
               <p>
-                When the client approached us, their goal was clear: they didn&apos;t
-                want to look like just another brand. They wanted energy, youth, and
-                a playful edge that would stand out both on shelves and in digital
-                campaigns.
+                {t("detailPage.sections.theChallenge.content")}
               </p>
             </section>
             <section>
               <h2 className="text-[18px] md:text-[22px] font-semibold text-[#0F0F0F] mb-2">
-                Our Creative Direction
+                {t("detailPage.sections.ourCreativeDirection.heading")}
               </h2>
               <p>
-                We started by rethinking their visual language, building around a
-                bold wordmark and a vivid palette. The design is intentionally
-                simple so the name takes center stage, while the colors carry the
-                personality.
+                {t("detailPage.sections.ourCreativeDirection.content")}
               </p>
             </section>
             <section>
               <h2 className="text-[18px] md:text-[22px] font-semibold text-[#0F0F0F] mb-2">
-                Extending the Brand Experience
+                {t("detailPage.sections.extendingTheBrandExperience.heading")}
               </h2>
               <p>
-                Beyond packaging, we created lifestyle visuals and digital campaign
-                assets. From social media to e‑commerce banners, the look and feel
-                stays consistent: confident, loud, and memorable.
+                {t("detailPage.sections.extendingTheBrandExperience.content")}
               </p>
             </section>
           </div>

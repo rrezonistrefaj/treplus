@@ -4,8 +4,17 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { supportData } from './supportData';
+import { useTranslations } from 'next-intl';
 
 const SupportSection = () => {
+  const t = useTranslations("Support");
+  const cards = t.raw("cards") as Array<{
+    id: string;
+    heading: string;
+    description: string;
+    actionText: string;
+  }>;
+  
   return (
     <div className="max-w-[1260px] mx-auto px-4 md:px-0 py-12 md:py-16 lg:py-20 overflow-x-clip">
       {/* Section Title */}
@@ -21,7 +30,7 @@ const SupportSection = () => {
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
         <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-[#22252A] leading-tight sm:leading-normal lg:leading-[110%] font-unbounded px-2 md:px-0">
-          {supportData.title}
+          {t("title")}
         </h2>
       </motion.div>
 
@@ -38,7 +47,9 @@ const SupportSection = () => {
           }
         }}
       >
-        {supportData.cards.map((card) => (
+        {cards.map((card) => {
+          const dataCard = supportData.cards.find((d) => d.id === card.id);
+          return (
           <motion.div
             key={card.id}
             className="bg-[#F4F4F4] border border-[#E4E7E9] rounded-[15px] lg:rounded-[25px] px-2 sm:px-6 lg:px-8 py-2 sm:py-6 lg:py-8 hover:shadow-xl transition-shadow duration-200 flex-1 min-w-0"
@@ -56,12 +67,15 @@ const SupportSection = () => {
             <div className="flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left w-full space-y-6 lg:space-y-0 lg:space-x-0">
               {/* Icon */}
               <div className="w-20 h-20 sm:w-28 sm:h-24 md:w-36 md:h-32 lg:w-[232px] lg:h-[208px] relative mb-4 sm:mb-5 lg:mb-0 flex-shrink-0">
-                <Image
-                  src={card.icon}
-                  alt={`${card.heading} icon`}
-                  fill
-                  className="object-contain"
-                />
+                {dataCard?.icon && (
+                  <Image
+                    src={dataCard.icon}
+                    alt={`${card.heading} icon`}
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 640px) 80px, (max-width: 768px) 112px, (max-width: 1024px) 144px, 232px"
+                  />
+                )}
               </div>
 
               {/* Text Content */}
@@ -74,17 +88,19 @@ const SupportSection = () => {
                 </p>
 
                 {/* Action Button/Link */}
-                {card.actionType === 'email' ? (
+                {dataCard?.actionType === 'email' ? (
                   <a
-                    href={card.actionUrl}
+                    href={dataCard.actionUrl}
+                    rel="noopener noreferrer"
                     className="block lg:inline-block w-full lg:w-auto px-3 sm:px-5 lg:px-6 py-2.5 sm:py-3 lg:py-3 border border-[#FF5F1F] text-[#FF5F1F] bg-white rounded-[10px] font-medium text-sm sm:text-base lg:text-base hover:bg-[#FF5F1F] hover:text-white transition-transform will-change-transform hover:-translate-y-[1px] duration-200 break-words text-center lg:text-left"
                   >
                     {card.actionText}
                   </a>
                 ) : (
                   <button
-                    onClick={() => window.open(card.actionUrl, '_blank')}
+                    onClick={() => window.open(dataCard?.actionUrl || '#', '_blank')}
                     className="w-full lg:w-auto px-2 sm:px-5 lg:px-6 py-2.5 sm:py-3 lg:py-3 border border-[#FF5F1F] text-[#FF5F1F] bg-white rounded-[10px] font-medium text-sm sm:text-base lg:text-base hover:bg-[#FF5F1F] hover:text-white transition-transform will-change-transform hover:-translate-y-[1px] duration-200 break-words"
+                    aria-label="Open support link in new window"
                   >
                     {card.actionText}
                   </button>
@@ -92,7 +108,8 @@ const SupportSection = () => {
               </div>
             </div>
           </motion.div>
-        ))}
+          );
+        })}
       </motion.div>
     </div>
   );

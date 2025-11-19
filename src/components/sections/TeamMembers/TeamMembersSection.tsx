@@ -96,6 +96,7 @@ const TeamMembersSection = () => {
                       key={`${member.id}-icon-${idx}`}
                       src={icon.src}
                       alt=""
+                      aria-hidden="true"
                       width={icon.width}
                       height={icon.height}
                       className={`absolute z-[1] ${mobileClasses || icon.className} w-[60%] sm:w-[70%] md:w-[80%] lg:w-full h-auto`}

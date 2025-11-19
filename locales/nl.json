@@ -17,6 +17,17 @@
     "trustedBy": "Vertrouwd door:",
     "animated": ["Ontwikkeling", "Marketing", "Design"]
   },
+  "ServicesBanner": {
+    "title": "Jouw nearshore partner voor groei",
+    "description": "Van marketing tot code, onze nearshore teams leveren strategieën, designs en oplossingen die resultaten opleveren.",
+    "primaryCta": "Laten we praten",
+    "trustedBy": "Vertrouwd door:",
+    "overlays": {
+      "software": "Software <br/> oplossing",
+      "creative": "Creatieve <br/> oplossingen",
+      "marketing": "Marketing <br/> oplossingen"
+    }
+  },
   "TeamBanner": {
     "title": "Ontmoet de mensen die slimme, schaalbare successen mogelijk maken",
     "description": "Achter elk succesvol project staat een team dat om zorgt. We geloven in openheid, samenwerking en de kracht van diverse perspectieven. Samen creëren we een omgeving waar creativiteit bloeit, innovatie de weg wijst en elke klant zich onderdeel voelt van de reis.",
@@ -36,7 +47,23 @@
       {"title": "Creatieve diensten", "description": "We ontwerpen branding, UI/UX en visuele content die de identiteit van je merk vastlegt, je verhaal vertelt en je publiek betrokken houdt."},
       {"title": "Softwarediensten", "description": "We bouwen web-, mobiele en cloudapplicaties die veilig, schaalbaar en afgestemd zijn op jouw bedrijfsbehoeften."}
     ],
-    "contact": {"title": "Laten we samen je volgende grote project maken.", "label": "Contact", "cta": "Neem contact op"}
+    "contact": {"title": "Laten we samen je volgende grote project maken.", "label": "Contact", "cta": "Neem contact op"},
+    "detailPage": {
+      "sections": {
+        "ourApproach": {
+          "heading": "Onze aanpak",
+          "content": "We combineren creativiteit met datagedreven besluitvorming. Elke samenwerking is afgestemd op jouw doelen, of dat nu bewustwording opbouwen, leads genereren of verkopen stimuleren is. Door strategie, content, design en prestaties op één lijn te brengen, zorgen we ervoor dat jouw boodschap de juiste mensen op het juiste moment bereikt."
+        },
+        "whatWeOffer": {
+          "heading": "Wat we bieden",
+          "content": "Een compleet aanbod op het gebied van strategie, design en levering. Van social, zoeken en content tot productdesign en schaalbare web-ervaringen, we bouwen systemen die veilig, performant en gemakkelijk te groeien zijn."
+        },
+        "whyTrePlus": {
+          "heading": "Waarom Tre+",
+          "content": "Als nearshore partner brengen we je het beste van beide werelden: West-Europese marktbegrip gecombineerd met efficiënte levering. Ons multidisciplinaire team werkt hand in hand om oplossingen te creëren die niet alleen effectief zijn, maar ook schaalbaar naarmate je bedrijf groeit."
+        }
+      }
+    }
   },
   "ServiceHighlights": {
     "items": {
@@ -160,6 +187,23 @@
     "buttons": {
       "viewMore": "Meer laden"
     },
+    "detailPage": {
+      "titleSuffix": "– Een gedurfde uitstraling voor een gedurfd merk",
+      "sections": {
+        "theChallenge": {
+          "heading": "De uitdaging",
+          "content": "Toen de klant naar ons toekwam, was hun doel duidelijk: ze wilden er niet uitzien als zomaar een ander merk. Ze wilden energie, jeugd en een speelse rand die zou opvallen, zowel in de schappen als in digitale campagnes."
+        },
+        "ourCreativeDirection": {
+          "heading": "Onze creatieve richting",
+          "content": "We begonnen met het heroverwegen van hun visuele taal, bouwend rond een gedurfd woordmerk en een levendig palet. Het design is opzettelijk eenvoudig zodat de naam centraal staat, terwijl de kleuren de persoonlijkheid dragen."
+        },
+        "extendingTheBrandExperience": {
+          "heading": "De merkervaring uitbreiden",
+          "content": "Naast verpakking creëerden we lifestyle visuals en digitale campagne-assets. Van social media tot e‑commerce banners, de look en feel blijven consistent: zelfverzekerd, luid en memorabel."
+        }
+      }
+    },
     "cards": {
       "digital-assets-1": { "title": "Digital assets", "description": "Marketingcampagne voor slimme investeringen." },
       "unwell-product-design": { "title": "Product design", "description": "Een gedurfd visueel merk." },
@@ -182,6 +226,9 @@
     }
   },
   "Insights": {
+    "title": "Inzichten & Nieuws",
+    "description": "Blijf op de hoogte van het laatste nieuws in softwareontwikkeling, design en marketing. Van branchenieuws tot praktische tips, onze inzichten zijn er om bedrijven slimmer te laten groeien en voorop te blijven lopen.",
+    "seeMoreLabel": "Meer bekijken",
     "tabs": {
       "all": "Alle inzichten",
       "marketing": "Marketing",
@@ -191,6 +238,19 @@
     },
     "buttons": {
       "viewMore": "Meer bekijken"
+    },
+    "detailPage": {
+      "intro": "In het digitale landschap van vandaag is het plaatsen van advertenties eenvoudig—maar het creëren van content die presteert vereist strategie. Hier zijn de principes die we gebruiken om artikelen te ontwerpen die informeren en converteren.",
+      "sections": {
+        "whatMakesItWork": {
+          "heading": "Wat maakt het werkend?",
+          "content": "Duidelijke boodschap, gepolijste visuals en timing. We combineren onderzoek, sterke redactionele structuur en prestatie-denken om lezers betrokken te houden en vooruit te bewegen."
+        },
+        "whyItMatters": {
+          "heading": "Waarom het ertoe doet",
+          "content": "Met toenemende concurrentie op alle kanalen, verandert de juiste contentstrategie indrukken in betekenisvolle merkmomenten—en groei."
+        }
+      }
     },
     "cards": {
       "social-ads-that-convert": {
@@ -228,6 +288,126 @@
       "design-trends": {
         "title": "Designtrends 2025",
         "description": "Opkomende patronen en best practices in UI/UX-design."
+      }
+    }
+  },
+  "Testimonials": {
+    "title": "Wat onze klanten zeggen",
+    "description": "We houden van feedback van onze klanten. Ontdek wat ze over ons zeggen!",
+    "mobileCta": "Meer bekijken",
+    "items": [
+      {
+        "id": 1,
+        "quote": "Ze leverden eersteklas nearshore ontwikkeling die onze project snelheid en kwaliteit verhoogde.",
+        "name": "Morgan Carric",
+        "role": "Code Crafter"
+      },
+      {
+        "id": 2,
+        "quote": "Een betrouwbare partner voor schaalbare softwareoplossingen tegen concurrerende tarieven.",
+        "name": "Alexa Huster",
+        "role": "CEO van Ta2k"
+      },
+      {
+        "id": 3,
+        "quote": "Hun team integreerde naadloos met het onze, leverde op tijd en met precisie.",
+        "name": "Irina Lester",
+        "role": "Klant"
+      },
+      {
+        "id": 4,
+        "quote": "Professioneel, proactief en gericht op resultaten — we vonden het geweldig om met hen te werken.",
+        "name": "Liam Ortega",
+        "role": "Product Lead"
+      }
+    ]
+  },
+  "WhoWeAre": {
+    "heading": {
+      "line1": "Wie we zijn",
+      "line2": "Van drie oprichters",
+      "line3": "naar een gedeelde visie"
+    },
+    "description": "Tre+ werd opgericht door drie ondernemers, twee uit Nederland en één uit Kosovo, met een visie om West-Europa te verbinden met het talent van Oost-Europa. Met expertise in ontwikkeling, design en digitale marketing, creëerden we een nearshore bedrijf dat technische vaardigheid, creativiteit en culturele diversiteit combineert."
+  },
+  "OurProjects": {
+    "heading": {
+      "line1": "Projecten die ons",
+      "line2": {
+        "beforeUs": "trots maakten en",
+        "afterOur": "onze"
+      },
+      "line3": "klanten gelukkig"
+    },
+    "description": "We creëren software-, design- en marketingoplossingen die echte uitdagingen oplossen en meetbare impact leveren. Elk project is een samenwerking die ideeën omzet in resultaten waar onze klanten op kunnen vertrouwen."
+  },
+  "WhatWeDo": {
+    "heading": "Wat we doen"
+  },
+  "Support": {
+    "title": "Voor andere toegewijde ondersteuning",
+    "cards": [
+      {
+        "id": "press-inquiry",
+        "heading": "Persvraag",
+        "description": "Voor vragen met betrekking tot media of pers, neem rechtstreeks contact met ons op:",
+        "actionText": "Info@treplus.com"
+      },
+      {
+        "id": "direct-meeting",
+        "heading": "Directe vergadering",
+        "description": "Voor prioritaire besprekingen of projectvragen, plan een vergadering met ons team:",
+        "actionText": "Plan een vergadering"
+      }
+    ]
+  },
+  "Contact": {
+    "header": {
+      "title": "Neem contact op met ons team",
+      "description": [
+        "Ons team is zeer toegewijd om u te helpen met uw vragen.",
+        "Stuur gewoon een 'hallo' via het formulier en ons team neemt binnen dezelfde dag contact met u op."
+      ]
+    },
+    "trustedSection": {
+      "title": "Vertrouwd door leiders",
+      "description": "Sluit je aan bij honderden bedrijven die ons vertrouwen voor eersteklas nearshore ontwikkelingsoplossingen met snelheid, kwaliteit en schaalbaarheid."
+    },
+    "form": {
+      "fields": {
+        "fullName": {
+          "label": "Volledige naam",
+          "placeholder": "Volledige naam"
+        },
+        "profileLink": {
+          "label": "Profiel link (elk social media)",
+          "placeholder": "Bijvoorbeeld Instagram, Tik tok etc."
+        },
+        "email": {
+          "label": "E-mail",
+          "placeholder": "Voer uw e-mail in"
+        },
+        "phoneNumber": {
+          "label": "Telefoonnummer (met landcode)",
+          "placeholder": "+1 (000) 000-0000"
+        },
+        "query": {
+          "label": "Uw vraag",
+          "placeholder": "Geef eventuele details met betrekking tot uw vraag..."
+        }
+      },
+      "privacyPolicy": {
+        "text": "Door contact met ons op te nemen, gaat u akkoord met ons",
+        "linkText": "Privacybeleid"
+      },
+      "submitButton": {
+        "text": "Verstuur bericht",
+        "submitting": "Verzenden..."
+      },
+      "success": "Bedankt voor uw bericht! We nemen zo spoedig mogelijk contact met u op.",
+      "errors": {
+        "validation": "Corrigeer de fouten in het formulier.",
+        "submission": "Er is een fout opgetreden bij het verzenden van uw bericht. Probeer het later opnieuw."
       }
     }
   }
